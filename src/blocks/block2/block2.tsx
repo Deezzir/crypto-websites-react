@@ -15,7 +15,7 @@ export const Block2 = () => {
           />
         </div>
         <div>
-          <h3 className="text-3xl lg:text-4xl px-48">
+          <h3 className="text-3xl lg:text-4xl px-12 lg:px-48 text-center">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
             error perspiciatis labore accusantium provident
           </h3>

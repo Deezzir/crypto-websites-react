@@ -61,7 +61,7 @@ export const Block1 = () => {
         }
       >
         <MovingImg
-          customClassWrapper={"top-[40%] md:top-[30%]"}
+          customClassWrapper={"absolute top-[40%] md:top-[30%]"}
           tz={3}
           tx={3}
           ty={20}
@@ -69,7 +69,7 @@ export const Block1 = () => {
           imgPath={"./pepeplane.png"}
         />
         <a
-          href=""
+          href="https://www.google.com"
           className=" mt-auto mb-36 md:mb-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
         >
           <span className="">BUY YOUR PASS TO FREEDOM</span>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export const MovingImg = (props: any) => {
   return (
     <motion.div
-      className={"absolute " + props.customClassWrapper}
+      className={"" + props.customClassWrapper}
       style={{ y: props.y }}
     >
       {/*  MAYBE MOVE THIS WRAPPER SEPARETE IF WE NEED TO REUSE IT  */}
@@ -27,6 +27,7 @@ export const MovingImg = (props: any) => {
         <img
           className={props.customClassImg + " select-none"}
           src={props.imgPath}
+          alt={props.alt}
         />
       </motion.div>
     </motion.div>
