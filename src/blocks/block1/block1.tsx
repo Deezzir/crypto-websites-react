@@ -61,7 +61,7 @@ export const Block1 = () => {
       <Doroga />
       <AppearWrapper
         customClass={
-          "w-full  items-center content-between relative flex max-w-screen-2xl"
+          "w-full  items-center content-between relative flex max-w-screen-2xl z-50"
         }
       >
         <MovingImg

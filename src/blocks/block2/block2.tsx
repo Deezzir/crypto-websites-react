@@ -10,16 +10,16 @@ export const Block2 = () => {
             tz={3}
             tx={-18}
             ty={15}
-            customClassImg={"w-full rounded-xl h-48 rotate-12"}
-            imgPath={"./block2/plane1.png"}
+            customClassImg={"w-full rounded-xl h-48 img-hor"}
+            imgPath={"./pepeplane.png"}
           />
           <MovingImg
             customClassWrapper={"relative"}
             tz={3}
             tx={18}
             ty={-5}
-            customClassImg={"w-full rounded-xl h-64 -rotate-12"}
-            imgPath={"./block2/plane2.png"}
+            customClassImg={"rounded-xl h-32 -rotate-12 img-hor"}
+            imgPath={"./block2/pln2.png"}
           />
         </div>
         <div>
@@ -34,8 +34,8 @@ export const Block2 = () => {
             tz={3}
             tx={-10}
             ty={10}
-            customClassImg={"w-full rounded-xl h-64 rotate-12"}
-            imgPath={"./block2/plane3.png"}
+            customClassImg={"w-full rounded-xl h-64 -rotate-45"}
+            imgPath={"./block2/pln3.png"}
           />
           <MovingImg
             customClassWrapper={"relative"}
@@ -43,7 +43,7 @@ export const Block2 = () => {
             tx={10}
             ty={10}
             customClassImg={"w-full rounded-xl h-64 rotate-12"}
-            imgPath={"./block2/plane4.png"}
+            imgPath={"./block2/pln4.png"}
           />
         </div>
       </div>

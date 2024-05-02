@@ -28,3 +28,11 @@
     transform: scale(2);
   }
 }
+
+.img-hor {
+  transform: rotateY(180deg);
+}
+
+.img-vert {
+  transform: rotateX(180deg);
+}
