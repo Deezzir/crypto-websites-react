@@ -35,7 +35,7 @@ function Clouds() {
             <img
               key={index}
               src={`./block1/clouds/cl${index + 1}.webp`}
-              alt={`Image ${index}`}
+              alt="Cloud"
               className="h-12 md:h-16 w-auto select-none object-contain"
             />
           ))}
