@@ -31,32 +31,62 @@ export const Links = (props: any) => {
       }
     >
       <Checker val={TWITTER}>
-        <a target="_blank" href={TWITTER} className={buttonClass}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={TWITTER}
+          className={buttonClass}
+        >
           <XIcon iconClass={iconClass} />
         </a>
       </Checker>
       <Checker val={TELEGRAM}>
-        <a target="_blank" href={TELEGRAM} className={buttonClass}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={TELEGRAM}
+          className={buttonClass}
+        >
           <TgIcon iconClass={iconClass} />
         </a>
       </Checker>
       <Checker val={RAYDIUM}>
-        <a target="_blank" href={RAYDIUM} className={buttonClass}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={RAYDIUM}
+          className={buttonClass}
+        >
           <RaydiumIcon iconClass={iconClass} />
         </a>
       </Checker>
       <Checker val={JUPITER} r>
-        <a target="_blank" href={JUPITER} className={buttonClass}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={JUPITER}
+          className={buttonClass}
+        >
           <JupiterIcon iconClass={iconClass} />
         </a>
       </Checker>
       <Checker val={DEXSCREENER}>
-        <a target="_blank" href={DEXSCREENER} className={buttonClass}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={DEXSCREENER}
+          className={buttonClass}
+        >
           <DexscreenerIcon iconClass={iconClass} />
         </a>
       </Checker>
       <Checker val={DEXTOOLS}>
-        <a target="_blank" href={DEXTOOLS} className={buttonClass}>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={DEXTOOLS}
+          className={buttonClass}
+        >
           <DextoolsIcon iconClass={iconClass} />
         </a>
       </Checker>
