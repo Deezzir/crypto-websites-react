@@ -15,9 +15,9 @@ function Doroga() {
       >
         <div className="flex flex-row h-auto">
           <img
-            src={"./block1/city.png"}
+            src={"./block1/city.webp"}
             alt="Doroga"
-            className="w-auto h-36 md:h-72 select-none object-contain"
+            className="w-auto h-96 select-none object-contain"
             fetchPriority="high"
           />
         </div>
@@ -56,7 +56,7 @@ function Clouds() {
 
 export const Block1 = () => {
   return (
-    <div className="min-h-screen w-full flex relative bg-[#d9e8f8] justify-center">
+    <div className="min-h-screen w-full flex relative justify-center">
       <Clouds />
       <Doroga />
       <AppearWrapper
@@ -74,7 +74,7 @@ export const Block1 = () => {
         />
         <a
           href="https://www.google.com"
-          className=" mt-auto mb-36 md:mb-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
+          className="z-50 mt-auto mb-36 md:mb-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
         >
           <span className="">BUY YOUR PASS TO FREEDOM</span>
         </a>
