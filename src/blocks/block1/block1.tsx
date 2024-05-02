@@ -29,14 +29,14 @@ function Doroga() {
 function Clouds() {
   return (
     <div className="w-full overflow-hidden absolute top-0 left-0 flex justify-center items-center flex-col">
-      <Marquee className="relative" speed={25} autoFill direction={"left"}>
+      <Marquee className="relative mt-4" speed={25} autoFill direction={"left"}>
         <div className="flex flew-row mr-12 gap-24">
           {[...Array(10)].map((_, index) => (
             <img
               key={index}
               src={`./block1/clouds/cl${index + 1}.webp`}
               alt={`Image ${index}`}
-              className="h-16 w-auto select-none object-contain"
+              className="h-12 md:h-16 w-auto select-none object-contain"
             />
           ))}
         </div>
@@ -63,7 +63,7 @@ export const Block1 = () => {
           tz={3}
           tx={3}
           ty={20}
-          customClassImg={"h-24 md:h-36"}
+          customClassImg={"h-20 md:h-36"}
           imgPath={"./pepeplane.png"}
         />
         <a
