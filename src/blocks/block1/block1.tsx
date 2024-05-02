@@ -56,7 +56,7 @@ function Clouds() {
 
 export const Block1 = () => {
   return (
-    <div className="min-h-screen w-full flex relative justify-center">
+    <div className="min-h-screen w-full bg-[#d9e8f8] flex relative justify-center">
       <Clouds />
       <Doroga />
       <AppearWrapper
