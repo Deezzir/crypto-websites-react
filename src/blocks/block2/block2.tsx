@@ -24,8 +24,8 @@ export const Block2 = () => {
         </div>
         <div>
           <h3 className="text-3xl lg:text-4xl px-12 lg:px-48 text-center">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
-            error perspiciatis labore accusantium provident
+            "Join our community flight plan – where we launch together and find
+            your spot onboard!"
           </h3>
         </div>
         <div className="flex flex-col space-y-16 lg:flex-row justify-between items-center px-8">
