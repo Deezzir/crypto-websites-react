@@ -1,17 +1,25 @@
+import { MovingImg } from "../../common/moving-img";
+
 export const Block2 = () => {
   return (
     <div className="min-h-screen w-full flex relative justify-center items-center">
       <div className="flex flex-col w-full h-full max-w-screen-2xl space-y-24 py-12">
         <div className="flex flex-col space-y-12 lg:flex-row justify-between items-center px-8">
-          <img
-            src="/block2/plane1.png"
-            alt="Plane"
-            className="w-full lg:w-1/3 rounded-xl"
+          <MovingImg
+            customClassWrapper={"relative"}
+            tz={3}
+            tx={-18}
+            ty={15}
+            customClassImg={"w-full rounded-xl h-48 rotate-12"}
+            imgPath={"./block2/plane1.png"}
           />
-          <img
-            src="/block2/plane2.png"
-            alt="Plane"
-            className="w-full lg:w-1/3 rounded-xl"
+          <MovingImg
+            customClassWrapper={"relative"}
+            tz={3}
+            tx={18}
+            ty={-5}
+            customClassImg={"w-full rounded-xl h-64 -rotate-12"}
+            imgPath={"./block2/plane2.png"}
           />
         </div>
         <div>
@@ -21,15 +29,21 @@ export const Block2 = () => {
           </h3>
         </div>
         <div className="flex flex-col space-y-16 lg:flex-row justify-between items-center px-8">
-          <img
-            src="/block2/plane3.png"
-            alt="Plane"
-            className="w-full lg:w-1/3 rounded-xl"
+          <MovingImg
+            customClassWrapper={"relative"}
+            tz={3}
+            tx={-10}
+            ty={10}
+            customClassImg={"w-full rounded-xl h-64 rotate-12"}
+            imgPath={"./block2/plane3.png"}
           />
-          <img
-            src="/block2/plane4.png"
-            alt="Plane"
-            className="w-full lg:w-1/3 rounded-xl"
+          <MovingImg
+            customClassWrapper={"relative"}
+            tz={3}
+            tx={10}
+            ty={10}
+            customClassImg={"w-full rounded-xl h-64 rotate-12"}
+            imgPath={"./block2/plane4.png"}
           />
         </div>
       </div>
