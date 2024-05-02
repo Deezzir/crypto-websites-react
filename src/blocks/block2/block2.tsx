@@ -24,7 +24,7 @@ export const Block2 = () => {
         </div>
         <div>
           <h3 className="text-3xl lg:text-4xl px-12 lg:px-48 text-center">
-            "Join our community flight plan – where we launch together and find
+            "Join our community flight plane – where we launch together and find
             your spot onboard!"
           </h3>
         </div>
