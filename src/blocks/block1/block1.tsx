@@ -41,7 +41,7 @@ function Clouds() {
           ))}
         </div>
       </Marquee>
-      <Links customClass={"mt-8"} />
+      <Links customClass={"mt-8 md:mt-12"} />
       <TextReg
         customClass={"mt-8 md:mt-16"}
         text={"Lorem ipsun orem ipsun orem ipsun orem ipsun"}
