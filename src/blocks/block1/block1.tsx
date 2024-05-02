@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import { AppearWrapper } from "../../common/appear-wrapper";
+import { MovingImg } from "../../common/moving-img";
 
 function Doroga() {
   return (
@@ -42,17 +43,28 @@ function Clouds() {
   );
 }
 
-const Pepe = () => {
-  return <img src="./block1/pepe.png" />;
-};
-
 export const Block1 = () => {
   return (
     <div className="min-h-screen w-full flex relative bg-[#d9e8f8]">
       <Clouds />
       <Doroga />
-      <AppearWrapper>
-        <Pepe />
+      <AppearWrapper
+        customClass={"w-full justify-center items-center relative flex"}
+      >
+        <MovingImg
+          customClassWrapper={"top-[30%]"}
+          tz={3}
+          tx={3}
+          ty={20}
+          customClassImg={"h-24 md:h-36"}
+          imgPath={"./block1/pepe.png"}
+        />
+        <a
+          href=""
+          className=" mt-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
+        >
+          <span className="">BUY YOUR PASS TO FREEDOM</span>
+        </a>
       </AppearWrapper>
     </div>
   );
