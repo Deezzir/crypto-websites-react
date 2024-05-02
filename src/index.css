@@ -12,3 +12,19 @@
     background-color: white;
   }
 }
+
+.scaleAnim {
+  animation: leaves 6s infinite;
+}
+
+@keyframes leaves {
+  0% {
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(4);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
