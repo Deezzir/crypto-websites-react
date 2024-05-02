@@ -36,7 +36,7 @@ const Game = ({
     };
 
     document.addEventListener("keypress", handleKeyPress);
-  }, []);
+  });
 
   return (
     <div
