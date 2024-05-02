@@ -64,7 +64,7 @@ export const Block1 = () => {
           tx={3}
           ty={20}
           customClassImg={"h-24 md:h-36"}
-          imgPath={"./block1/pepe.png"}
+          imgPath={"./pepeplane.png"}
         />
         <a
           href=""
