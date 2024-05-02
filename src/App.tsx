@@ -6,6 +6,7 @@ import { Block2 } from "./blocks/block2/block2";
 import { Block4 } from "./blocks/block4/block4";
 import { Block3 } from "./blocks/block3/block3";
 import { Block10 } from "./blocks/block10/block10";
+import { Footer } from "./blocks/footer/footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Block3 />
       <Block4 />
       <Block10 />
+      <Footer />
     </div>
   );
 }

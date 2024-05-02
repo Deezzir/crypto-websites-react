@@ -6,7 +6,7 @@ import { Links } from "../../common/links";
 
 function Doroga() {
   return (
-    <div className="w-full overflow-hidden absolute bottom-0 left-0">
+    <div className="w-full overflow-hidden absolute bottom-0 left-0 block1">
       <Marquee
         className="relative bottom-[-5px] overflow-hidden"
         speed={25}
@@ -15,9 +15,9 @@ function Doroga() {
       >
         <div className="flex flex-row h-auto">
           <img
-            src={"./block1/doroga.webp"}
+            src={"./block1/city.png"}
             alt="Doroga"
-            className="w-auto h-24 md:h-36 select-none object-contain"
+            className="w-auto h-36 md:h-72 select-none object-contain"
             fetchPriority="high"
           />
         </div>
