@@ -14,9 +14,9 @@ import { TgIcon } from "./icons/tg-icon";
 import { XIcon } from "./icons/x-icon";
 
 const buttonClass =
-  " select-none orange-link font-bold cursor-pointer rounded-full flex flex-row content-center items-center transform transition duration-500 hover:scale-105";
+  " select-none font-bold cursor-pointer rounded-full flex flex-row content-center items-center transform transition duration-500 hover:scale-105";
 
-const iconClass = "w-12 h-12 fill-[#111827]";
+const iconClass = "w-12 h-12 fill-[#16a34a]";
 
 const Checker = (props: any) => {
   return <>{props.val.length !== 0 && props.children}</>;

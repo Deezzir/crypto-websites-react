@@ -9,9 +9,9 @@ function Doroga() {
     <div className="w-full overflow-hidden absolute bottom-0 left-0">
       <Marquee
         className="relative bottom-[-5px] overflow-hidden"
-        speed={15}
+        speed={25}
         autoFill
-        direction={"right"}
+        direction={"left"}
       >
         <div className="flex flex-row h-auto">
           <img
@@ -29,7 +29,7 @@ function Doroga() {
 function Clouds() {
   return (
     <div className="w-full overflow-hidden absolute top-0 left-0 flex justify-center items-center flex-col">
-      <Marquee className="relative" speed={15} autoFill direction={"left"}>
+      <Marquee className="relative" speed={25} autoFill direction={"left"}>
         <div className="flex flew-row mr-12 gap-24">
           {[...Array(10)].map((_, index) => (
             <img
