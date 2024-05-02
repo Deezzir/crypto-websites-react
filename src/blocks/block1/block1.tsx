@@ -1,6 +1,8 @@
 import Marquee from "react-fast-marquee";
 import { AppearWrapper } from "../../common/appear-wrapper";
 import { MovingImg } from "../../common/moving-img";
+import { TextReg } from "../../common/text-reg";
+import { Links } from "../../common/links";
 
 function Doroga() {
   return (
@@ -26,7 +28,7 @@ function Doroga() {
 
 function Clouds() {
   return (
-    <div className="w-full overflow-hidden absolute top-0 left-0">
+    <div className="w-full overflow-hidden absolute top-0 left-0 flex justify-center items-center flex-col">
       <Marquee className="relative" speed={15} autoFill direction={"left"}>
         <div className="flex flew-row mr-12 gap-24">
           {[...Array(10)].map((_, index) => (
@@ -39,6 +41,11 @@ function Clouds() {
           ))}
         </div>
       </Marquee>
+      <Links customClass={"mt-8"} />
+      <TextReg
+        customClass={"mt-8 md:mt-16"}
+        text={"Lorem ipsun orem ipsun orem ipsun orem ipsun"}
+      />
     </div>
   );
 }
@@ -49,10 +56,10 @@ export const Block1 = () => {
       <Clouds />
       <Doroga />
       <AppearWrapper
-        customClass={"w-full justify-center items-center relative flex"}
+        customClass={"w-full  items-center content-between relative flex"}
       >
         <MovingImg
-          customClassWrapper={"top-[30%]"}
+          customClassWrapper={"top-[40%] md:top-[30%]"}
           tz={3}
           tx={3}
           ty={20}
@@ -61,7 +68,7 @@ export const Block1 = () => {
         />
         <a
           href=""
-          className=" mt-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
+          className=" mt-auto mb-36 md:mb-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
         >
           <span className="">BUY YOUR PASS TO FREEDOM</span>
         </a>
