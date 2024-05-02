@@ -52,11 +52,13 @@ function Clouds() {
 
 export const Block1 = () => {
   return (
-    <div className="min-h-screen w-full flex relative bg-[#d9e8f8]">
+    <div className="min-h-screen w-full flex relative bg-[#d9e8f8] justify-center">
       <Clouds />
       <Doroga />
       <AppearWrapper
-        customClass={"w-full  items-center content-between relative flex"}
+        customClass={
+          "w-full  items-center content-between relative flex max-w-screen-2xl"
+        }
       >
         <MovingImg
           customClassWrapper={"top-[40%] md:top-[30%]"}
