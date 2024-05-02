@@ -1,0 +1,55 @@
+import Marquee from "react-fast-marquee";
+import { AppearWrapper } from "../../common/appear-wrapper";
+
+function Doroga() {
+  return (
+    <div className="w-full overflow-hidden absolute bottom-0 left-0">
+      <Marquee
+        className="relative bottom-[-5px] overflow-hidden"
+        speed={15}
+        autoFill
+        direction={"right"}
+      >
+        <div className="flex flex-row h-auto">
+          <img
+            src={"./block1/doroga.webp"}
+            alt="Doroga"
+            className="w-auto h-24 md:h-36 select-none object-contain"
+            fetchPriority="high"
+          />
+        </div>
+      </Marquee>
+    </div>
+  );
+}
+
+function Clouds() {
+  return (
+    <div className="w-full overflow-hidden absolute top-0 left-0">
+      <Marquee
+        className="relative bottom-[-5px] overflow-hidden"
+        speed={15}
+        autoFill
+        direction={"right"}
+      >
+        <div className="flex flex-row h-auto">
+          <img
+            src={"./block1/doroga.webp"}
+            alt="Doroga"
+            className="w-auto h-24 md:h-36 select-none object-contain"
+            fetchPriority="high"
+          />
+        </div>
+      </Marquee>
+    </div>
+  );
+}
+
+export const Block1 = () => {
+  return (
+    <div className="min-h-screen w-full flex relative">
+      <Doroga />
+      <AppearWrapper></AppearWrapper>
+    </div>
+  );
+};
