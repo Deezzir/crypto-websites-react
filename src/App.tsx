@@ -8,7 +8,7 @@ import { Block3 } from "./blocks/block3/block3";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
       <Block1 />
       <Block2 />
       <Block3 />
