@@ -52,15 +52,15 @@ const Game = ({ status, start, fly }) => {
     };
 
     document.addEventListener("keydown", handleKeyPress);
+    document.addEventListener("touchstart", handleTouchStart);
     if (div) {
       div.addEventListener("mousedown", handleClick);
-      div.addEventListener("touchstart", handleTouchStart);
     }
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
+      document.removeEventListener("touchstart", handleTouchStart);
       if (div) {
         div.removeEventListener("mousedown", handleClick);
-        div.removeEventListener("touchstart", handleTouchStart);
       }
     };
   });
@@ -78,7 +78,7 @@ const Game = ({ status, start, fly }) => {
       </div>
       <div
         className={
-          "rounded-lg shadow-lg lg:scale-150 origin-center lg:translate-y-1/3 border-2 border-black " +
+          "rounded-lg shadow-lg scale-100 lg:scale-150 origin-center lg:translate-y-1/3 border-2 border-black " +
           (started ? "blur-none" : "blur-[2px]")
         }
         style={{
