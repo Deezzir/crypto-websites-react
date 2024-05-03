@@ -9,6 +9,7 @@ import { Block10 } from "./blocks/block10/block10";
 import { Provider } from "react-redux";
 import { FooterSection } from "./blocks/footer";
 import { ToastContainer } from "react-toastify";
+import { Block5 } from "./blocks/block5/block5";
 
 function App({ store }: any) {
   return (
@@ -16,6 +17,7 @@ function App({ store }: any) {
       <ToastContainer />
       <Block1 />
       <Block2 />
+      <Block5 />
       <Block3 />
       <Provider store={store}>
         <Block4 />
