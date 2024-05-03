@@ -1,6 +1,6 @@
 import { TgIcon } from "../common/icons/tg-icon";
 import { XIcon } from "../common/icons/x-icon";
-import { TELEGRAM, TWITTER } from "../urls";
+import { TELEGRAM_DEV, TWITTER_DEV } from "../urls";
 
 const iconClass = "w-6 h-6 fill-white";
 
@@ -11,7 +11,7 @@ export const FooterSection = () => {
         <span className="text-sm font-bold sm:text-xl">$PPP &copy; 2024</span>
         <span className="inline-flex">
           <a
-            href={TWITTER}
+            href={TWITTER_DEV}
             target="_blank"
             rel="noopener noreferrer"
             className="mx-[2px] rounded p-2 font-bold"
@@ -19,7 +19,7 @@ export const FooterSection = () => {
             <XIcon iconClass={iconClass} />
           </a>
           <a
-            href={TELEGRAM}
+            href={TELEGRAM_DEV}
             rel="noopener noreferrer"
             target="_blank"
             className="mx-[2px] rounded p-2 font-bold"

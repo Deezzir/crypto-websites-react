@@ -1,7 +1,7 @@
 export const CA = "Coming...";
-export const TELEGRAM = "";
-export const TWITTER = "";
-export const BUY_LING = "coming";
+export const TELEGRAM = "https://t.me/pepeplane";
+export const TWITTER = "https://twitter.com/Pepeplanee";
+export const BUY_LINK = "coming";
 export const DEXSCREENER = "";
 export const RAYDIUM = "";
 export const JUPITER = "";

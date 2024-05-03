@@ -51,7 +51,7 @@ const Game = ({ status, start, fly }) => {
       document.removeEventListener("keydown", handleKeyPress);
       if (div) div.removeEventListener("mousedown", handleClick);
     };
-  }, [started]);
+  });
 
   return (
     <div className="flex flex-col lg:flex-row w-full h-full justify-center items-center gap-4 lg:gap-[8rem]">

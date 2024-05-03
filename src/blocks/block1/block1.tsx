@@ -1,9 +1,8 @@
 import Marquee from "react-fast-marquee";
 import { AppearWrapper } from "../../common/appear-wrapper";
 import { MovingImg } from "../../common/moving-img";
-import { TextReg } from "../../common/text-reg";
 import { Links } from "../../common/links";
-import { FooterSection } from "../footer";
+import { BUY_LINK } from "../../urls";
 import { CopyCa } from "../../common/copy-ca";
 
 function Doroga() {
@@ -36,7 +35,7 @@ function Clouds() {
             <img
               key={index}
               src={`./block1/clouds/cl${index + 1}.webp`}
-              alt={`Image ${index}`}
+              alt={`img${index}`}
               className="h-12 md:h-16 w-auto select-none object-contain"
             />
           ))}
@@ -45,7 +44,7 @@ function Clouds() {
       <AppearWrapper
         customClass={"flex w-full justify-center align-center items-center"}
       >
-        <Links customClass={"mt-8 md:mt-12"} />
+        <Links customClass={"mt-8 md:my-12"} />
         <CopyCa />
       </AppearWrapper>
     </div>
@@ -59,7 +58,7 @@ export const Block1 = () => {
       <Doroga />
       <AppearWrapper
         customClass={
-          "w-full  items-center content-between relative flex max-w-screen-2xl z-30"
+          "w-fullitems-center content-between relative flex max-w-screen-2xl z-30"
         }
       >
         <MovingImg
@@ -71,7 +70,7 @@ export const Block1 = () => {
           imgPath={"./pepeplane.png"}
         />
         <a
-          href=""
+          href={BUY_LINK}
           className="z-50 mt-auto mb-36 md:mb-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
         >
           <span className="">BUY YOUR PASS TO FREEDOM</span>
