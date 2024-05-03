@@ -20,7 +20,7 @@ const Pipe = ({ x, pipes }) => {
           }}
         >
           <div
-            className="img-vert rounded-t-lg"
+            className="img-vert rounded-t-lg border-2 border-black"
             style={{
               position: "absolute",
               top: 0,
@@ -33,7 +33,7 @@ const Pipe = ({ x, pipes }) => {
             }}
           ></div>
           <div
-            className="rounded-t-lg"
+            className="rounded-t-lg border-2 border-black"
             style={{
               position: "absolute",
               top: topHeight + 100,
