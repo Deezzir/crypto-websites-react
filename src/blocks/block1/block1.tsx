@@ -3,6 +3,7 @@ import { AppearWrapper } from "../../common/appear-wrapper";
 import { MovingImg } from "../../common/moving-img";
 import { TextReg } from "../../common/text-reg";
 import { Links } from "../../common/links";
+import { FooterSection } from "../footer";
 
 function Doroga() {
   return (
@@ -35,7 +36,7 @@ function Clouds() {
             <img
               key={index}
               src={`./block1/clouds/cl${index + 1}.webp`}
-              alt="Cloud"
+              alt={`Image ${index}`}
               className="h-12 md:h-16 w-auto select-none object-contain"
             />
           ))}
@@ -61,7 +62,7 @@ export const Block1 = () => {
       <Doroga />
       <AppearWrapper
         customClass={
-          "w-full  items-center content-between relative flex max-w-screen-2xl z-50"
+          "w-full  items-center content-between relative flex max-w-screen-2xl z-30"
         }
       >
         <MovingImg
@@ -73,7 +74,7 @@ export const Block1 = () => {
           imgPath={"./pepeplane.png"}
         />
         <a
-          href="https://www.google.com"
+          href=""
           className="z-50 mt-auto mb-36 md:mb-64 inline-flex text-md md:text-lg font-medium bg-green-600 md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
         >
           <span className="">BUY YOUR PASS TO FREEDOM</span>

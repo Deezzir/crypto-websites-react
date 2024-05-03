@@ -8,6 +8,7 @@ import { Block3 } from "./blocks/block3/block3";
 import { Block10 } from "./blocks/block10/block10";
 import { Footer } from "./blocks/footer/footer";
 import { Provider } from "react-redux";
+import { FooterSection } from "./blocks/footer";
 
 function App({ store }: any) {
   return (
@@ -20,6 +21,7 @@ function App({ store }: any) {
       </Provider>
       <Block10 />
       <Footer />
+      <FooterSection />
     </div>
   );
 }

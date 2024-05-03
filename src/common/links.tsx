@@ -14,7 +14,7 @@ import { TgIcon } from "./icons/tg-icon";
 import { XIcon } from "./icons/x-icon";
 
 const buttonClass =
-  " select-none font-bold cursor-pointer rounded-full flex flex-row content-center items-center transform transition duration-500 hover:scale-105";
+  " select-none font-bold cursor-pointer rounded-full flex flex-row content-center items-center transform transition duration-500 hover:scale-105 z-50";
 
 const iconClass = "w-12 h-12 fill-black";
 
