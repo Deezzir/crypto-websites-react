@@ -67,13 +67,18 @@ const Game = ({ status, start, fly }) => {
 
   return (
     <div className="flex flex-col lg:flex-row w-full h-full justify-center items-center gap-4 lg:gap-[8rem]">
-      <div className="flex h-full flex-col-reverse md:flex-col justify-center items-end lg:items-center">
-        {/* <h2 className="text-2xl font-bold text-center">Score: {score}</h2> */}
+      <div className="flex h-full flex-col-reverse md:flex-col justify-center items-center mb-5 lg:mb-0">
+        <h2 className="text-2xl font-bold text-center hidden sm:block">
+          Controls: Use Space bar to fly
+        </h2>
+        <h2 className="text-2xl font-bold text-center block sm:hidden">
+          Controls: Tap to fly
+        </h2>
         <img
           ref={gameRef}
           src={StartImage}
           alt="Flappy Bird"
-          className="w-96 h-96 select-none object-contain cursor-pointer hover:scale-105 transform transition duration-300 ease-in-out"
+          className="w-96 h-auto select-none cursor-pointer hover:scale-105 transform transition duration-300 ease-in-out"
         />
       </div>
       <div
@@ -150,6 +155,10 @@ const check = (dispatch, getState) => {
     });
 
   if (birdY > 512 - 108) {
+    dispatch({ type: "GAME_OVER" });
+  }
+
+  if (birdY < 0) {
     dispatch({ type: "GAME_OVER" });
   }
 
