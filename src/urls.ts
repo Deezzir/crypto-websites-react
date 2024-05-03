@@ -1,4 +1,4 @@
-export const CA = "Coming...";
+export const CA = "3uPF7WqZDbhYQNmJYfmc663Qmsc9ohYjJ8p9B5qKrgNp";
 export const TELEGRAM = "https://t.me/pepeplane";
 export const TWITTER = "https://twitter.com/Pepeplanee";
 export const BUY_LINK = "coming";
