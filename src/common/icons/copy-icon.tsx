@@ -3,7 +3,7 @@
 export const CopyIcon = () => {
   return (
     <svg
-      className="w-6 h-6 2xl:w-16 2xl:h-16"
+      className="w-6 h-6"
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"

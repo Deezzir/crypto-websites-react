@@ -1,4 +1,4 @@
-export const CA = "7Cga2epeJMhte3j74ekEBRMBDn2nRKcgFBrEggSC99fk";
+export const CA = "Coming...";
 export const TELEGRAM = "";
 export const TWITTER = "";
 export const BUY_LING = "coming";

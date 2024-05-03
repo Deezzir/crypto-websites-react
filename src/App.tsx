@@ -9,10 +9,12 @@ import { Block10 } from "./blocks/block10/block10";
 import { Footer } from "./blocks/footer/footer";
 import { Provider } from "react-redux";
 import { FooterSection } from "./blocks/footer";
+import { ToastContainer, toast } from "react-toastify";
 
 function App({ store }: any) {
   return (
     <div className="App overflow-hidden">
+      <ToastContainer />
       <Block1 />
       <Block2 />
       <Block3 />
