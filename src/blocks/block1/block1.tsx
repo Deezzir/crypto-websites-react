@@ -8,7 +8,7 @@ import { CopyCa } from "../../common/copy-ca";
 
 function Doroga() {
   return (
-    <div className="w-full overflow-hidden absolute bottom-0 left-0 block1">
+    <div className="w-full overflow-hidden absolute bottom-0 left-0">
       <Marquee
         className="relative bottom-[-5px] overflow-hidden"
         speed={25}
@@ -20,7 +20,6 @@ function Doroga() {
             src={"./block1/city.webp"}
             alt="Doroga"
             className="w-auto h-96 select-none object-contain"
-            fetchPriority="high"
           />
         </div>
       </Marquee>
@@ -55,7 +54,7 @@ function Clouds() {
 
 export const Block1 = () => {
   return (
-    <div className="min-h-screen w-full bg-[#d9e8f8] flex relative justify-center">
+    <div className="min-h-screen w-full bg-[#d9e8f8] flex relative justify-center blurred-border-bottom">
       <Clouds />
       <Doroga />
       <AppearWrapper

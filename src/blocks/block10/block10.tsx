@@ -4,11 +4,11 @@ export const Block10 = () => {
   return (
     <div className="min-h-screen w-full relative flex justify-center align-center overflow-y-visible overflow-x-clip">
       <MovingImg
-        customClassWrapper={"absolute top-[50%] md:top-0"}
+        customClassWrapper={"absolute top-[50%] md:top-[20%]"}
         tz={30}
         tx={1}
         ty={1}
-        customClassImg={"h-20 md:h-80 scaleAnim"}
+        customClassImg={"h-20 md:h-72 scaleAnim"}
         imgPath={"./ass.png"}
       />
     </div>

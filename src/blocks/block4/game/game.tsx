@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 
 import Bird from "./bird";
@@ -6,51 +6,81 @@ import Pipe from "./pipe";
 import Foreground from "./foreground";
 
 import BgImage from "../assets/bg.png";
+import StartImage from "../assets/start.png";
 
 let gameLoop: NodeJS.Timeout;
 let pipeGenerator: NodeJS.Timeout;
+// let SET_SCORE: any;
 
-const Game = ({
-  status,
-  start,
-  fly,
-}: {
-  status: string;
-  start: () => void;
-  fly: () => void;
-}) => {
-  if (status === "game-over") {
-    clearInterval(gameLoop);
-    clearInterval(pipeGenerator);
-  }
+// @ts-ignore
+const Game = ({ status, start, fly }) => {
+  const gameRef = useRef<HTMLImageElement>(null);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    const handleKeyPress = (e: { keyCode: number }) => {
-      if (e.keyCode === 32) {
+    if (status === "game-over") {
+      clearInterval(gameLoop);
+      clearInterval(pipeGenerator);
+      setStarted(false);
+    }
+  }, [status]);
+
+  useEffect(() => {
+    const div = gameRef.current;
+    if (!div) return;
+
+    const handleKeyPress = (e: {
+      keyCode: number;
+      preventDefault: () => void;
+    }) => {
+      if (e.keyCode === 32 && status === "playing") {
+        e.preventDefault();
         fly();
       }
-
+    };
+    const handleClick = () => {
       if (status !== "playing") {
+        setStarted(true);
         start();
       }
     };
 
-    document.addEventListener("keypress", handleKeyPress);
-  });
+    document.addEventListener("keydown", handleKeyPress);
+    if (div) div.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+      if (div) div.removeEventListener("mousedown", handleClick);
+    };
+  }, [started]);
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: 512,
-        height: 512,
-        background: `url(${BgImage})`,
-        overflow: "hidden",
-      }}
-    >
-      <Bird />
-      <Pipe />
-      <Foreground />
+    <div className="flex flex-col lg:flex-row w-full h-full justify-center items-center gap-4 lg:gap-[8rem]">
+      <div className="flex h-full flex-col-reverse md:flex-col justify-center items-center">
+        {/* <h2 className="text-2xl font-bold text-center">Score: {score}</h2> */}
+        <img
+          ref={gameRef}
+          src={StartImage}
+          alt="Flappy Bird"
+          className="w-96 h-96 select-none object-contain cursor-pointer hover:scale-105 transform transition duration-300 ease-in-out"
+        />
+      </div>
+      <div
+        className={
+          "rounded-lg shadow-lg lg:scale-150 origin-center lg:translate-y-1/3 border-2 border-black " +
+          (started ? "blur-none" : "blur-[2px]")
+        }
+        style={{
+          position: "relative",
+          width: 288,
+          height: 512,
+          background: `url(${BgImage})`,
+          overflow: "hidden",
+        }}
+      >
+        <Bird />
+        <Pipe />
+        <Foreground />
+      </div>
     </div>
   );
 };
@@ -62,10 +92,8 @@ const fly = () => {
 };
 
 const start = () => {
-  return (
-    dispatch: (arg0: { type: string }) => void,
-    getState: () => { (): any; new (): any; game: { status: any } }
-  ) => {
+  // @ts-ignore
+  return (dispatch, getState) => {
     const { status } = getState().game;
 
     if (status !== "playing") {
@@ -74,7 +102,7 @@ const start = () => {
         dispatch({ type: "RUNNING" });
 
         check(dispatch, getState);
-      }, 200);
+      }, 300);
 
       pipeGenerator = setInterval(() => {
         dispatch({ type: "GENERATE" });
@@ -86,7 +114,7 @@ const start = () => {
 };
 
 // @ts-ignore
-const check = (dispatch, getState: any) => {
+const check = (dispatch, getState) => {
   const state = getState();
   const birdY = state.bird.y;
   const pipes = state.pipe.pipes;

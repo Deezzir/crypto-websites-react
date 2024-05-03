@@ -13,6 +13,21 @@
   }
 }
 
+.blurred-border-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  left: -20px;
+  height: 40px;
+  width: 120%;
+  overflow-y: hidden;
+  background: gray;
+  box-shadow: 0 10% 10% rgba(0, 0, 0, 0.3);
+  filter: blur(8px);
+  z-index: 20;
+}
+
 .scaleAnim {
   animation: leaves 6s infinite;
 }

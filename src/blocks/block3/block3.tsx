@@ -10,38 +10,38 @@ export const Block3 = () => {
           tx={3}
           ty={20}
           customClassImg={"h-24 md:h-36"}
-          imgPath={"./pepeplane.png"}
+          imgPath={"/block3/wifus.png"}
         />
         <div className="grid mt-24 lg:mt-0 grid-cols-1 lg:grid-cols-3 gap-x-20 gap-y-12 lg:gap-y-20">
           <img
-            src="/block3/placeholder.png"
-            alt="Plane"
-            className="rounded-xl"
+            src="/block3/image1.png"
+            alt="Meme"
+            className="rounded-xl object-cover w-96 h-96"
           />
           <img
-            src="/block3/placeholder.png"
-            alt="Plane"
-            className="rounded-xl"
+            src="/block3/image2.png"
+            alt="Meme"
+            className="rounded-xl object-cover w-96 h-96"
           />
           <img
-            src="/block3/placeholder.png"
-            alt="Plane"
-            className="rounded-xl"
+            src="/block3/image3.jpg"
+            alt="Meme"
+            className="rounded-xl object-cover w-96 h-96"
           />
           <img
-            src="/block3/placeholder.png"
-            alt="Plane"
-            className="rounded-xl"
+            src="/block3/image4.jpg"
+            alt="Meme"
+            className="rounded-xl object-cover w-96 h-96"
           />
           <img
-            src="/block3/placeholder.png"
-            alt="Plane"
-            className="rounded-xl"
+            src="/block3/image5.jpg"
+            alt="Meme"
+            className="rounded-xl object-cover w-96 h-96"
           />
           <img
-            src="/block3/placeholder.png"
+            src="/block3/image6.jpg"
             alt="Plane"
-            className="rounded-xl"
+            className="rounded-xl object-cover w-96 h-96"
           />
         </div>
       </div>
