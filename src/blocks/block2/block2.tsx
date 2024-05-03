@@ -23,9 +23,9 @@ export const Block2 = () => {
           />
         </div>
         <div>
-          <h3 className="text-3xl lg:text-4xl px-12 lg:px-48 text-center">
-            "Join our community flight plane – where we launch together and find
-            your spot onboard!" @ Pepe airlines worldwide
+          <h3 className="text-3xl lg:text-4xl px-12 lg:px-48 text-center uppercase">
+            pepe airlines worldwide. special offers for degens, apes and pepe
+            lovers. remember no jeeting allowed on board
           </h3>
         </div>
         <div className="flex flex-col space-y-16 lg:flex-row justify-between items-center px-8">

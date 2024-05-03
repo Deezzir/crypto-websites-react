@@ -38,6 +38,12 @@ const Game = ({ status, start, fly }) => {
         fly();
       }
     };
+    const handleTouchStart = (e: TouchEvent) => {
+      if (status === "playing") {
+        e.preventDefault();
+        fly();
+      }
+    };
     const handleClick = () => {
       if (status !== "playing") {
         setStarted(true);
@@ -46,16 +52,22 @@ const Game = ({ status, start, fly }) => {
     };
 
     document.addEventListener("keydown", handleKeyPress);
-    if (div) div.addEventListener("mousedown", handleClick);
+    if (div) {
+      div.addEventListener("mousedown", handleClick);
+      div.addEventListener("touchstart", handleTouchStart);
+    }
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
-      if (div) div.removeEventListener("mousedown", handleClick);
+      if (div) {
+        div.removeEventListener("mousedown", handleClick);
+        div.removeEventListener("touchstart", handleTouchStart);
+      }
     };
   });
 
   return (
     <div className="flex flex-col lg:flex-row w-full h-full justify-center items-center gap-4 lg:gap-[8rem]">
-      <div className="flex h-full flex-col-reverse md:flex-col justify-center items-center">
+      <div className="flex h-full flex-col-reverse md:flex-col justify-center items-end lg:items-center">
         {/* <h2 className="text-2xl font-bold text-center">Score: {score}</h2> */}
         <img
           ref={gameRef}
