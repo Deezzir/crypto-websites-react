@@ -85,13 +85,15 @@ export const Block1 = () => {
           customClassImg={"h-20 md:h-36"}
           imgPath={"./pepeplane.png"}
         /> */}
-        <a
-          href={BUY_LINK}
-          className="z-50 w-fit mt-auto mb-8 md:mb-8 inline-flex text-md md:text-lg font-medium bg-black md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
-        >
-          <span className="">GANG BUY</span>
-        </a>
-        <CopyCa />
+        <div className="mt-auto">
+          <CopyCa />
+          <a
+            href={BUY_LINK}
+            className="z-50 w-fit mb-8 md:mb-16 inline-flex text-md md:text-lg font-medium bg-black md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
+          >
+            <span className="">GANG BUY</span>
+          </a>
+        </div>
       </AppearWrapper>
     </div>
   );
