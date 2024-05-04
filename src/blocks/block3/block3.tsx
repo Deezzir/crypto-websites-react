@@ -28,7 +28,7 @@ export const Block3 = () => {
           ></iframe>
         </div>
       </div>
-      <TextMaqruee direction={"right"} customClass={"bottom-0 left-0"} />
+      <TextMaqruee direction={"left"} customClass={"bottom-0 left-0"} />
     </AppearWrapper>
   );
 };
