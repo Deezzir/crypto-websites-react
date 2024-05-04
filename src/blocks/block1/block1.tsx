@@ -27,10 +27,20 @@ function Doroga() {
   );
 }
 
-function Clouds() {
+export function Clouds(props: any) {
   return (
-    <div className="w-full overflow-hidden absolute top-0 left-0 flex justify-center items-center flex-col">
-      <Marquee className="relative mt-4" speed={50} autoFill direction={"left"}>
+    <div
+      className={
+        "w-full overflow-hidden absolute top-0 left-0 flex justify-center items-center flex-col " +
+        props.customClass
+      }
+    >
+      <Marquee
+        className="relative mt-4"
+        speed={50}
+        autoFill
+        direction={props.direction}
+      >
         <div className="flex flew-row mr-2 gap-24">
           <TextReg text={"GANG GANG GANG GANG GANG GANG GANG"} />
           {/* {[...Array(10)].map((_, index) => (
