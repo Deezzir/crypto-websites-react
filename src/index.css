@@ -9,7 +9,7 @@
     box-sizing: border-box;
   }
   body {
-    background-color: #e0d700;
+    /* background-color: #e0d700; */
     font-family: "Permanent Marker", cursive;
     font-weight: 400;
     font-style: normal;
@@ -17,7 +17,7 @@
 }
 
 .blurred-border-bottom::after {
-  content: "";
+  /* content: "";
   position: absolute;
   bottom: -20px;
   right: -20px;
@@ -28,7 +28,7 @@
   background: gray;
   box-shadow: 0 10% 10% rgba(0, 0, 0, 0.3);
   filter: blur(8px);
-  z-index: 20;
+  z-index: 20; */
 }
 
 .scaleAnim {

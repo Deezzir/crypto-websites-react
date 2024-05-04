@@ -19,10 +19,10 @@ function App({ store }: any) {
       <Block2 />
       <Block5 />
       <Block3 />
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <Block4 />
       </Provider>
-      <Block10 />
+      <Block10 /> */}
       <FooterSection />
     </div>
   );
