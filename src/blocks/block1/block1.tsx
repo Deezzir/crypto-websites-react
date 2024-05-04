@@ -41,8 +41,8 @@ export function TextMaqruee(props: any) {
         autoFill
         direction={props.direction}
       >
-        <div className="flex flew-row mr-2 gap-24">
-          <TextReg text={"GANG GANG GANG GANG GANG GANG GANG"} />
+        <div className="flex flew-row mr-8 gap-24">
+          <TextReg text={"$KEEFCHI"} />
           {/* {[...Array(10)].map((_, index) => (
             <img
               key={index}

@@ -26,7 +26,7 @@ export const Block2 = () => {
         </div>
         <div>
           <h3 className="text-3xl lg:text-4xl px-12 lg:px-48 text-center uppercase">
-            Keechi Coin: From O'Block to the moon, Chief Keef's meme currency
+            Keefchi Coin: From O'Block to the moon, Chief Keef's meme currency
             reaching new heights.
           </h3>
         </div>
