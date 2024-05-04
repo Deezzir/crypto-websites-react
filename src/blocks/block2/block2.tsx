@@ -1,53 +1,83 @@
+import Marquee from "react-fast-marquee";
 import { MovingImg } from "../../common/moving-img";
 import { TextMaqruee } from "../block1/block1";
+import { TextReg } from "../../common/text/text-reg";
+
+const ImageMarquee = () => {
+  return (
+    <div className="w-full h-full flex gap-12 flex-col">
+      <Marquee
+        className="relative height-[45%] overflow-hidden"
+        speed={25}
+        autoFill
+        direction={"left"}
+      >
+        <div className="flex mr-12 flex-row h-auto">
+          <img
+            src={"./block2/meme.png"}
+            alt="Doroga"
+            className=" select-none object-contain"
+          />
+        </div>
+      </Marquee>
+      <Marquee
+        className="relative height-[450%] overflow-hidden"
+        speed={45}
+        autoFill
+        direction={"right"}
+      >
+        <div className="flex mr-12 flex-row h-auto">
+          <img
+            src={"./block2/meme.png"}
+            alt="Doroga"
+            className=" select-none object-contain"
+          />
+        </div>
+      </Marquee>
+      <Marquee
+        className="relative height-[45%] overflow-hidden"
+        speed={35}
+        autoFill
+        direction={"left"}
+      >
+        <div className="flex mr-12 flex-row h-auto">
+          <img
+            src={"./block2/meme.png"}
+            alt="Doroga"
+            className="  select-none object-contain"
+          />
+        </div>
+      </Marquee>
+    </div>
+  );
+};
 
 export const Block2 = () => {
   return (
-    <div className="min-h-screen w-full flex relative justify-center items-center">
-      <TextMaqruee direction={"right"} customClass={"bottom-0 left-0"} />
-      <div className="flex flex-col w-full h-full max-w-screen-2xl space-y-24 py-12">
-        <div className="flex flex-col space-y-12 lg:flex-row justify-between items-center px-8">
-          <MovingImg
-            customClassWrapper={"relative"}
-            tz={3}
-            tx={-7}
-            ty={15}
-            customClassImg={"w-full rounded-xl h-48 img-hor"}
-            imgPath={"./block2/keef.png"}
-          />
-          <MovingImg
-            customClassWrapper={"relative"}
-            tz={3}
-            tx={10}
-            ty={-2}
-            customClassImg={"rounded-xl h-32 -rotate-12 img-hor"}
-            imgPath={"./block2/keef.png"}
-          />
+    <div className="min-h-screen w-full flex relative justify-center items-center content-center">
+      <div className="block-2-card p-16 rounded-xl md:my-0 my-8 flex flex-col gap-8 mx-4 md:w-6/12 w-full h-full">
+        <TextReg customClass={"text-4xl"} text={"Bla Bla Bla Bla"} />
+        <TextReg
+          customClass={""}
+          text={
+            "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun  ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun  ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
+          }
+        />
+        <div className="w-full flex flex-col md:flex-row gap-8">
+          <div className="w-full md:w-1/3 flex justify-center">
+            <img src="./block2/dog.png" />
+          </div>
+          <div className="w-full md:w-2/3 px-16 flex justify-center align-center items-center">
+            <audio controls className="w-full">
+              <source src="horse.ogg" type="audio/ogg" />
+              <source src="horse.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
         </div>
-        <div>
-          <h3 className="text-3xl lg:text-4xl px-12 lg:px-48 text-center uppercase">
-            Keefchi Coin: From O'Block to the moon, Chief Keef's meme currency
-            reaching new heights.
-          </h3>
-        </div>
-        <div className="flex flex-col space-y-16 lg:flex-row justify-between items-center px-8">
-          <MovingImg
-            customClassWrapper={"relative"}
-            tz={3}
-            tx={-3}
-            ty={10}
-            customClassImg={"w-full rounded-xl h-64 -rotate-45"}
-            imgPath={"./block2/keef.png"}
-          />
-          <MovingImg
-            customClassWrapper={"relative"}
-            tz={3}
-            tx={5}
-            ty={4}
-            customClassImg={"w-full rounded-xl h-64 rotate-12"}
-            imgPath={"./block2/keef.png"}
-          />
-        </div>
+      </div>
+      <div className="top-0 absolute left-0 w-full min-h-screen flex justify-center align-center content-center items-center">
+        <ImageMarquee />
       </div>
     </div>
   );

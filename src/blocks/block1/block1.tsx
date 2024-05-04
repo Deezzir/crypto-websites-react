@@ -1,6 +1,5 @@
 import Marquee from "react-fast-marquee";
 import { AppearWrapper } from "../../common/appear-wrapper";
-import { MovingImg } from "../../common/moving-img";
 import { Links } from "../../common/links";
 import { BUY_LINK } from "../../urls";
 import { CopyCa } from "../../common/copy-ca";
@@ -36,13 +35,16 @@ export function TextMaqruee(props: any) {
       }
     >
       <Marquee
-        className="relative mt-4"
+        className="relative mt-4  overflow-visible"
         speed={50}
         autoFill
         direction={props.direction}
       >
         <div className="flex flew-row mr-8 gap-24">
-          <TextReg text={"$KEEFCHI"} />
+          <TextReg
+            customClass={"text-marquee text-4xl font-bold"}
+            text={"$perito"}
+          />
           {/* {[...Array(10)].map((_, index) => (
             <img
               key={index}
@@ -73,10 +75,12 @@ export const Block1 = () => {
       >
         <Links customClass={"mt-16 mb-8"} />
         <TextReg
+          customClass={"text-red-600 mx-4"}
           text={
-            "It is here to show the lorem ipsun to the world and whater gang gang"
+            "The most memeable dog on the Internet with unlimited potential or"
           }
         />
+        <TextReg customClass={"text-red-600 mb-4"} text={"just a cute dog"} />
         {/* <MovingImg
           customClassWrapper={"absolute top-[40%] md:top-[30%]"}
           tz={3}
@@ -86,12 +90,18 @@ export const Block1 = () => {
           imgPath={"./pepeplane.png"}
         /> */}
         <div className="mt-auto">
+          <img
+            className="h-[40vh] md:h-[50vh] rounded-lg border-8 border-black"
+            src="./block1/perito.png"
+          />
+        </div>
+        <div className="mt-auto">
           <CopyCa />
           <a
             href={BUY_LINK}
-            className="z-50 w-fit mb-8 md:mb-16 inline-flex text-md md:text-lg font-medium bg-black md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
+            className="z-50 w-fit mb-16 inline-flex text-md md:text-lg font-medium bg-black  px-12 py-4 rounded-lg tracking-wide text-white"
           >
-            <span className="">GANG BUY</span>
+            <span className="">BUY $PERITO</span>
           </a>
         </div>
       </AppearWrapper>

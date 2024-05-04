@@ -6,10 +6,11 @@ import { TextMaqruee } from "../block1/block1";
 export const Block3 = () => {
   return (
     <AppearWrapper customClass={"relative"}>
-      <div className="min-h-screen w-full flex flex-col justify-center items-center">
-        <HeaderText text={"Charting from O`block"} />
+      <TextMaqruee direction={"right"} customClass={"top-0 left-0"} />
+      <div className="min-h-screen w-full flex flex-col justify-center items-center pb-[50px]">
+        <HeaderText text={"El Perito moves"} />
         <div
-          className="flex justify-center items-center w-full h-full px-12 lg:px-36 relative"
+          className="flex justify-center items-center w-full h-full px-2 md:px-24 lg:px-36 relative"
           id="dexscreener-embed"
         >
           {/* <MovingImg
@@ -21,7 +22,7 @@ export const Block3 = () => {
             imgPath={"/block5/candles.png"}
           /> */}
           <iframe
-            className="w-full h-[80vh] z-10 rounded-xl"
+            className="w-full h-[70vh] z-10 rounded-xl"
             title="Dex"
             src="https://dexscreener.com/solana/B4HNBPkTHpodjfkxWg1CQhHdY12gei4uhcEBt6j4uK5Tor?embed=1&theme=dark&trades=0"
           ></iframe>

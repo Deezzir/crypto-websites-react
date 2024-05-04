@@ -17,7 +17,7 @@ function App({ store }: any) {
       <ToastContainer />
       <Block1 />
       <Block2 />
-      <Block5 />
+      {/* <Block5 /> */}
       <Block3 />
       {/* <Provider store={store}>
         <Block4 />
