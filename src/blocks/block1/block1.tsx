@@ -27,11 +27,11 @@ function Doroga() {
   );
 }
 
-export function Clouds(props: any) {
+export function TextMaqruee(props: any) {
   return (
     <div
       className={
-        "w-full overflow-hidden absolute top-0 left-0 flex justify-center items-center flex-col " +
+        "w-full overflow-hidden absolute flex justify-center items-center flex-col " +
         props.customClass
       }
     >
@@ -63,14 +63,15 @@ export function Clouds(props: any) {
 export const Block1 = () => {
   return (
     <div className="min-h-screen w-full bg-[#d9e8f8]1 flex relative justify-center blurred-border-bottom">
-      <Clouds />
+      <TextMaqruee direction={"right"} customClass={"top-0 left-0"} />
+      <TextMaqruee direction={"left"} customClass={"bottom-0 left-0"} />
       {/* <Doroga /> */}
       <AppearWrapper
         customClass={
           "w-full items-center content-between relative flex max-w-screen-2xl z-30"
         }
       >
-        <Links customClass={"mt-16 md:my-16"} />
+        <Links customClass={"mt-16 mb-8"} />
         <TextReg
           text={
             "It is here to show the lorem ipsun to the world and whater gang gang"
@@ -86,7 +87,7 @@ export const Block1 = () => {
         /> */}
         <a
           href={BUY_LINK}
-          className="z-50 w-fit mt-auto mb-36 md:mb-36 inline-flex text-md md:text-lg font-medium bg-black md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
+          className="z-50 w-fit mt-auto mb-8 md:mb-8 inline-flex text-md md:text-lg font-medium bg-black md:px-8 md:py-4 px-4 py-2 rounded-lg tracking-wide text-white"
         >
           <span className="">GANG BUY</span>
         </a>

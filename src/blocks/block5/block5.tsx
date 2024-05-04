@@ -1,11 +1,13 @@
 import { AppearWrapper } from "../../common/appear-wrapper";
 import { MovingImg } from "../../common/moving-img";
 import { HeaderText } from "../../common/text/header-text";
+import { TextMaqruee } from "../block1/block1";
 
 export const Block5 = () => {
   return (
     <div className="min-h-screen w-full flex relative justify-center items-center">
-      <div className="flex flex-col justify-center items-center w-full h-full max-w-screen-2xl py-12">
+      <TextMaqruee direction={"left"} customClass={"bottom-0 left-0"} />
+      <div className="flex flex-col justify-center items-center w-full h-full max-w-screen-2xl ">
         {/* <MovingImg
           customClassWrapper={"flex"}
           tz={3}
@@ -20,32 +22,32 @@ export const Block5 = () => {
             <img
               src="/block3/dude.png"
               alt="Meme"
-              className="rounded-xl object-cover w-96 h-96"
+              className="rounded-xl object-cover w-80 h-80"
             />
             <img
               src="/block3/dude.png"
               alt="Meme"
-              className="rounded-xl object-cover w-96 h-96"
+              className="rounded-xl object-cover w-80 h-80"
             />
             <img
               src="/block3/dude.png"
               alt="Meme"
-              className="rounded-xl object-cover w-96 h-96"
+              className="rounded-xl object-cover w-80 h-80"
             />
             <img
               src="/block3/dude.png"
               alt="Meme"
-              className="rounded-xl object-cover w-96 h-96"
+              className="rounded-xl object-cover w-80 h-80"
             />
             <img
               src="/block3/dude.png"
               alt="Meme"
-              className="rounded-xl object-cover w-96 h-96"
+              className="rounded-xl object-cover w-80 h-80"
             />
             <img
               src="/block3/dude.png"
               alt="Plane"
-              className="rounded-xl object-cover w-96 h-96"
+              className="rounded-xl object-cover w-80 h-80"
             />
           </div>
         </AppearWrapper>

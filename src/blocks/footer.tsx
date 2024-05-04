@@ -8,7 +8,9 @@ export const FooterSection = () => {
   return (
     <footer className="bg-black py-2 text-center text-white backdrop-blur transition-colors duration-500">
       <p className="flex flex-row items-center justify-center gap-2">
-        <span className="text-sm font-bold sm:text-xl">$PPP &copy; 2024</span>
+        <span className="text-sm font-bold sm:text-xl">
+          $KEECHI &copy; 2024
+        </span>
         <span className="inline-flex">
           <a
             href={TWITTER_DEV}
@@ -29,8 +31,8 @@ export const FooterSection = () => {
         </span>
       </p>
       <p className="px-2 pb-4 text-sm">
-        $PPP is a memecoin with no intrinsic value, and is not a investment and
-        simply a community/culture token similar to $PPP. No Promises, No
+        $KEECHI is a memecoin with no intrinsic value, and is not a investment
+        and simply a community/culture token similar to $KEECHI. No Promises, No
         Utility, Purely For Entertainment Purposes
       </p>
     </footer>

@@ -1,12 +1,13 @@
 import { AppearWrapper } from "../../common/appear-wrapper";
 import { MovingImg } from "../../common/moving-img";
 import { HeaderText } from "../../common/text/header-text";
+import { TextMaqruee } from "../block1/block1";
 
 export const Block3 = () => {
   return (
-    <AppearWrapper>
+    <AppearWrapper customClass={"relative"}>
       <div className="min-h-screen w-full flex flex-col justify-center items-center">
-        <HeaderText text={"Charting to the Moon"} />
+        <HeaderText text={"Charting from O`block"} />
         <div
           className="flex justify-center items-center w-full h-full px-12 lg:px-36 relative"
           id="dexscreener-embed"
@@ -26,6 +27,7 @@ export const Block3 = () => {
           ></iframe>
         </div>
       </div>
+      <TextMaqruee direction={"right"} customClass={"bottom-0 left-0"} />
     </AppearWrapper>
   );
 };
