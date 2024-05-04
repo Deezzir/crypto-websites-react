@@ -5,9 +5,9 @@ import { TextMaqruee } from "../block1/block1";
 
 export const Block3 = () => {
   return (
-    <AppearWrapper customClass={"relative"}>
+    <AppearWrapper customClass={"relative items-center justify-center "}>
       <TextMaqruee direction={"right"} customClass={"top-0 left-0"} />
-      <div className="min-h-screen w-full flex flex-col justify-center items-center pb-[50px]">
+      <div className="min-h-screen w-full flex flex-col justify-center items-center pb-[50px] max-w-screen-2xl align-center">
         <HeaderText text={"El Perito moves"} />
         <div
           className="flex justify-center items-center w-full h-full px-2 md:px-24 lg:px-36 relative"

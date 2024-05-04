@@ -75,12 +75,12 @@ export const Block1 = () => {
       >
         <Links customClass={"mt-16 mb-8"} />
         <TextReg
-          customClass={"text-red-600 mx-4"}
+          customClass={"text-[#0b1d21] mx-4"}
           text={
             "The most memeable dog on the Internet with unlimited potential or"
           }
         />
-        <TextReg customClass={"text-red-600 mb-4"} text={"just a cute dog"} />
+        <TextReg customClass={"text-[#0b1d21] mb-4"} text={"just a cute dog"} />
         {/* <MovingImg
           customClassWrapper={"absolute top-[40%] md:top-[30%]"}
           tz={3}
@@ -91,7 +91,7 @@ export const Block1 = () => {
         /> */}
         <div className="mt-auto">
           <img
-            className="h-[40vh] md:h-[50vh] rounded-lg border-8 border-black"
+            className="h-[40vh] md:h-[50vh] rounded-lg border-8 border-[#0b1d21]"
             src="./block1/perito.png"
           />
         </div>
@@ -99,7 +99,7 @@ export const Block1 = () => {
           <CopyCa />
           <a
             href={BUY_LINK}
-            className="z-50 w-fit mb-16 inline-flex text-md md:text-lg font-medium bg-black  px-12 py-4 rounded-lg tracking-wide text-white"
+            className="z-50 w-fit mb-16 inline-flex text-md md:text-lg font-medium bg-[#0b1d21]  px-12 py-4 rounded-lg tracking-wide text-white"
           >
             <span className="">BUY $PERITO</span>
           </a>

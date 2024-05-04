@@ -46,11 +46,11 @@ export const CopyCa = (props: any) => {
     <button
       onClick={onCopy}
       className={
-        "mb-8 text-center text-xl cursor-pointer flex-row gap-4 align-center justify-center items-center select-non flex z-50 " +
+        "mb-8 text-center text-xl cursor-pointer flex-row gap-4 align-center justify-center items-center select-non flex z-50 text-[#0b1d21] " +
         props.customClass
       }
     >
-      <p className="text-3xl font-bold">CA: {clampedText()}</p>
+      <p className="text-3xl font-bold text-[#0b1d21]">CA: {clampedText()}</p>
       <CopyIcon />
     </button>
   );
