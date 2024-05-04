@@ -63,7 +63,7 @@ export const Block1 = () => {
         <Links customClass={"mt-16 md:my-16"} />
         <TextReg
           text={
-            "It is here to show the lorem ipsun to the world and whater bla bla bla"
+            "It is here to show the lorem ipsun to the world and whater gang gang"
           }
         />
         {/* <MovingImg
