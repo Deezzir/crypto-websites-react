@@ -23,7 +23,7 @@ export const Block3 = () => {
           <iframe
             className="w-full h-[80vh] z-10 rounded-xl"
             title="Dex"
-            src="https://dexscreener.com/solana/B4HNBPkTHpodjfkxWg1CQhHdYgei4uhcEBt6j4uK5Tor?embed=1&theme=dark&trades=0"
+            src="https://dexscreener.com/solana/B4HNBPkTHpodjfkxWg1CQhHdY12gei4uhcEBt6j4uK5Tor?embed=1&theme=dark&trades=0"
           ></iframe>
         </div>
       </div>
