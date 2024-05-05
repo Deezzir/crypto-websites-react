@@ -1,4 +1,4 @@
-export const CA = "Coming...";
+export const CA = "ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq";
 export const TELEGRAM = "https://t.me/peritosolana";
 export const TWITTER = "https://x.com/peritosolana";
 
