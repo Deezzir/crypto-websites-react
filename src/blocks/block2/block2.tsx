@@ -3,6 +3,11 @@ import { MovingImg } from "../../common/moving-img";
 import { TextMaqruee } from "../block1/block1";
 import { TextReg } from "../../common/text/text-reg";
 
+const range = (start: number, stop: number, step = 1) =>
+  Array(Math.ceil((stop - start) / step))
+    .fill(start)
+    .map((x, y) => x + y * step);
+
 const ImageMarquee = () => {
   return (
     <div className="w-full h-full flex gap-12 flex-col">
@@ -12,13 +17,13 @@ const ImageMarquee = () => {
         autoFill
         direction={"left"}
       >
-        <div className="flex mr-12 flex-row h-auto">
+        <div className="flex gap-8 flex-row h-auto">
           {[...Array(40)].map((_, index) => (
             <img
               key={index}
-              src={`./block1/dogeeee/${index + 1}.jpeg`}
+              src={`./block2/kvadrat/ssstik-${index + 1}.png`}
               alt={`img${index}`}
-              className="h-[33vh] w-[33vh] select-none object-contain"
+              className="h-[26vh] w-[26vh] select-none object-contain"
             />
           ))}
         </div>
@@ -29,13 +34,13 @@ const ImageMarquee = () => {
         autoFill
         direction={"right"}
       >
-        <div className="flex mr-12 flex-row h-auto">
-          {[...Array(40, 80)].map((_, index) => (
+        <div className="flex mr-12 gap-8 flex-row h-auto">
+          {range(40, 80, 1).map((num, index) => (
             <img
-              key={index}
-              src={`./block1/dogeeee/cl${index + 1}.jpeg`}
+              key={num}
+              src={`./block2/kvadrat/ssstik-${num + 1}.png`}
               alt={`img${index}`}
-              className="h-[33vh] w-[33vh] select-none object-contain"
+              className="h-[26vh] w-[26vh] select-none object-contain"
             />
           ))}
         </div>
@@ -46,13 +51,13 @@ const ImageMarquee = () => {
         autoFill
         direction={"left"}
       >
-        <div className="flex mr-12 flex-row h-auto">
-          {[...Array(80, 120)].map((_, index) => (
+        <div className="flex mr-12 gap-8 flex-row h-auto">
+          {range(80, 120, 1).map((num, index) => (
             <img
-              key={index}
-              src={`./block1/dogeeee/cl${index + 1}.jpeg`}
-              alt={`img${index}`}
-              className="h-[33vh] w-[33vh] select-none object-contain"
+              key={num}
+              src={`./block2/kvadrat/ssstik-${num + 1}.png`}
+              alt={`img${num}`}
+              className="h-[26vh] w-[26vh] select-none object-contain"
             />
           ))}
         </div>
