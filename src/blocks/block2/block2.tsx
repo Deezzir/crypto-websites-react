@@ -70,21 +70,19 @@ export const Block2 = () => {
   return (
     <div className="min-h-screen w-full flex relative justify-center items-center content-center">
       <div className="block-2-card p-16 rounded-xl md:my-0 my-8 flex flex-col gap-8 mx-4 md:w-6/12 w-full h-full max-w-screen-2xl">
-        <TextReg customClass={"text-4xl text-white"} text={"Bla Bla Bla Bla"} />
-        <TextReg
-          customClass={"text-white"}
-          text={
-            "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun  ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun  ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
-          }
-        />
+        <TextReg customClass={"text-4xl text-white"} text={"$perito info"} />
+        <TextReg customClass={"text-white"} text={"dev buy burned (15%)"} />
+        <TextReg customClass={"text-white"} text={"lp locked"} />
+        <TextReg customClass={"text-white"} text={"fair launched"} />
+        <TextReg customClass={"text-white"} text={"unlimited meme"} />
+        <TextReg customClass={"text-white"} text={"wof wof"} />
         <div className="w-full flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-1/3 flex justify-center">
             <img className="w-80" src="./block2/dog.png" />
           </div>
           <div className="w-full md:w-2/3 px-16 flex justify-center align-center items-center">
-            <audio controls className="w-full">
-              <source src="horse.ogg" type="audio/ogg" />
-              <source src="horse.mp3" type="audio/mpeg" />
+            <audio controls autoPlay className="w-full">
+              <source src="./block2/gav.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>
