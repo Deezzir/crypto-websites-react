@@ -75,12 +75,12 @@ export const Block1 = () => {
       >
         <Links customClass={"mt-16 mb-8"} />
         <TextReg
-          customClass={"text-[#0b1d21] mx-4"}
+          customClass={"text-white mx-4"}
           text={
             "The most memeable dog on the Internet with unlimited potential or"
           }
         />
-        <TextReg customClass={"text-[#0b1d21] mb-4"} text={"just a cute dog"} />
+        <TextReg customClass={"text-white mb-4"} text={"just a cute dog"} />
         {/* <MovingImg
           customClassWrapper={"absolute top-[40%] md:top-[30%]"}
           tz={3}

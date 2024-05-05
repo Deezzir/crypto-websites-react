@@ -13,11 +13,14 @@ const ImageMarquee = () => {
         direction={"left"}
       >
         <div className="flex mr-12 flex-row h-auto">
-          <img
-            src={"./block2/meme.png"}
-            alt="Doroga"
-            className=" select-none object-contain"
-          />
+          {[...Array(40)].map((_, index) => (
+            <img
+              key={index}
+              src={`./block1/dogeeee/${index + 1}.jpeg`}
+              alt={`img${index}`}
+              className="h-[33vh] w-[33vh] select-none object-contain"
+            />
+          ))}
         </div>
       </Marquee>
       <Marquee
@@ -27,11 +30,14 @@ const ImageMarquee = () => {
         direction={"right"}
       >
         <div className="flex mr-12 flex-row h-auto">
-          <img
-            src={"./block2/meme.png"}
-            alt="Doroga"
-            className=" select-none object-contain"
-          />
+          {[...Array(40, 80)].map((_, index) => (
+            <img
+              key={index}
+              src={`./block1/dogeeee/cl${index + 1}.jpeg`}
+              alt={`img${index}`}
+              className="h-[33vh] w-[33vh] select-none object-contain"
+            />
+          ))}
         </div>
       </Marquee>
       <Marquee
@@ -41,11 +47,14 @@ const ImageMarquee = () => {
         direction={"left"}
       >
         <div className="flex mr-12 flex-row h-auto">
-          <img
-            src={"./block2/meme.png"}
-            alt="Doroga"
-            className="  select-none object-contain"
-          />
+          {[...Array(80, 120)].map((_, index) => (
+            <img
+              key={index}
+              src={`./block1/dogeeee/cl${index + 1}.jpeg`}
+              alt={`img${index}`}
+              className="h-[33vh] w-[33vh] select-none object-contain"
+            />
+          ))}
         </div>
       </Marquee>
     </div>
