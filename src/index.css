@@ -69,7 +69,7 @@
 .strikethrough {
   display: inline-block;
   position: relative;
-  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
 .strikethrough:after {
@@ -78,8 +78,8 @@
   display: block;
   width: 100%;
   height: 2px;
-  box-shadow: 0 1px rgba(255, 255, 255, 0.6);
-  margin-top: -0.7em;
+
+  margin-top: -0.5em;
   background: black;
   transform-origin: center left;
   animation: strikethrough 1s 0.5s cubic-bezier(0.55, 0, 0.1, 1) 1;
@@ -87,16 +87,6 @@
 }
 
 /* Little hover effect */
-
-.strikethrough:hover {
-  color: rgba(200, 0, 0, 1);
-  background: rgba(255, 189, 182, 0.3);
-}
-
-.strikethrough:hover:after {
-  transform: scaleX(0);
-  transform-origin: center right;
-}
 
 /* Keyframes for initial animation */
 
@@ -112,4 +102,16 @@
 .block-2-card {
   z-index: 50;
   background-color: rgb(69, 33, 13, 0.84);
+}
+
+@media screen and (max-width: 900px) {
+  .strikethrough {
+    text-decoration: line-through #0b1d21;
+    transition: none;
+  }
+  .strikethrough:after {
+    display: none;
+    animation: none;
+    transition: none;
+  }
 }

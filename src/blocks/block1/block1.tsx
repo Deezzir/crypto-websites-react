@@ -75,7 +75,7 @@ export const Block1 = () => {
       >
         <Links customClass={"mt-16 mb-8"} />
         <TextReg
-          customClass={"text-white mx-4"}
+          customClass={"text-white mx-4 strikethrough"}
           text={
             "The most memeable dog on the Internet with unlimited potential or"
           }
