@@ -92,7 +92,7 @@ export const Block1 = () => {
         <div className="mt-auto">
           <img
             className="h-[40vh] md:h-[50vh] rounded-lg border-8 border-[#0b1d21]"
-            src="./block1/perito.png"
+            src="./block1/perito.gif"
           />
         </div>
         <div className="mt-auto">
