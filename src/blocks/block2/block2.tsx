@@ -21,7 +21,7 @@ const ImageMarquee = () => {
           {[...Array(40)].map((_, index) => (
             <img
               key={index}
-              src={`./block2/kvadrat/ssstik-${index + 1}.png`}
+              src={`./block2/papa/papa${index + 1}-(Compressify.io).webp`}
               alt={`img${index}`}
               className="h-[26vh] w-[26vh] select-none object-contain"
             />
@@ -38,7 +38,7 @@ const ImageMarquee = () => {
           {range(40, 80, 1).map((num, index) => (
             <img
               key={num}
-              src={`./block2/kvadrat/ssstik-${num + 1}.png`}
+              src={`./block2/papa/papa${num + 1}-(Compressify.io).webp`}
               alt={`img${index}`}
               className="h-[26vh] w-[26vh] select-none object-contain"
             />
@@ -55,7 +55,7 @@ const ImageMarquee = () => {
           {range(80, 120, 1).map((num, index) => (
             <img
               key={num}
-              src={`./block2/kvadrat/ssstik-${num + 1}.png`}
+              src={`./block2/papa/papa${num + 1}-(Compressify.io).webp`}
               alt={`img${num}`}
               className="h-[26vh] w-[26vh] select-none object-contain"
             />
