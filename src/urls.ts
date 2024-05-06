@@ -6,7 +6,7 @@ export const BUY_LINK =
   "https://jupiter-terminal.dexscreener.com/?inputMint=ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq&outputMint=So11111111111111111111111111111111111111112";
 export const DEXSCREENER = "";
 export const RAYDIUM =
-  "https://raydium.io/swap/?outputCurrency=7Cga2epeJMhte3j74ekEBRMBDn2nRKcgFBrEggSC99fk";
+  "https://raydium.io/swap/?outputCurrency=ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq";
 export const JUPITER =
   "https://jupiter-terminal.dexscreener.com/?inputMint=ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq&outputMint=So11111111111111111111111111111111111111112";
 export const DEXTOOLS = "";
