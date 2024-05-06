@@ -24,7 +24,8 @@ export const SignUpUpdate = () => {
     setWallet(e.target.value);
   };
 
-  const onSignUpUpdate = () => {
+  const onSignUpUpdate = (e: any) => {
+    e.preventDefault();
     const walletToSend = wallet.replace(/\s/g, "");
     if (wallet.length < 34 || wallet.length > 44) {
       return;
@@ -35,7 +36,7 @@ export const SignUpUpdate = () => {
     const telegramToSend = telegram.replace(/\s/g, "").replace("@", "");
 
     axios
-      .post(SERVER + "/addUpdateUser", {
+      .post("http://localhost:4000/users/addUpdateUser", {
         user: {
           wallet: walletToSend,
           twitter: twitterToSend,

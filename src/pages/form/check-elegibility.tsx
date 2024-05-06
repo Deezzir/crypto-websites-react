@@ -6,18 +6,20 @@ export const SERVER = process.env.SERVER;
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");
+  const SERVER1 = process.env.SERVER;
 
   const onWalletChange = (e: any) => {
     setWallet(e.target.value);
   };
 
-  const onCheck = () => {
+  const onCheck = (e: any) => {
+    e.preventDefault();
     const walletToSend = wallet.replace(/\s/g, "");
     if (wallet.length < 34 || wallet.length > 44) {
       return;
     }
     axios
-      .post(SERVER + "/checkUserByWallet", {
+      .post("http://localhost:4000/users/checkUserByWallet", {
         wallet: walletToSend,
       })
       .then((response) => {
@@ -67,7 +69,7 @@ export const CheckElegibility = () => {
   return (
     <div className="flex flex-col gap-2 w-full md:w-[600px]">
       <p className="text-lg font-bold">Check account validity</p>
-      <form className="">
+      <form onSubmit={onCheck}>
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-black sr-only dark:text-white"
