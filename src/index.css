@@ -9,48 +9,10 @@
     box-sizing: border-box;
   }
   body {
-    background-color: #b4a088;
+    background-color: white;
     /* font-family: "Permanent Marker", cursive; */
     font-weight: 400;
     font-style: normal;
-  }
-}
-
-.text-marquee {
-  /* text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25); */
-  /* text-shadow: 0px 5px 2px black; */
-  color: #0b1d21;
-  /* -webkit-text-stroke: 1px black; */
-}
-
-.blurred-border-bottom::after {
-  /* content: "";
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  left: -20px;
-  height: 40px;
-  width: 120%;
-  overflow-y: hidden;
-  background: gray;
-  box-shadow: 0 10% 10% rgba(0, 0, 0, 0.3);
-  filter: blur(8px);
-  z-index: 20; */
-}
-
-.scaleAnim {
-  animation: leaves 6s infinite;
-}
-
-@keyframes leaves {
-  0% {
-    transform: scale(2);
-  }
-  50% {
-    transform: scale(4);
-  }
-  100% {
-    transform: scale(2);
   }
 }
 
@@ -60,59 +22,4 @@
 
 .img-vert {
   transform: rotateX(180deg);
-}
-
-.text-strike-anim {
-  position: relative;
-}
-
-.strikethrough {
-  display: inline-block;
-  position: relative;
-  transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
-}
-
-.strikethrough:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 4px;
-
-  margin-top: -0.6em;
-  background: black;
-  transform-origin: center left;
-  animation: strikethrough 3s 0.5s cubic-bezier(0.55, 0, 0.1, 1) 1;
-  transition: transform 1s cubic-bezier(0.55, 0, 0.1, 1);
-}
-
-/* Little hover effect */
-
-/* Keyframes for initial animation */
-
-@keyframes strikethrough {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-.block-2-card {
-  z-index: 50;
-  background-color: rgb(69, 33, 13, 0.84);
-}
-
-@media screen and (max-width: 900px) {
-  .strikethrough {
-    text-decoration: line-through #0b1d21;
-    text-decoration-thickness: 4px;
-    transition: none;
-  }
-  .strikethrough:after {
-    display: none;
-    animation: none;
-    transition: none;
-  }
 }

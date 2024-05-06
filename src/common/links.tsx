@@ -5,7 +5,7 @@ import {
   RAYDIUM,
   TELEGRAM,
   TWITTER,
-} from "../urls";
+} from "./urls";
 import { DexscreenerIcon } from "./icons/dexscreener-icon";
 import { DextoolsIcon } from "./icons/dextools-icon";
 import { JupiterIcon } from "./icons/jupiter-icon";

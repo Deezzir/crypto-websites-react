@@ -1,6 +1,6 @@
-import { TgIcon } from "../common/icons/tg-icon";
-import { XIcon } from "../common/icons/x-icon";
-import { TELEGRAM_DEV, TWITTER_DEV } from "../urls";
+import { TgIcon } from "./icons/tg-icon";
+import { XIcon } from "./icons/x-icon";
+import { TELEGRAM_DEV, TWITTER_DEV } from "./urls";
 
 const iconClass = "w-6 h-6 fill-[#0b1d21]";
 
