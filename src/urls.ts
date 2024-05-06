@@ -4,7 +4,8 @@ export const TWITTER = "https://x.com/peritosolana";
 
 export const BUY_LINK =
   "https://jup.ag/swap/ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq-SOL";
-export const DEXSCREENER = "";
+export const DEXSCREENER =
+  "https://dexscreener.com/solana/71yaKMBhXHjh3dutwd221fkTnfxZULEcYeDzpzB5oUm4";
 export const RAYDIUM =
   "https://raydium.io/swap/?outputCurrency=ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq";
 export const JUPITER =
