@@ -28,12 +28,71 @@ export const SignUpUpdate = () => {
     e.preventDefault();
     const walletToSend = wallet.replace(/\s/g, "");
     if (wallet.length < 34 || wallet.length > 44) {
+      toast.error("Wrong solana wallet", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
       return;
     }
 
     const twitterToSend = twitter.replace(/\s/g, "").replace("@", "");
+    if (!/^@?[0-9a-zA-Z_]{1,15}$/.test(twitterToSend)) {
+      toast.error("Wront twitter account profile", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      return;
+    }
+
     const twitterLinkToSend = twitterLink.replace(/\s/g, "");
+    if (
+      !/^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/[a-zA-Z0-9_]{1,15}\/status\/[0-9]+$/.test(
+        twitterLinkToSend
+      )
+    ) {
+      toast.error("Wront twitter link", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      return;
+    }
+
     const telegramToSend = telegram.replace(/\s/g, "").replace("@", "");
+    if (!/^@?[0-9a-zA-Z_]{5,32}$/.test(twitterLinkToSend)) {
+      toast.error("Wront telegram account", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      return;
+    }
 
     axios
       .post("http://localhost:4000/users/addUpdateUser", {
@@ -45,9 +104,20 @@ export const SignUpUpdate = () => {
         },
       })
       .then((response) => {
-        //HANDE
         if (response.data.isCreated) {
-          toast.success("You are eligible", {
+          toast.success("You signed!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
+        } else if (response.data.isUpdated) {
+          toast.warning("Record updated!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -59,9 +129,7 @@ export const SignUpUpdate = () => {
             transition: Bounce,
           });
         } else {
-          //DISPLAY ELIBILITY
-          const errors = response.data.errors;
-          toast.warning("Not eligible", {
+          toast.error("Unhandled sh*t happened", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,

@@ -13,11 +13,25 @@ export const CheckElegibility = () => {
   };
 
   const onCheck = (e: any) => {
+    console.log("here1");
     e.preventDefault();
+    console.log("here2");
     const walletToSend = wallet.replace(/\s/g, "");
     if (wallet.length < 34 || wallet.length > 44) {
+      toast.error("Wrong solana wallet", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
       return;
     }
+    console.log("here");
     axios
       .post("http://localhost:4000/users/checkUserByWallet", {
         wallet: walletToSend,
@@ -106,7 +120,6 @@ export const CheckElegibility = () => {
           />
           <button
             onClick={onCheck}
-            type="submit"
             className="text-white absolute end-2.5 bottom-2.5 bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-600 font-medium rounded-lg text-sm px-4 py-2"
           >
             Validate
