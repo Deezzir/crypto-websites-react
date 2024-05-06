@@ -10,7 +10,8 @@ export const RAYDIUM =
   "https://raydium.io/swap/?outputCurrency=ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq";
 export const JUPITER =
   "https://jup.ag/swap/ucS24PgtPbjWfSgtMB2ttCqXRYayA2ZsJKGz28nksQq-SOL";
-export const DEXTOOLS = "";
+export const DEXTOOLS =
+  "https://www.dextools.io/app/en/solana/pair-explorer/71yaKMBhXHjh3dutwd221fkTnfxZULEcYeDzpzB5oUm4?t=1714958610980";
 
 export const TELEGRAM_DEV = "https://t.me/lettodev";
 export const TWITTER_DEV = "https://twitter.com/letto_dev";
