@@ -1,3 +1,4 @@
+import { PublicKey } from "@solana/web3.js";
 import axios from "axios";
 import { useState } from "react";
 import { Bounce, toast } from "react-toastify";
@@ -26,7 +27,13 @@ export const SignUpUpdate = () => {
   const onSignUpUpdate = (e: any) => {
     e.preventDefault();
     const walletToSend = wallet.replace(/\s/g, "");
-    if (wallet.length < 34 || wallet.length > 44) {
+    let validWallet = true;
+    try {
+      new PublicKey(wallet);
+    } catch (e) {
+      validWallet = false;
+    }
+    if (wallet.length < 34 || wallet.length > 44 || !validWallet) {
       toast.error("Wrong solana wallet", {
         position: "top-right",
         autoClose: 5000,

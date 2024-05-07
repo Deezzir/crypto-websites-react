@@ -6,7 +6,6 @@ export const SERVER = process.env.SERVER;
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");
-  const SERVER1 = process.env.SERVER;
 
   const onWalletChange = (e: any) => {
     setWallet(e.target.value);
@@ -37,8 +36,14 @@ export const CheckElegibility = () => {
         wallet: walletToSend,
       })
       .then((response) => {
-        if (response.data.isValid) {
-          toast.success("You are eligible", {
+        const { isTelegram, isTwitter, isTwitterPost, isWallet } =
+          response.data;
+        // isTelegram: telegramVerified,
+        // isTwitter: true,
+        // isTwitterPost: true,
+        // isWallet: walletVerified,
+        if (isTelegram && isTwitter && isTwitterPost && isWallet) {
+          toast.success("You are eligible!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -50,9 +55,13 @@ export const CheckElegibility = () => {
             transition: Bounce,
           });
         } else {
-          //DISPLAY ELIBILITY
-          const errors = response.data.errors;
-          toast.warning("Not eligible", {
+          let msg = "Please update your record. ";
+          msg += !isTelegram ? "Telegram is not verified. " : "";
+          msg += !isTwitter ? "Twitter is not verified. " : "";
+          msg += !isTwitterPost ? "Twitter post is not verified. " : "";
+          msg += !isWallet ? "You have wrong SOL wallet specified." : "";
+
+          toast.warning(msg, {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -114,7 +123,7 @@ export const CheckElegibility = () => {
             onChange={onWalletChange}
             type="search"
             id="default-search"
-            className="block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
+            className="pe-[100px] block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />
