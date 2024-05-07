@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { SERVER } from "./check-elegibility";
 import { Bounce, toast } from "react-toastify";
 
 export const SignUpUpdate = () => {
@@ -79,7 +78,7 @@ export const SignUpUpdate = () => {
     }
 
     const telegramToSend = telegram.replace(/\s/g, "").replace("@", "");
-    if (!/^@?[0-9a-zA-Z_]{5,32}$/.test(twitterLinkToSend)) {
+    if (!/^@?[0-9a-zA-Z_]{5,32}$/.test(telegramToSend)) {
       toast.error("Wront telegram account", {
         position: "top-right",
         autoClose: 5000,
@@ -117,7 +116,7 @@ export const SignUpUpdate = () => {
             transition: Bounce,
           });
         } else if (response.data.isUpdated) {
-          toast.warning("Record updated!", {
+          toast.success("Record updated!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -162,14 +161,14 @@ export const SignUpUpdate = () => {
       <p className="text-lg font-bold">Sign up for airdrop / update record</p>
       <form className="">
         <div className="relative">
-          <p>Twitter account @</p>
+          <p>Twitter @</p>
           <input
             value={twitter}
             onChange={onTwitterChange}
             type="search"
             id="default-search"
             className="block w-full p-4 mb-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
-            placeholder="solana_aper"
+            placeholder="solana_aper_x_twitter"
             required
           />
         </div>
@@ -181,21 +180,25 @@ export const SignUpUpdate = () => {
             type="search"
             id="default-search"
             className="block w-full p-4 mb-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
-            placeholder="Enter twitter post link"
+            placeholder="https://twitter.com/"
             required
           />
         </div>
         <div className="relative">
-          <p>Telegram account @</p>
+          <p>Telegram @</p>
           <input
             value={telegram}
             onChange={onTelegramChange}
             type="search"
             id="default-search"
-            className="block w-full p-4 mb-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
-            placeholder="Enter Telegram @"
+            className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
+            placeholder="solana_aper_tg"
             required
           />
+          <p className="mb-4 text-xs text-slate-400">
+            You need to send at least one message in our chat to confirm your
+            Telegram account
+          </p>
         </div>
         <div className="relative">
           <p>Wallet Solana</p>
