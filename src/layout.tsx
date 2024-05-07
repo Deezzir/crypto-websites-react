@@ -9,7 +9,7 @@ export const Layout = (props: any) => {
     <>
       <ToastContainer />
       <Navbar />
-      <div className="md:mx-24 border min-h-[80vh]">
+      <div className="md:mx-24 min-h-[80vh]">
         <Outlet />
       </div>
       <FooterSection />
