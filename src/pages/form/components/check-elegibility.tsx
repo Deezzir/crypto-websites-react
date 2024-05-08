@@ -1,6 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { Bounce, toast } from "react-toastify";
+import {
+  sendErrorNotification,
+  sendSuccessNotification,
+  sendWarningNotification,
+} from "../utils";
 
 export const SERVER = process.env.SERVER;
 
@@ -17,17 +22,7 @@ export const CheckElegibility = () => {
     console.log("here2");
     const walletToSend = wallet.replace(/\s/g, "");
     if (wallet.length < 34 || wallet.length > 44) {
-      toast.error("Wrong solana wallet", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      sendErrorNotification("Wrong solana wallet");
       return;
     }
     console.log("here");
@@ -38,59 +33,24 @@ export const CheckElegibility = () => {
       .then((response) => {
         const { isTelegram, isTwitter, isTwitterPost, isWallet } =
           response.data;
-        // isTelegram: telegramVerified,
-        // isTwitter: true,
-        // isTwitterPost: true,
-        // isWallet: walletVerified,
         if (isTelegram && isTwitter && isTwitterPost && isWallet) {
-          toast.success("You are eligible!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-          });
+          sendSuccessNotification("You are eligible");
         } else {
           let msg = "Please update your record. ";
           msg += !isTelegram ? "Telegram is not verified. " : "";
           msg += !isTwitter ? "Twitter is not verified. " : "";
           msg += !isTwitterPost ? "Twitter post is not verified. " : "";
           msg += !isWallet ? "You have wrong SOL wallet specified." : "";
-
-          toast.warning(msg, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-          });
+          sendWarningNotification(msg);
         }
       })
       .catch((error) => {
-        toast.error("Unhandled error:" + error, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
+        sendErrorNotification("Unhandled error:" + error);
       });
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full md:w-[600px]">
+    <div className="flex flex-col gap-2 w-full">
       <p className="text-lg font-bold">Check account validity</p>
       <form onSubmit={onCheck}>
         <label
@@ -123,7 +83,7 @@ export const CheckElegibility = () => {
             onChange={onWalletChange}
             type="search"
             id="default-search"
-            className="pe-[100px] block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
+            className="pe-[100px] block w-full p-4 mb-8 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />

@@ -1,13 +1,24 @@
 import { PublicKey } from "@solana/web3.js";
 import axios from "axios";
 import { useState } from "react";
-import { Bounce, toast } from "react-toastify";
+import {
+  sendErrorNotification,
+  sendSuccessNotification,
+  sendWarningNotification,
+} from "../utils";
 
-export const SignUpUpdate = () => {
+export const SignUpUpdate = (props: any) => {
   const [twitter, setTwitter] = useState("");
   const [twitterLink, setTwitterLink] = useState("");
   const [telegram, setTelegram] = useState("");
   const [wallet, setWallet] = useState("");
+
+  const clearForm = () => {
+    setTwitter("");
+    setTwitterLink("");
+    setTelegram("");
+    setWallet("");
+  };
 
   const onTwitterChange = (e: any) => {
     setTwitter(e.target.value);
@@ -34,33 +45,13 @@ export const SignUpUpdate = () => {
       validWallet = false;
     }
     if (wallet.length < 34 || wallet.length > 44 || !validWallet) {
-      toast.error("Wrong solana wallet", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      sendErrorNotification("Wrong solana wallet");
       return;
     }
 
     const twitterToSend = twitter.replace(/\s/g, "").replace("@", "");
     if (!/^@?[0-9a-zA-Z_]{1,15}$/.test(twitterToSend)) {
-      toast.error("Wront twitter account profile", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      sendErrorNotification("Wront twitter account profile");
       return;
     }
 
@@ -70,33 +61,13 @@ export const SignUpUpdate = () => {
         twitterLinkToSend
       )
     ) {
-      toast.error("Wront twitter link", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      sendErrorNotification("Wront twitter link");
       return;
     }
 
     const telegramToSend = telegram.replace(/\s/g, "").replace("@", "");
     if (!/^@?[0-9a-zA-Z_]{5,32}$/.test(telegramToSend)) {
-      toast.error("Wront telegram account", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+      sendErrorNotification("Wront telegram account");
       return;
     }
 
@@ -110,61 +81,30 @@ export const SignUpUpdate = () => {
         },
       })
       .then((response) => {
+        if (response.data.errorMsg) {
+          sendWarningNotification(response.data.errorMsg);
+          clearForm();
+          return;
+        }
         if (response.data.isCreated) {
-          toast.success("You signed!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-          });
+          sendSuccessNotification("You signed!");
+          clearForm();
         } else if (response.data.isUpdated) {
-          toast.success("Record updated!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-          });
+          sendSuccessNotification("Record updated!");
+          clearForm();
         } else {
-          toast.error("Unhandled sh*t happened", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-          });
+          sendErrorNotification("Unhandled sh*t happened. Let dev know!");
+          clearForm();
         }
       })
       .catch((error) => {
-        toast.error("Unhandled error:" + error, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
+        sendErrorNotification("Unhandled error:" + error);
+        clearForm();
       });
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full md:w-[600px]">
+    <div className="flex flex-col gap-2 w-full">
       <p className="text-lg font-bold">Sign up for airdrop / update record</p>
       <form className="">
         <div className="relative">
