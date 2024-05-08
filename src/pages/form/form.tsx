@@ -7,7 +7,7 @@ import axios from "axios";
 import { sendErrorNotification } from "./utils";
 
 export const Form = () => {
-  const deadlineTime = 1715184000000;
+  const deadlineTime = Number(process.env.REACT_APP_DEADLINE);
   const [days, hours, minutes, seconds] = useCountdown(deadlineTime);
   const [registeredUsers, setRegisteredUsers] = useState(0);
 
@@ -15,15 +15,14 @@ export const Form = () => {
     days + hours + minutes + seconds <= 0 || registeredUsers >= 1000;
   useEffect(() => {
     axios
-      .get("http://localhost:4000/users/getUsersRegistered")
+      .get(process.env.REACT_APP_SERVER + "/users/getUsersRegistered")
       .then((response) => {
         const { numberOfUsers } = response.data;
         setRegisteredUsers(numberOfUsers);
       })
       .catch((error) => {
         sendErrorNotification(
-          "Cannot get number of registered users. Contact @vverchonov TG" +
-            error
+          "Cannot get number of registered users. Contact dev please." + error
         );
       });
   }, []);

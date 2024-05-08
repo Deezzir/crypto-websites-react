@@ -72,7 +72,7 @@ export const SignUpUpdate = (props: any) => {
     }
 
     axios
-      .post("http://localhost:4000/users/addUpdateUser", {
+      .post(process.env.REACT_APP_SERVER + "/users/addUpdateUser", {
         user: {
           wallet: walletToSend,
           twitter: twitterToSend,
@@ -83,22 +83,20 @@ export const SignUpUpdate = (props: any) => {
       .then((response) => {
         if (response.data.errorMsg) {
           sendWarningNotification(response.data.errorMsg);
-          clearForm();
           return;
         }
         if (response.data.isCreated) {
           sendSuccessNotification("You signed!");
-          clearForm();
         } else if (response.data.isUpdated) {
           sendSuccessNotification("Record updated!");
-          clearForm();
         } else {
           sendErrorNotification("Unhandled sh*t happened. Let dev know!");
-          clearForm();
         }
       })
       .catch((error) => {
         sendErrorNotification("Unhandled error:" + error);
+      })
+      .finally(() => {
         clearForm();
       });
   };

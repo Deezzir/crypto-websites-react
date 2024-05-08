@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { Bounce, toast } from "react-toastify";
 import {
   sendErrorNotification,
   sendSuccessNotification,
@@ -17,17 +16,16 @@ export const CheckElegibility = () => {
   };
 
   const onCheck = (e: any) => {
-    console.log("here1");
     e.preventDefault();
-    console.log("here2");
+
     const walletToSend = wallet.replace(/\s/g, "");
     if (wallet.length < 34 || wallet.length > 44) {
       sendErrorNotification("Wrong solana wallet");
       return;
     }
-    console.log("here");
+
     axios
-      .post("http://localhost:4000/users/checkUserByWallet", {
+      .post(process.env.REACT_APP_SERVER + "/users/checkUserByWallet", {
         wallet: walletToSend,
       })
       .then((response) => {
