@@ -112,10 +112,13 @@ export const SignUpUpdate = (props: any) => {
             onChange={onTwitterChange}
             type="search"
             id="default-search"
-            className="block w-full p-4 mb-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
+            className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
             placeholder="solana_aper_x_twitter"
             required
           />
+          <p className="mb-4 text-xs text-slate-400">
+            You should follow our account @TEST.
+          </p>
         </div>
         <div className="relative">
           <p>Twitter post link</p>
@@ -124,10 +127,13 @@ export const SignUpUpdate = (props: any) => {
             onChange={onTwitterLinkChange}
             type="search"
             id="default-search"
-            className="block w-full p-4 mb-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
+            className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
             placeholder="https://twitter.com/"
             required
           />
+          <p className="mb-4 text-xs text-slate-400">
+            Your post should include tag to our account @TEST.
+          </p>
         </div>
         <div className="relative">
           <p>Telegram @</p>
@@ -142,7 +148,7 @@ export const SignUpUpdate = (props: any) => {
           />
           <p className="mb-4 text-xs text-slate-400">
             You need to send at least one message in our chat to confirm your
-            Telegram account
+            Telegram account.
           </p>
         </div>
         <div className="relative">
