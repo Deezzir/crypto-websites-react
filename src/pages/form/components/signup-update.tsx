@@ -135,6 +135,7 @@ export const SignUpUpdate = (props: any) => {
             Your post should include tag to our account @TEST.
           </p>
         </div>
+
         <div className="relative">
           <p>Telegram @</p>
           <input
