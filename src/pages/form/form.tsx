@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AboutAirdrop } from "./components/about-airdrop";
 import { CheckElegibility } from "./components/check-elegibility";
 import { SignUpUpdate } from "./components/signup-update";
-import { useCountdown } from "./components/timer/useCountdownHook";
+import { useCountdown } from "../../hooks/useCountdownHook";
 import axios from "axios";
 import { sendErrorNotification } from "./utils";
 import { Presale } from "./components/presale";
@@ -61,7 +61,7 @@ export const Form = () => {
         />
       </div>
       <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
-        <div className={"w-full md:w-1/2 "}>
+        <div className="w-full md:w-[48%]">
           <CheckElegibility />
           <div
             className={
@@ -76,14 +76,17 @@ export const Form = () => {
             />
           </div>
         </div>
-        <div className={"w-full md:w-1/2 "}>
+        <div className="w-full md:w-[4%] flex justify-self-center self-center justify-center items-center">
+          <h1 className="text-3xl text-center font-bold uppercase">OR</h1>
+        </div>
+        <div className="w-full md:w-[48%]">
           <div
             className={
               "w-full " +
               (blured || blurredPresale ? "blur-sm select-none" : "")
             }
           >
-            <Presale maxPresaleUsers={maxPresaleUsers} />
+            <Presale />
           </div>
         </div>
       </div>
