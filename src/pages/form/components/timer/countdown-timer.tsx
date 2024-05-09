@@ -12,7 +12,6 @@ const CountdownTimer = (props: any) => {
         days={days}
         hours={hours}
         minutes={minutes}
-        seconds={seconds}
       />
     );
   }

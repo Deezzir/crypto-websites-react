@@ -1,8 +1,7 @@
 const ExpiredNotice = () => {
   return (
-    <div className="expired-notice">
-      <span>Deadline is reached</span>
-      <p>The enrollment is done :)</p>
+    <div className="text-center px-8 py-6 border-2 rounded-xl border-[#ebebeb]">
+      <span className="text-2xl font-bold text-red-600">Drops are done</span>
     </div>
   );
 };

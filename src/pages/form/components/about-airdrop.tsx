@@ -1,19 +1,19 @@
 import CountdownTimer from "./timer/countdown-timer";
-import "./css/timer.css";
 
 export const AboutAirdrop = (props: any) => {
   const { days, hours, seconds, minutes } = props;
   return (
-    <div className={" flex flex-col gap-2 w-full "}>
-      <h1 className="text-lg font-bold">Airdrop starts in:</h1>
+    <div className="flex flex-row gap-12 w-full justify-between items-center">
       <CountdownTimer
         days={days}
         hours={hours}
         seconds={seconds}
         minutes={minutes}
       />
-      <h1 className="text-lg mt-8 font-bold">
-        People registered: {props.registeredUsers}/1000
+      <h1 className="text-2xl font-bold text-right">
+        Airdrop signups: {props.registeredAirdropUsers}/{props.maxAirDropUsers}
+        <br />
+        Presale signups: {props.registeredPresaleUsers}/{props.maxPresaleUsers}
       </h1>
     </div>
   );

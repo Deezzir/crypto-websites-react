@@ -113,26 +113,26 @@ export const SignUpUpdate = (props: any) => {
             type="search"
             id="default-search"
             className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
-            placeholder="solana_aper_x_twitter"
+            placeholder="jeet_x_twitter"
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            You should follow our account @TEST.
+            You should follow our account @{props.toFollow}
           </p>
         </div>
         <div className="relative">
-          <p>Twitter post link</p>
+          <p>Twitter Post link</p>
           <input
             value={twitterLink}
             onChange={onTwitterLinkChange}
             type="search"
             id="default-search"
             className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
-            placeholder="https://twitter.com/"
+            placeholder="https://twitter.com/username/status/1234454265263"
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            Your post should include tag to our account @TEST.
+            Your post should include tag to our account @{props.toFollow}
           </p>
         </div>
 
@@ -144,7 +144,7 @@ export const SignUpUpdate = (props: any) => {
             type="search"
             id="default-search"
             className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
-            placeholder="solana_aper_tg"
+            placeholder="jeet_tg"
             required
           />
           <p className="mb-4 text-xs text-slate-400">
@@ -153,7 +153,7 @@ export const SignUpUpdate = (props: any) => {
           </p>
         </div>
         <div className="relative">
-          <p>Wallet Solana</p>
+          <p>Solana Wallet</p>
           <input
             value={wallet}
             onChange={onWalletChange}
@@ -173,6 +173,10 @@ export const SignUpUpdate = (props: any) => {
             Sign up / Update record
           </button>
         </div>
+        <p className="text-center mt-4">
+          The <span className="font-bold">50 million tokens</span> will be
+          distributed among {props.maxAirDropUsers} people equaly.
+        </p>
       </form>
     </div>
   );

@@ -5,53 +5,93 @@ import { SignUpUpdate } from "./components/signup-update";
 import { useCountdown } from "./components/timer/useCountdownHook";
 import axios from "axios";
 import { sendErrorNotification } from "./utils";
+import { Presale } from "./components/presale";
 
 export const Form = () => {
-  const deadlineTime = Number(process.env.REACT_APP_DEADLINE);
-  const [days, hours, minutes, seconds] = useCountdown(deadlineTime);
-  const [registeredUsers, setRegisteredUsers] = useState(0);
+  const [deadline, setDeadline] = useState(0);
+  let [days, hours, minutes, seconds] = useCountdown(deadline);
+  const [registeredAirdropUsers, setAirdropRegisteredUsers] = useState(0);
+  const [registeredPresaleUsers, setPresaleRegisteredUsers] = useState(0);
+  const [maxAirDropUsers, setMaxAirDropUsers] = useState(0);
+  const [maxPresaleUsers, setMaxPresaleUsers] = useState(0);
+  const [toXFollow, setToXFollow] = useState("");
 
-  const blured =
-    days + hours + minutes + seconds <= 0 || registeredUsers >= 1000;
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_SERVER + "/users/getUsersRegistered")
+      .get(process.env.REACT_APP_SERVER + "/users/getDropInfo")
       .then((response) => {
-        const { numberOfUsers } = response.data;
-        setRegisteredUsers(numberOfUsers);
+        const {
+          numberOfMaxAirdropUsers,
+          numberOfMaxPresaleUsers,
+          numberOfAirdropUsers,
+          numberOfPresaleUsers,
+          deadline,
+          toFollow,
+        } = response.data;
+        setMaxAirDropUsers(numberOfMaxAirdropUsers);
+        setMaxPresaleUsers(numberOfMaxPresaleUsers);
+        setAirdropRegisteredUsers(numberOfAirdropUsers);
+        setPresaleRegisteredUsers(numberOfPresaleUsers);
+        setDeadline(parseInt(deadline, 10));
+        setToXFollow(toFollow);
       })
       .catch((error) => {
         sendErrorNotification(
-          "Cannot get number of registered users. Contact dev please." + error
+          "Cannot get Drop Information. Contact dev please." + error
         );
       });
   }, []);
 
+  const blured = days + hours + minutes + seconds <= 0;
+  const blurredAirdrop = registeredAirdropUsers >= maxAirDropUsers;
+  const blurredPresale = registeredPresaleUsers >= maxPresaleUsers;
+
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 pb-12">
+      <div className="w-full justify-self-center self-center">
+        <AboutAirdrop
+          registeredAirdropUsers={registeredAirdropUsers}
+          registeredPresaleUsers={registeredPresaleUsers}
+          maxAirDropUsers={maxAirDropUsers}
+          maxPresaleUsers={maxPresaleUsers}
+          days={days}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+        />
+      </div>
       <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
         <div className={"w-full md:w-1/2 "}>
           <CheckElegibility />
-          <div className={"w-full " + (blured ? "blur-sm select-none" : "")}>
-            <SignUpUpdate blured={blured} />
+          <div
+            className={
+              "w-full " +
+              (blured || blurredAirdrop ? "blur-sm select-none" : "")
+            }
+          >
+            <SignUpUpdate
+              blured={blured}
+              maxAirDropUsers={maxAirDropUsers}
+              toFollow={toXFollow}
+            />
           </div>
         </div>
-        <div className="w-full md:w-1/2">
-          <AboutAirdrop
-            registeredUsers={registeredUsers}
-            days={days}
-            hours={hours}
-            minutes={minutes}
-            seconds={seconds}
-          />
+        <div className={"w-full md:w-1/2 "}>
+          <div
+            className={
+              "w-full " +
+              (blured || blurredPresale ? "blur-sm select-none" : "")
+            }
+          >
+            <Presale maxPresaleUsers={maxPresaleUsers} />
+          </div>
         </div>
       </div>
-      <div className="w-full">
-        <p className="text-center">
-          The airdrop is going to be performed shortly after the count down is
-          done. Please be patiente, it takes us time to perform transactions! We
-          appreciate your enrollment. The 50% (except balance to burn) of dev
-          balance will be distributed among 1000 people equaly.
+      <div className="w-full flex flex-col justify-center items-center">
+        <p className="text-3xl font-bold text-center">
+          The Airdrops are going to be performed shortly after the Raydium
+          launch. Please be patiente, it takes time to perform transactions.
+          Thanks for the enrollment.
         </p>
       </div>
     </div>
