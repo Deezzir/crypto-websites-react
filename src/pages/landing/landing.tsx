@@ -1,3 +1,9 @@
+import Cards from "./blocks/cards/cards";
+
 export const Landing = () => {
-  return <p className="text-black">landing</p>;
+  return (
+    <div className="w-full min-h-[80vh] justify-center items-center flex flex-row">
+      <Cards />
+    </div>
+  );
 };
