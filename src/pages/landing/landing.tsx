@@ -5,7 +5,7 @@ export const Landing = () => {
   return (
     <div className="w-full min-h-[80vh] justify-center items-center flex flex-col relative">
       <div className="mb-auto w-full text-center justify-center items-center flex flex-col gap-8">
-        <p className="text-6xl font-bold uppercase">Taro of memes</p>
+        <p className="text-6xl font-bold uppercase">Taro of memes.</p>
         <CopyCa />
       </div>
       <button
