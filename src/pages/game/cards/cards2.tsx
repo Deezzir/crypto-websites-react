@@ -104,7 +104,7 @@ export const Cards2 = () => {
   };
 
   return (
-    <>
+    <div className="flex w-full min-h-screen justify-center align-middle items-center relative">
       <div className="flex gap-2 items-center justify-center overflow-x-hidden mx-4">
         <div className="z-50 inline">
           <img
@@ -168,6 +168,6 @@ export const Cards2 = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };

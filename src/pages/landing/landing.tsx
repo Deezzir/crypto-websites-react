@@ -1,26 +1,21 @@
-import { CopyCa } from "../../common/copy-ca";
-import { Cards2 } from "./blocks/cards/cards2";
+import { Block1 } from "./blocks/block1/block1";
+import { Block2 } from "./blocks/block2/block2";
+import { Block3 } from "./blocks/block3/block3";
+import { Block4 } from "./blocks/block4/block4";
+import { Block5 } from "./blocks/block5/block5";
+import { Block6 } from "./blocks/block6/block6";
+import { Block7 } from "./blocks/block7/block7";
 
 export const Landing = () => {
   return (
-    <div className="w-full min-h-[80vh] justify-center items-center flex flex-col relative">
-      <div className="mb-auto w-full text-center justify-center items-center flex flex-col gap-8">
-        <p className="text-6xl font-bold uppercase">Taro of memes.</p>
-        <CopyCa />
-      </div>
-      <button
-        type="button"
-        className="text-white my-auto bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-sm px-10 py-4 me-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-      >
-        DIVE INTO FUTURE
-      </button>
-
-      <div className="flex flex-col gap-2">
-        <p className="text-lg text-center">Get your prediction</p>
-        <div className="flex flex-col gap-2">
-          <Cards2 />
-        </div>
-      </div>
-    </div>
+    <>
+      <Block1 />
+      <Block2 />
+      <Block3 />
+      <Block4 />
+      <Block5 />
+      <Block6 />
+      <Block7 />
+    </>
   );
 };

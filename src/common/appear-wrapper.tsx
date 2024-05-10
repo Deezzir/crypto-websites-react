@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export const AppearWrapper = (props: any) => {
   return (
     <motion.div
-      className={props.customClass + " flex flex-col p-2"}
+      className={props.customClass + ""}
       initial={{
         opacity: 0,
       }}
