@@ -39,11 +39,13 @@ export const Block6 = () => {
           <TextReg customClass={"text-[#00BCF8]"} text={"Lorem ipsun"} />
           <img className="h-[50vh] lg:h-[60vh]" src="./block6/deck.jpg" />
         </div>
+
         <div className="flex w-full lg:w-2/12 flex-col gap-8 p-4 justify-center align-center items-center">
           <TextReg customClass={"text-[#00BCF8]"} text={"Lorem ipsun"} />
           <img className="h-[50vh] lg:h-[60vh]" src="./block6/deck.jpg" />
         </div>
       </div>
+
       <img
         onClick={onClick}
         className="w-12/12 px-8 md:w-4/12 cursor-pointer"
