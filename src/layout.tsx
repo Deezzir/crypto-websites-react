@@ -12,7 +12,7 @@ export const Layout = (props: any) => {
       <div className="md:mx-24 min-h-[80vh]">
         <Outlet />
       </div>
-      {/* <FooterSection /> */}
+      <FooterSection />
     </>
   );
 };

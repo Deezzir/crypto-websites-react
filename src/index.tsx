@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import { ToastContainer } from "react-toastify";
 import { Layout } from "./layout";
 import { Landing } from "./pages/landing/landing";
 import { Form } from "./pages/form/form";

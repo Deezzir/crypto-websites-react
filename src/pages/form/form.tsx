@@ -12,8 +12,10 @@ export const Form = () => {
   let [days, hours, minutes, seconds] = useCountdown(deadline);
   const [registeredAirdropUsers, setAirdropRegisteredUsers] = useState(0);
   const [registeredPresaleUsers, setPresaleRegisteredUsers] = useState(0);
-  const [maxAirDropUsers, setMaxAirDropUsers] = useState(0);
-  const [maxPresaleUsers, setMaxPresaleUsers] = useState(0);
+  const [maxSolAmount, setMaxSolAmount] = useState(5.0);
+  const [minSolAmount, setMinSolAmount] = useState(0.1);
+  const [maxAirDropUsers, setMaxAirDropUsers] = useState(1000);
+  const [maxPresaleUsers, setMaxPresaleUsers] = useState(500);
   const [toXFollow, setToXFollow] = useState("");
 
   useEffect(() => {
@@ -27,6 +29,8 @@ export const Form = () => {
           numberOfPresaleUsers,
           deadline,
           toFollow,
+          presaleMaxSolAmount,
+          presaleMinSolAmount,
         } = response.data;
         setMaxAirDropUsers(numberOfMaxAirdropUsers);
         setMaxPresaleUsers(numberOfMaxPresaleUsers);
@@ -34,6 +38,8 @@ export const Form = () => {
         setPresaleRegisteredUsers(numberOfPresaleUsers);
         setDeadline(parseInt(deadline, 10));
         setToXFollow(toFollow);
+        setMaxSolAmount(presaleMaxSolAmount);
+        setMinSolAmount(presaleMinSolAmount);
       })
       .catch((error) => {
         sendErrorNotification(
@@ -60,9 +66,11 @@ export const Form = () => {
           seconds={seconds}
         />
       </div>
+      <div className="w-[40%] justify-self-center self-center">
+        <CheckElegibility />
+      </div>
       <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
-        <div className="w-full md:w-[48%]">
-          <CheckElegibility />
+        <div className="w-full md:w-[46%]">
           <div
             className={
               "w-full " +
@@ -76,17 +84,21 @@ export const Form = () => {
             />
           </div>
         </div>
-        <div className="w-full md:w-[4%] flex justify-self-center self-center justify-center items-center">
+        <div className="w-full md:w-[8%] flex justify-self-center self-center justify-center items-center">
           <h1 className="text-3xl text-center font-bold uppercase">OR</h1>
         </div>
-        <div className="w-full md:w-[48%]">
+        <div className="w-full md:w-[46%]">
           <div
             className={
               "w-full " +
               (blured || blurredPresale ? "blur-sm select-none" : "")
             }
           >
-            <Presale />
+            <Presale
+              maxPresaleUsers={maxPresaleUsers}
+              maxSolAmount={maxSolAmount}
+              minSolAmount={minSolAmount}
+            />
           </div>
         </div>
       </div>

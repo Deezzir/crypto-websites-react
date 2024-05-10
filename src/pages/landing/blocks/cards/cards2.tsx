@@ -1,5 +1,5 @@
 import { motion, useAnimationControls } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./card.css";
 
 type Card = {
@@ -108,6 +108,7 @@ export const Cards2 = () => {
       <div className="flex gap-2 items-center justify-center overflow-x-hidden mx-4">
         <div className="z-50 inline">
           <img
+            alt="deck"
             onClick={onDeckPress}
             className="w-[22vh] cursor-pointer select-none z-50 inline"
             src="./landing/cards/deck.png"
@@ -135,6 +136,7 @@ export const Cards2 = () => {
                       animate={{ rotateY: card.isFlipped ? 0 : 180 }}
                     >
                       <img
+                        alt="card"
                         className="w-[16vh] cursor-pointer"
                         onClick={() => {
                           flipCard(card.id);
@@ -152,6 +154,7 @@ export const Cards2 = () => {
                     >
                       <img
                         className="w-[16vh] cursor-pointer"
+                        alt="back"
                         onClick={() => {
                           flipCard(card.id);
                         }}

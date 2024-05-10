@@ -48,8 +48,8 @@ export const CheckElegibility = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full">
-      <p className="text-lg font-bold">Check account validity</p>
+    <div className="flex flex-col gap-2 w-full justify-center">
+      <p className="text-lg font-bold text-center">Check account enrollment</p>
       <form onSubmit={onCheck}>
         <label
           htmlFor="default-search"
@@ -75,19 +75,19 @@ export const CheckElegibility = () => {
               />
             </svg>
           </div>
-          <p>Solana Wallet</p>
+          <p className="">Solana Wallet</p>
           <input
             value={wallet}
             onChange={onWalletChange}
-            type="search"
-            id="default-search"
-            className="pe-[100px] block w-full p-4 mb-8 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-green-500 focus:border-green-500"
+            type="text"
+            id="solana-check-wallet"
+            className="pe-[100px] block w-full p-4 mb-8 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />
           <button
             onClick={onCheck}
-            className="text-white absolute end-2.5 bottom-2.5 bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-600 font-medium rounded-lg text-sm px-4 py-2"
+            className="text-white absolute end-2.5 bottom-2.5 bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-4 focus:outline-none focus:ring-[#1f2937] font-medium rounded-lg text-sm px-4 py-2"
           >
             Validate
           </button>
