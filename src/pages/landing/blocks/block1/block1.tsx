@@ -35,11 +35,16 @@ export const Block1 = () => {
           text={"Lorem ipsun lorem ipsun lorem ipsun ipsun ipsun ipsun"}
         />
         <div className="flex w-full flex-col gap-4 justify-center items-center">
-          <img className="w-10/12 md:w-5/12" src={"./block1/game.png"} />
+          <img
+            className="w-10/12 md:w-5/12"
+            src={"./block1/game.png"}
+            alt="game"
+          />
           <img
             onClick={onPlay}
             className="w-full md:w-6/12 cursor-pointer"
             src="./block1/play.png"
+            alt="play"
           />
         </div>
       </motion.div>

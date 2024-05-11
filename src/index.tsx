@@ -21,7 +21,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Landing />} />
-          <Route path="airdrop" element={<Form />} />
+          <Route path="drop" element={<Form />} />
           <Route path="game" element={<Cards2 />} />
         </Route>
       </Routes>

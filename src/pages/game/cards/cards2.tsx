@@ -54,7 +54,7 @@ export const Cards2 = () => {
     return shuffled.slice(0, 4);
   };
 
-  const [isVisible, setIsVisible] = useState(false);
+  //   const [isVisible, setIsVisible] = useState(false);
   const [isDealt, setIsDealt] = useState(true);
   const [cards, setCards] = useState<Card[]>(getRandomCards());
 

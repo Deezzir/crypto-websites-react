@@ -6,6 +6,7 @@ import { useCountdown } from "../../hooks/useCountdownHook";
 import axios from "axios";
 import { sendErrorNotification } from "./utils";
 import { Presale } from "./components/presale/presale";
+import { FooterSection } from "../../common/footer";
 
 export const Form = () => {
   const [deadline, setDeadline] = useState(0);
@@ -62,79 +63,82 @@ export const Form = () => {
   const blurredPresale = registeredPresaleUsers >= maxPresaleUsers;
 
   return (
-    <div className="flex flex-col gap-8 pb-12">
-      <div className="w-full justify-self-center self-center">
-        <AboutDrop
-          registeredAirdropUsers={registeredAirdropUsers}
-          registeredPresaleUsers={registeredPresaleUsers}
-          maxAirDropUsers={maxAirDropUsers}
-          maxPresaleUsers={maxPresaleUsers}
-          presaleSolAmount={presaleSolAmount}
-          days={days}
-          hours={hours}
-          minutes={minutes}
-          seconds={seconds}
-        />
-      </div>
-      <div className="w-[40%] justify-self-center self-center">
-        <CheckElegibility />
-      </div>
-      <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
-        <div className="w-full md:w-[46%] relative">
-          {blurredAirdrop && (
-            <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
-              Airdrop enrollment is done
-            </h3>
-          )}
-          <div
-            className={
-              "w-full " +
-              (blured || blurredAirdrop
-                ? "blur-sm select-none pointer-events-none"
-                : "")
-            }
-          >
-            <SignUpUpdate
-              blured={blured}
-              maxAirDropUsers={maxAirDropUsers}
-              toXFollow={toXFollow}
-              toTGFollow={toTGFollow}
-            />
+    <>
+      <div className="flex flex-col gap-8 py-12 px-20">
+        <div className="w-full justify-self-center self-center">
+          <AboutDrop
+            registeredAirdropUsers={registeredAirdropUsers}
+            registeredPresaleUsers={registeredPresaleUsers}
+            maxAirDropUsers={maxAirDropUsers}
+            maxPresaleUsers={maxPresaleUsers}
+            presaleSolAmount={presaleSolAmount}
+            days={days}
+            hours={hours}
+            minutes={minutes}
+            seconds={seconds}
+          />
+        </div>
+        <div className="w-[40%] justify-self-center self-center">
+          <CheckElegibility />
+        </div>
+        <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
+          <div className="w-full md:w-[46%] relative">
+            {blurredAirdrop && (
+              <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
+                Airdrop enrollment is done
+              </h3>
+            )}
+            <div
+              className={
+                "w-full " +
+                (blured || blurredAirdrop
+                  ? "blur-sm select-none pointer-events-none"
+                  : "")
+              }
+            >
+              <SignUpUpdate
+                blured={blured}
+                maxAirDropUsers={maxAirDropUsers}
+                toXFollow={toXFollow}
+                toTGFollow={toTGFollow}
+              />
+            </div>
+          </div>
+          <div className="w-full md:w-[8%] flex justify-self-center self-center justify-center items-center">
+            <h1 className="text-3xl text-center font-bold uppercase">OR</h1>
+          </div>
+          <div className="w-full md:w-[46%] relative">
+            {blurredPresale && (
+              <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ">
+                Presale enrollment is done
+              </h3>
+            )}
+            <div
+              className={
+                "w-full " +
+                (blured || blurredPresale
+                  ? "blur-sm select-none pointer-events-none"
+                  : "")
+              }
+            >
+              <Presale
+                maxPresaleUsers={maxPresaleUsers}
+                maxSolAmount={maxSolAmount}
+                minSolAmount={minSolAmount}
+                dropPubkey={dropPubkey}
+              />
+            </div>
           </div>
         </div>
-        <div className="w-full md:w-[8%] flex justify-self-center self-center justify-center items-center">
-          <h1 className="text-3xl text-center font-bold uppercase">OR</h1>
-        </div>
-        <div className="w-full md:w-[46%] relative">
-          {blurredPresale && (
-            <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ">
-              Presale enrollment is done
-            </h3>
-          )}
-          <div
-            className={
-              "w-full " +
-              (blured || blurredPresale
-                ? "blur-sm select-none pointer-events-none"
-                : "")
-            }
-          >
-            <Presale
-              maxPresaleUsers={maxPresaleUsers}
-              maxSolAmount={maxSolAmount}
-              minSolAmount={minSolAmount}
-              dropPubkey={dropPubkey}
-            />
-          </div>
+        <div className="w-full flex flex-col justify-center items-center">
+          <h1 className="text-3xl font-bold text-center">
+            The Drops are going to be performed shortly after the Raydium
+            launch. Please be patiente, it takes time to perform transactions.
+            Thanks for the enrollment.
+          </h1>
         </div>
       </div>
-      <div className="w-full flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold text-center">
-          The Drops are going to be performed shortly after the Raydium launch.
-          Please be patiente, it takes time to perform transactions. Thanks for
-          the enrollment.
-        </h1>
-      </div>
-    </div>
+      <FooterSection />
+    </>
   );
 };
