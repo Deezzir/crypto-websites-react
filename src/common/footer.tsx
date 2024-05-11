@@ -2,21 +2,19 @@ import { TgIcon } from "./icons/tg-icon";
 import { XIcon } from "./icons/x-icon";
 import { TELEGRAM_DEV, TWITTER_DEV } from "./urls";
 
-const iconClass = "w-6 h-6 fill-[#0b1d21]";
+const iconClass = "w-6 h-6 fill-white";
 
 export const FooterSection = () => {
   return (
-    <footer className="p-8 pb-0 text-center text-white backdrop-blur transition-colors duration-500">
-      <p className="flex flex-row items-center justify-center gap-2">
-        <span className="text-sm font-bold sm:text-xl text-[#0b1d21]">
-          $ &copy; 2024
-        </span>
+    <footer className="px-8 pt-1 text-center bg-[#1f2937] text-white backdrop-blur transition-colors duration-500">
+      <p className="flex flex-row items-center justify-center gap-1">
+        <span className="text-sm font-bold sm:text-xl ">$ &copy; 2024</span>
         <span className="inline-flex">
           <a
             href={TWITTER_DEV}
             target="_blank"
             rel="noopener noreferrer"
-            className="mx-[2px] rounded p-2 font-bold fill-[#0b1d21]"
+            className="mx-[2px] rounded p-2 font-bold"
           >
             <XIcon iconClass={iconClass} />
           </a>
@@ -30,7 +28,7 @@ export const FooterSection = () => {
           </a>
         </span>
       </p>
-      <p className="px-2 pb-4 text-sm text-[#0b1d21]">
+      <p className="px-2 pb-2 text-sm">
         $ is a memecoin with no intrinsic value, and is not a investment and
         simply a community/culture token similar to $. No Promises, No Utility,
         Purely For Entertainment Purposes

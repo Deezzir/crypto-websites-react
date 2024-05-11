@@ -8,6 +8,9 @@ import { Landing } from "./pages/landing/landing";
 import { Form } from "./pages/form/form";
 import { Cards2 } from "./pages/game/cards/cards2";
 
+import { Buffer } from "buffer";
+window.Buffer = Buffer;
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

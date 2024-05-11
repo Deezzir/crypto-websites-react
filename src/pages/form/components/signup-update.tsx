@@ -72,12 +72,12 @@ export const SignUpUpdate = (props: any) => {
     }
 
     axios
-      .post(process.env.REACT_APP_SERVER + "/users/addUpdateUser", {
+      .post(process.env.REACT_APP_SERVER + "/users/addUpdateAirdropUser", {
         user: {
           wallet: walletToSend,
-          twitter: twitterToSend,
-          twitterLink: twitterLinkToSend,
-          telegram: telegramToSend,
+          xUsername: twitterToSend,
+          xPostLink: twitterLinkToSend,
+          tgUsername: telegramToSend,
         },
       })
       .then((response) => {
@@ -108,6 +108,18 @@ export const SignUpUpdate = (props: any) => {
       </p>
       <form className="">
         <div className="relative">
+          <p>Solana Wallet</p>
+          <input
+            value={wallet}
+            onChange={onWalletChange}
+            type="text"
+            id="wallet"
+            className="block w-full p-4 mb-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+            placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
+            required
+          />
+        </div>
+        <div className="relative">
           <p>Twitter @</p>
           <input
             value={twitter}
@@ -119,7 +131,7 @@ export const SignUpUpdate = (props: any) => {
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            You should follow our account @{props.toFollow}
+            You should follow our account @{props.toXFollow}
           </p>
         </div>
         <div className="relative">
@@ -134,7 +146,7 @@ export const SignUpUpdate = (props: any) => {
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            Your post should include tag to our account @{props.toFollow}
+            Your post should include tag to our account @{props.toXFollow}
           </p>
         </div>
 
@@ -150,22 +162,11 @@ export const SignUpUpdate = (props: any) => {
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            You need to send at least one message in our chat to confirm your
-            Telegram account.
+            You need to send at least one message in @{props.toTGFollow} to
+            confirm your Telegram account.
           </p>
         </div>
-        <div className="relative">
-          <p>Solana Wallet</p>
-          <input
-            value={wallet}
-            onChange={onWalletChange}
-            type="text"
-            id="wallet"
-            className="block w-full p-4 mb-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
-            placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
-            required
-          />
-        </div>
+
         <div className="w-full">
           <button
             onClick={onSignUpUpdate}

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import {
+  FormattedMessages,
   sendErrorNotification,
   sendSuccessNotification,
   sendWarningNotification,
@@ -29,17 +30,23 @@ export const CheckElegibility = () => {
         wallet: walletToSend,
       })
       .then((response) => {
-        const { isTelegram, isTwitter, isTwitterPost, isWallet } =
-          response.data;
-        if (isTelegram && isTwitter && isTwitterPost && isWallet) {
-          sendSuccessNotification("You are eligible");
+        const {
+          isValidWallet,
+          isPresaleEnrolled,
+          isAirdropEnrolled,
+          errorMsgs,
+          presaleAmount,
+        } = response.data;
+        if (isValidWallet && (isPresaleEnrolled || isAirdropEnrolled)) {
+          let msgs: string[] = [];
+          if (isAirdropEnrolled) msgs.push(`Airdrop enrolled`);
+          if (isPresaleEnrolled)
+            msgs.push(`Presale enrolled with ${presaleAmount.toFixed(2)} SOL`);
+          let formattedMessages = <FormattedMessages messages={msgs} />;
+          sendSuccessNotification(formattedMessages);
         } else {
-          let msg = "Please update your record. ";
-          msg += !isTelegram ? "Telegram is not verified. " : "";
-          msg += !isTwitter ? "Twitter is not verified. " : "";
-          msg += !isTwitterPost ? "Twitter post is not verified. " : "";
-          msg += !isWallet ? "You have wrong SOL wallet specified." : "";
-          sendWarningNotification(msg);
+          let formattedMessages = <FormattedMessages messages={errorMsgs} />;
+          sendWarningNotification(formattedMessages);
         }
       })
       .catch((error) => {
