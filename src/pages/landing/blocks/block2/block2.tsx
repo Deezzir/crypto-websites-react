@@ -16,7 +16,11 @@ export const Block2 = () => {
         imgPath={"./block1/maga.png"}
       />
       <MovingImg
+<<<<<<< HEAD
         customClassWrapper={"absolute bottom-[20%] right-[50%] "}
+=======
+        customClassWrapper={"absolute bottom-[20%] right-[50%]"}
+>>>>>>> 38ef3bc (maga done)
         tz={5}
         ty={7}
         tx={3}
@@ -121,6 +125,7 @@ export const Block2 = () => {
             </button>
           </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           <img className="w-8/12" src={"./block2/cards.jpg"} alt="cards" />
         </div>
@@ -131,6 +136,8 @@ export const Block2 = () => {
             alt="gendalph"
           />
 >>>>>>> 3c7a1e8 (Update form)
+=======
+>>>>>>> 38ef3bc (maga done)
         </div>
       </motion.div>
     </div>

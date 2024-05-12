@@ -27,8 +27,12 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.5",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react-type-animation": "^3.2.0",
 =======
+=======
+    "react-type-animation": "^3.2.0",
+>>>>>>> 38ef3bc (maga done)
     "react-tweet": "^3.2.1",
 >>>>>>> 3c7a1e8 (Update form)
     "typescript": "^4.9.5",
