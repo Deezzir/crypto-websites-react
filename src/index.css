@@ -9,10 +9,12 @@
     box-sizing: border-box;
   }
   body {
-    background-color: white;
+    background-color: rgb(148 163 184);
     /* font-family: "Permanent Marker", cursive; */
     font-weight: 400;
     font-style: normal;
+    font-family: "Poetsen One", sans-serif;
+    overflow-x: hidden;
   }
 }
 
@@ -22,4 +24,12 @@
 
 .img-vert {
   transform: rotateX(180deg);
+}
+
+.fade-img {
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    transparent 100%
+  );
 }

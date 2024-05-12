@@ -15,7 +15,7 @@ export const CopyCa = (props: any) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "dark",
+      theme: "light",
       transition: Bounce,
     });
   };
@@ -46,11 +46,11 @@ export const CopyCa = (props: any) => {
     <button
       onClick={onCopy}
       className={
-        "text-center text-xl cursor-pointer flex-row gap-4 align-center justify-center items-center select-non flex z-50 text-white " +
+        "text-center text-xl p-8 cursor-pointer flex-row gap-4 align-center justify-center items-center select-non flex z-50 text-white " +
         props.customClass
       }
     >
-      <p className="text-4xl font-bold text-black">CA: {clampedText()}</p>
+      <p className="text-4xl font-bold text-white">CA: {clampedText()}</p>
       <CopyIcon />
     </button>
   );

@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { Layout } from "./layout";
 import { Landing } from "./pages/landing/landing";
 import { Form } from "./pages/form/form";
-import { Cards2 } from "./pages/game/cards/cards2";
 
 import { Buffer } from "buffer";
 window.Buffer = Buffer;
@@ -22,7 +21,6 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route index element={<Landing />} />
           <Route path="drop" element={<Form />} />
-          <Route path="game" element={<Cards2 />} />
         </Route>
       </Routes>
     </BrowserRouter>

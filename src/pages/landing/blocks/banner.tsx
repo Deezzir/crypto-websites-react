@@ -14,13 +14,11 @@ export const Banner = (props: any) => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-black flex justify-center items-center">
-      <div className="flex flex-col gap-12">
-        <h1 className="text-4xl text-white font-bold capitalize">
-          Taro Cards Memes
-        </h1>
+    <div className="w-full min-h-screen bg-slate-400 flex justify-center items-center">
+      <div className="flex flex-col gap-12 justify-center items-center">
+        <h1 className="text-4xl text-white font-bold capitalize">TRUMPY</h1>
         <button
-          className={`proceed-btn  text-black font-bold p-4 rounded-xl ${
+          className={`proceed-btn text-xl  text-black font-bold p-4 rounded-xl ${
             !isButtonEnabled
               ? "bg-gray-600 text-gray-800 cursor-not-allowed"
               : "bg-white"
@@ -28,7 +26,7 @@ export const Banner = (props: any) => {
           onClick={() => props.close()}
           disabled={!isButtonEnabled}
         >
-          Enter the dungeon
+          Enter maga team
         </button>
       </div>
     </div>
