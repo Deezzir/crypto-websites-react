@@ -16,7 +16,7 @@ export const Block2 = () => {
         imgPath={"./block1/maga.png"}
       />
       <MovingImg
-        customClassWrapper={"absolute bottom-[20%] right-[50%]"}
+        customClassWrapper={"absolute bottom-[20%] right-[50%] "}
         tz={5}
         ty={7}
         tx={3}
