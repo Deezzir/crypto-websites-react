@@ -14,7 +14,7 @@ export const Form = () => {
     numberOfMaxPresaleUsers: 500,
     numberOfAirdropUsers: 0,
     numberOfPresaleUsers: 0,
-    deadline: 1715664630,
+    deadline: 0,
     toXFollow: "",
     toTGFollow: "",
     presaleMaxSolAmount: 5.0,
