@@ -50,7 +50,6 @@ export const Cards2 = () => {
   const controls = useAnimationControls();
   const getRandomCards = (): any => {
     const shuffled = Array.from(cardsStack).sort(() => 0.5 - Math.random());
-    console.log("cards = ", cardsStack);
     return shuffled.slice(0, 4);
   };
 
@@ -110,7 +109,7 @@ export const Cards2 = () => {
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[22vh] cursor-pointer select-none z-50 inline"
+            className="w-[30vh] bg-white cursor-pointer select-none z-50 inline"
             src="./landing/cards/deck.png"
           />
         </div>
@@ -158,7 +157,7 @@ export const Cards2 = () => {
                         onClick={() => {
                           flipCard(card.id);
                         }}
-                        src={"./landing/cards/back.png"}
+                        src={"./landing/cards/back.jpg"}
                       />
                     </motion.div>
                   )}
