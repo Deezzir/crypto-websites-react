@@ -56,7 +56,7 @@ export const Form = () => {
           ty={5}
           tx={2}
           customClassImg={"w-[10vh] z-0 inline"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
         <MovingImg
           customClassWrapper={"absolute top-[20%] left-20"}
@@ -64,7 +64,7 @@ export const Form = () => {
           ty={6}
           tx={15}
           customClassImg={"w-[10vh] z-0 inline"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
         <MovingImg
           customClassWrapper={"absolute top-[50%] left-10"}
@@ -72,7 +72,7 @@ export const Form = () => {
           ty={5}
           tx={5}
           customClassImg={"w-[10vh] z-0 inline"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
         <MovingImg
           customClassWrapper={"absolute top-[80%] left-30"}
@@ -80,7 +80,7 @@ export const Form = () => {
           ty={4}
           tx={3}
           customClassImg={"w-[10vh] z-0 inline"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
 
         <MovingImg
@@ -89,7 +89,7 @@ export const Form = () => {
           ty={1}
           tx={14}
           customClassImg={"w-[10vh] z-0 inline img-hor"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
         <MovingImg
           customClassWrapper={"absolute top-[20%] right-20"}
@@ -97,7 +97,7 @@ export const Form = () => {
           ty={5}
           tx={1}
           customClassImg={"w-[10vh] z-0 inline  img-hor"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
         <MovingImg
           customClassWrapper={"absolute top-[50%] right-48 img-hor"}
@@ -105,7 +105,7 @@ export const Form = () => {
           ty={10}
           tx={7}
           customClassImg={"w-[10vh] z-0 inline img-hor"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
 
         <MovingImg
@@ -114,7 +114,7 @@ export const Form = () => {
           ty={5}
           tx={10}
           customClassImg={"w-[10vh] z-0 inline img-hor"}
-          imgPath={"./block1/airdrop.png"}
+          imgPath={"./block1/airdrop.webp"}
         />
         <div className="md:w-1/2 justify-self-center self-center">
           <AboutDrop

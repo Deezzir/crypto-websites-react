@@ -13,7 +13,7 @@ export const Block2 = () => {
         ty={1}
         tx={10}
         customClassImg={"w-[10vh] z-0 inline"}
-        imgPath={"./block1/maga.png"}
+        imgPath={"./block1/maga.webp"}
       />
       <MovingImg
         customClassWrapper={"absolute bottom-[20%] right-[50%] "}
@@ -21,7 +21,7 @@ export const Block2 = () => {
         ty={7}
         tx={3}
         customClassImg={"w-[10vh] z-0 inline"}
-        imgPath={"./block1/maga.png"}
+        imgPath={"./block1/maga.webp"}
       />
       <MovingImg
         customClassWrapper={"absolute top-[20%] left-[10%]"}
@@ -29,12 +29,12 @@ export const Block2 = () => {
         ty={3}
         tx={9}
         customClassImg={"w-[10vh] z-0 inline"}
-        imgPath={"./block1/maga.png"}
+        imgPath={"./block1/maga.webp"}
       />
       <div className=" absolute bottom-0 right-0">
         <img
           className="w-[30vh] md:w-[50vh] img-hor z-0"
-          src="./block1/trump.png"
+          src="./block1/trump.webp"
         />
       </div>
       <motion.div

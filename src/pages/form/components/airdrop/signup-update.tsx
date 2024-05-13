@@ -5,7 +5,6 @@ import {
   EnrollToast,
   sendEnrollNotification,
   sendErrorNotification,
-  sendSuccessNotification,
   sendWarningNotification,
 } from "../../utils";
 import { ExampleModal } from "./example-modal";
@@ -15,7 +14,7 @@ import { toast } from "react-toastify";
 export const SignUpUpdate = (props: any) => {
   const [twitter, setTwitter] = useState("");
   const [twitterLink, setTwitterLink] = useState("");
-  const [telegram, setTelegram] = useState("");
+
   const [wallet, setWallet] = useState("");
 
   useCompensateScrollbar();
@@ -23,7 +22,7 @@ export const SignUpUpdate = (props: any) => {
   const clearForm = () => {
     setTwitter("");
     setTwitterLink("");
-    setTelegram("");
+
     setWallet("");
   };
 
@@ -32,10 +31,6 @@ export const SignUpUpdate = (props: any) => {
   };
   const onTwitterLinkChange = (e: any) => {
     setTwitterLink(e.target.value);
-  };
-
-  const onTelegramChange = (e: any) => {
-    setTelegram(e.target.value);
   };
 
   const onWalletChange = (e: any) => {
@@ -72,12 +67,6 @@ export const SignUpUpdate = (props: any) => {
       return;
     }
 
-    const telegramToSend = telegram.replace(/\s/g, "").replace(/^@/, "");
-    if (!/^@?[0-9a-zA-Z_]{5,32}$/.test(telegramToSend)) {
-      sendErrorNotification("Wrong telegram account");
-      return;
-    }
-
     const toastId = sendEnrollNotification("pending");
 
     axios
@@ -86,7 +75,6 @@ export const SignUpUpdate = (props: any) => {
           wallet: walletToSend,
           xUsername: twitterToSend,
           xPostLink: twitterLinkToSend,
-          tgUsername: telegramToSend,
         },
       })
       .then((response) => {
@@ -147,7 +135,7 @@ export const SignUpUpdate = (props: any) => {
             placeholder="jeet_x_twitter"
             required
           />
-          <p className="mb-4 text-xs text-black">
+          <p className="mb-4 mt-2 text-md text-black">
             You must follow our account @{props.dropInfo.toXFollow}
           </p>
         </div>
@@ -162,27 +150,11 @@ export const SignUpUpdate = (props: any) => {
             placeholder="https://twitter.com/username/status/1234454265263"
             required
           />
-          <p className="mb-4 text-xs text-black">
+          <p className="mb-4 text-md text mt-2-black">
             Your post must include tag to our account @
             {props.dropInfo.toXFollow} and our ticker $
             {props.dropInfo.tockenTicker}
             {props.dropInfo.tokenTicker}
-          </p>
-        </div>
-        <div className="relative">
-          <p>Telegram @</p>
-          <input
-            value={telegram}
-            onChange={onTelegramChange}
-            type="text"
-            id="tg"
-            className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
-            placeholder="jeet_tg"
-            required
-          />
-          <p className="mb-4 text-xs text-black">
-            You need to send at least one message in @
-            {props.dropInfo.toTGFollow} to confirm your Telegram account.
           </p>
         </div>
 
