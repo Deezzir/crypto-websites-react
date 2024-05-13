@@ -156,13 +156,13 @@ export const SignUpUpdate = (props: any) => {
         </div>
         <div className="relative">
           <p className="text-lg">Twitter Post link</p>
-          <div className="w-full flex flex-row gap-1 lg:gap-4">
+          <div className="w-full flex flex-row space-x-1 lg:space-x-4">
             <input
               value={twitterLink}
               onChange={onTwitterLinkChange}
               type="url"
               id="twitter-post"
-              className="block w-[70%] p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+              className="block w-[80%] p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
               placeholder="https://twitter.com/username/status/1234454265263"
               required
             />
