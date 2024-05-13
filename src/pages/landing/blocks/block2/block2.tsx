@@ -81,20 +81,16 @@ export const Block2 = () => {
           className="flex w-full lg:w-1/2 flex-col gap-8 h-full my-auto justify-center items-center"
         >
           <p className="text-left w-full text-white font-bold text-4xl z-50">
-            &#x2022; Initial dev buy 35%
+            &#x2022; Initial dev buy 25%
           </p>
           <p className="text-white font-bold text-4xl z-50">
-            &#x2022; 30% of dev buy to burn before Dexscreen
+            &#x2022; 15% of dev buy to burn before Dexscreen
           </p>
           <p className="text-left w-full text-white font-bold text-4xl z-50">
-            &#x2022; 20% of dev buy is going to be airdroped to signed
-            $TRUMPIES, right after going to DEX live
+            &#x2022; 10% is going to be airdroped after burn
           </p>
           <p className="text-left w-full text-white font-bold text-4xl z-50">
-            &#x2022; 1 mill, dev burns another 15%
-          </p>
-          <p className="text-left w-full text-white font-bold text-4xl z-50">
-            &#x2022; 2 mill, dev burns another 25%
+            &#x2022; 100 sol dev buy burn at 1 mil mc
           </p>
         </motion.div>
         <div className="flex flex-col gap-4 w-full items-center">
