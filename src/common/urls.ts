@@ -1,6 +1,6 @@
 export const CA = "Coming soon...";
 export const TELEGRAM = "";
-export const TWITTER = "";
+export const TWITTER = "https://twitter.com/mitrumpysol";
 
 export const BUY_LINK = "";
 export const DEXSCREENER = "";
