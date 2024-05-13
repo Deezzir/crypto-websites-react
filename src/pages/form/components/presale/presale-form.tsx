@@ -108,8 +108,12 @@ export const PresaleForm = (props: any) => {
           } else {
             sendErrorNotification("Unhandled sh*t happened. Let dev know!");
           }
+          clearForm();
         })
         .catch((error) => {
+          if (error.response.data.errorMsg) {
+            sendWarningNotification(error.response.data.errorMsg);
+          }
           throw error;
         });
     } catch (error) {
@@ -120,10 +124,8 @@ export const PresaleForm = (props: any) => {
         sendWarningNotification("Transaction was rejected by the user.");
       } else {
         toast.dismiss(toastId);
-        sendErrorNotification("An unexpected error occurred.");
+        sendErrorNotification("Unhandled error happened. Let dev know!.");
       }
-    } finally {
-      clearForm();
     }
   };
 
