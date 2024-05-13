@@ -1,5 +1,5 @@
 export const CA = "Coming soon...";
-export const TELEGRAM = "";
+export const TELEGRAM = "https://t.me/mitrumpysol";
 export const TWITTER = "https://twitter.com/mitrumpysol";
 
 export const BUY_LINK = "";
