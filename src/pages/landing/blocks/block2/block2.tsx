@@ -66,7 +66,7 @@ export const Block2 = () => {
             duration: 1,
           }}
           viewport={{ once: true }}
-          className="flex w-full lg:w-1/2 flex-col gap-8 h-full my-auto justify-center items-center"
+          className="flex w-full lg:w-1/2 flex-col gap-8 h-full my-auto justify-center items-start"
         >
           <p className="text-left w-full text-white font-bold text-4xl z-50">
             &#x2022; Initial dev buy 25%
