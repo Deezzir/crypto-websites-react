@@ -149,7 +149,9 @@ export const SignUpUpdate = (props: any) => {
           />
 
           <p className="mb-4 mt-2 text-black">
-            You must follow our account @{props.dropInfo.toXFollow}
+            Account must be Blue verified or have at least 30 followers and be
+            at least 60 days old. You also must follow our account @
+            {props.dropInfo.toXFollow}
           </p>
         </div>
         <div className="relative">
