@@ -150,7 +150,7 @@ export const SignUpUpdate = (props: any) => {
             placeholder="https://twitter.com/username/status/1234454265263"
             required
           />
-          <p className="mb-4 text-md text mt-2-black">
+          <p className="mb-4 text-md mt-2 text-black">
             Your post must include tag to our account @
             {props.dropInfo.toXFollow} and our ticker $
             {props.dropInfo.tockenTicker}
