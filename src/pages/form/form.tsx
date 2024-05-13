@@ -122,6 +122,7 @@ export const Form = () => {
             minutes={minutes}
             seconds={seconds}
           />
+
           <CheckElegibility />
         </div>
         <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
