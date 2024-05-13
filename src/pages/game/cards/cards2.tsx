@@ -6,6 +6,7 @@ type Card = {
   id: number;
   img: string;
   isFlipped: boolean;
+  description: string;
 };
 
 const cardsStack = [
@@ -13,36 +14,43 @@ const cardsStack = [
     id: 0,
     img: "./landing/cards/card.png",
     isFlipped: false,
+    description: "Lorem pupem",
   },
   {
     id: 1,
     img: "./landing/cards/card.png",
     isFlipped: false,
+    description: "Lorem pupem",
   },
   {
     id: 2,
     img: "./landing/cards/back.png",
     isFlipped: false,
+    description: "Lorem pupem",
   },
   {
     id: 3,
     img: "./landing/cards/card.png",
     isFlipped: false,
+    description: "Lorem pupem",
   },
   {
     id: 4,
     img: "./landing/cards/back.png",
     isFlipped: false,
+    description: "Lorem pupem",
   },
   {
     id: 5,
     img: "./landing/cards/card.png",
     isFlipped: false,
+    description: "Lorem pupem",
   },
   {
     id: 6,
     img: "./landing/cards/card.png",
     isFlipped: false,
+    description: "Lorem pupem",
   },
 ] as Card[];
 
@@ -109,13 +117,14 @@ export const Cards2 = () => {
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[30vh] bg-white cursor-pointer select-none z-50 inline"
+            className="w-[35vh] bg-white cursor-pointer select-none z-50 inline"
             src="./landing/cards/deck.png"
           />
         </div>
         {cards.map((card, index) => {
           return (
             <motion.div
+              className="relative overflow-visible"
               animate={controls}
               onAnimationStart={turnCardsBack}
               onAnimationComplete={resetCards}
@@ -163,6 +172,11 @@ export const Cards2 = () => {
                   )}
                 </motion.div>
               </motion.div>
+              {card.isFlipped && (
+                <p className="absolute bottom-[-15%] left-0">
+                  {card.description}
+                </p>
+              )}
             </motion.div>
           );
         })}
