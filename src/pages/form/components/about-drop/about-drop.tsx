@@ -18,13 +18,13 @@ export const AboutDrop = (props: any) => {
           Airdrop signups: {props.dropInfo.numberOfAirdropUsers}/
           {props.dropInfo.numberOfMaxAirdropUsers}
         </h1>
-        <h1 className="text-xl font-bold text-center md:text-right">
+        {/* <h1 className="text-xl font-bold text-center md:text-right">
           Presale signups: {props.dropInfo.numberOfPresaleUsers}/
           {props.dropInfo.numberOfMaxPresaleUsers}
         </h1>
         <h1 className="text-xl font-bold text-center md:text-right">
           Presale SOL: {props.dropInfo.presaleSolAmount.toFixed(1)}
-        </h1>
+        </h1> */}
       </div>
     </div>
   );
