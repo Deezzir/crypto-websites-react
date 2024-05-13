@@ -1,6 +1,7 @@
 import { PublicKey } from "@solana/web3.js";
+import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { saveAs } from "file-saver";
 import {
   EnrollToast,
@@ -17,6 +18,7 @@ export const SignUpUpdate = (props: any) => {
   const [twitter, setTwitter] = useState("");
   const [twitterLink, setTwitterLink] = useState("");
 
+  const recaptcha = useRef();
   const [wallet, setWallet] = useState("");
 
   useCompensateScrollbar();
@@ -48,6 +50,13 @@ export const SignUpUpdate = (props: any) => {
 
   const onSignUpUpdate = (e: any) => {
     e.preventDefault();
+
+    //@ts-ignore
+    const captchaValue = recaptcha.current.getValue();
+    if (!captchaValue) {
+      sendErrorNotification("Please verify the reCAPTCHA!");
+    }
+
     const walletToSend = wallet.replace(/\s/g, "");
     let validWallet = true;
     try {
@@ -181,7 +190,7 @@ export const SignUpUpdate = (props: any) => {
           </p>
         </div>
 
-        <div className="w-full">
+        <div className="w-full flex flex-col gap-4">
           <button
             disabled={isSending}
             onClick={onSignUpUpdate}
@@ -190,7 +199,12 @@ export const SignUpUpdate = (props: any) => {
           >
             Sign up / Update record
           </button>
+          <ReCAPTCHA
+            ref={recaptcha as any}
+            sitekey={process.env.REACT_APP_SITE_KEY as string}
+          />
         </div>
+
         <p className="text-center mt-4">
           <span className="font-bold uppercase">
             {props.dropInfo.airdropTokenAmount}% of tokens
