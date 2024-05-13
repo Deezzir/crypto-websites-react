@@ -4,6 +4,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { saveAs } from "file-saver";
 import { Tweet } from "react-tweet";
 
 import { useMemo, useState } from "react";
@@ -35,6 +36,12 @@ export const ExampleModal = (props: any) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const downloadImage = () => {
+    saveAs("./image.jpeg", "image.jpeg"); // Put your image URL here.
+    saveAs("./image2.png", "image2.png"); // Put your image URL here.
+    saveAs("./image3.png", "image3.png"); // Put your image URL here.
+  };
 
   return (
     <div>
@@ -75,8 +82,7 @@ export const ExampleModal = (props: any) => {
               Feel free to add any image or text
             </h3>
             <a
-              href="./image.jpeg"
-              download="x_image"
+              onClick={downloadImage}
               className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-2 transition-transform duration-75 ease-in-out"
             >
               Download Example Image
