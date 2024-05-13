@@ -2,12 +2,15 @@ import { PublicKey } from "@solana/web3.js";
 import axios from "axios";
 import { useState } from "react";
 import {
+  EnrollToast,
+  sendEnrollNotification,
   sendErrorNotification,
   sendSuccessNotification,
   sendWarningNotification,
 } from "../../utils";
 import { ExampleModal } from "./example-modal";
 import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar";
+import { toast } from "react-toastify";
 
 export const SignUpUpdate = (props: any) => {
   const [twitter, setTwitter] = useState("");
@@ -75,6 +78,8 @@ export const SignUpUpdate = (props: any) => {
       return;
     }
 
+    const toastId = sendEnrollNotification("pending");
+
     axios
       .post(process.env.REACT_APP_SERVER + "/drop/addUpdateAirdropUser", {
         user: {
@@ -86,15 +91,24 @@ export const SignUpUpdate = (props: any) => {
       })
       .then((response) => {
         if (response.data.isCreated) {
-          sendSuccessNotification("You signed!");
+          toast.update(toastId, {
+            render: <EnrollToast status="confirmed" text="You've enrolled" />,
+            autoClose: 7000,
+            closeOnClick: true,
+            draggable: true,
+          });
         } else if (response.data.isUpdated) {
-          sendSuccessNotification("Record updated!");
-        } else {
-          sendErrorNotification("Unhandled sh*t happened. Let dev know!");
+          toast.update(toastId, {
+            render: <EnrollToast status="confirmed" text="Record updated" />,
+            autoClose: 7000,
+            closeOnClick: true,
+            draggable: true,
+          });
         }
         clearForm();
       })
       .catch((error) => {
+        toast.dismiss(toastId);
         if (error.response.data.errorMsg) {
           sendWarningNotification(error.response.data.errorMsg);
           return;

@@ -70,6 +70,20 @@ export const sendErrorNotification = (text: string | JSX.Element) => {
   });
 };
 
+export const sendEnrollNotification = (status: string | undefined) => {
+  return toast(<EnrollToast status={status} text={undefined} />, {
+    position: "top-right",
+    hideProgressBar: false,
+    pauseOnHover: true,
+    autoClose: false,
+    closeOnClick: false,
+    draggable: false,
+    progress: undefined,
+    theme: "dark",
+    transition: Bounce,
+  });
+};
+
 export const sendTxNotification = (
   status: string | undefined,
   signature: string | undefined
@@ -86,6 +100,30 @@ export const sendTxNotification = (
     transition: Bounce,
   });
 };
+
+export function EnrollToast({
+  status,
+  text,
+}: {
+  status: string | undefined;
+  text: string | undefined;
+}) {
+  return (
+    <div>
+      {status === "pending" && (
+        <div className="flex flex-row gap-4 justify-start items-center">
+          <CircularProgress size={24} />
+          <p>Processing enrollment...</p>
+        </div>
+      )}
+      {status === "confirmed" && (
+        <div className="flex flex-row gap-4 justify-start items-center">
+          <p>{text ? text : "Success"}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function TransactionToast({
   status,
