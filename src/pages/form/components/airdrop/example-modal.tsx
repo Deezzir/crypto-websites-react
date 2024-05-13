@@ -34,8 +34,14 @@ export const ExampleModal = (props: any) => {
   }, []);
 
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpen = (e: any) => {
+    e.preventDefault();
+    setOpen(true);
+  };
+  const handleClose = (e: any) => {
+    e.preventDefault();
+    setOpen(false);
+  };
 
   const downloadImage = () => {
     saveAs("./image.jpeg", "image.jpeg"); // Put your image URL here.
@@ -46,7 +52,7 @@ export const ExampleModal = (props: any) => {
   return (
     <div>
       <button
-        className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-2 transition-transform duration-75 ease-in-out"
+        className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-4 transition-transform duration-75 ease-in-out"
         onClick={handleOpen}
       >
         Example post

@@ -136,7 +136,7 @@ export const SignUpUpdate = (props: any) => {
               onChange={onTwitterChange}
               type="text"
               id="twitter"
-              className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+              className="block w-[80%] p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
               placeholder="jeet_x_twitter"
               required
             />
@@ -183,9 +183,6 @@ export const SignUpUpdate = (props: any) => {
           {props.dropInfo.maxAirDropUsers} people equaly.
         </p>
       </form>
-      <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
-        <ExampleModal />
-      </div>
     </div>
   );
 };
