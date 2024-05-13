@@ -10,18 +10,18 @@ import { MovingImg } from "../../common/moving-img";
 
 export const Form = () => {
   const [dropInfo, setDropInfo] = useState<DropInfo>({
-    numberOfMaxAirdropUsers: 1000,
+    numberOfMaxAirdropUsers: 75,
     numberOfMaxPresaleUsers: 500,
     numberOfAirdropUsers: 0,
     numberOfPresaleUsers: 0,
-    deadline: 0,
+    deadline: 1715664630,
     toXFollow: "",
     toTGFollow: "",
     presaleMaxSolAmount: 5.0,
     presaleMinSolAmount: 0.1,
     presaleSolAmount: 0,
-    presaleTokenAmount: 75000000,
-    airdropTokenAmount: 75000000,
+    presaleTokenAmount: 10,
+    airdropTokenAmount: 10,
     tockenTicker: "SOL",
     dropPublicKey: "",
   });
