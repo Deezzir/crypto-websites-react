@@ -30,14 +30,8 @@ export const CheckElegibility = () => {
         wallet: walletToSend,
       })
       .then((response) => {
-        const {
-          isValidWallet,
-          isPresaleEnrolled,
-          isAirdropEnrolled,
-          errorMsgs,
-          presaleAmount,
-        } = response.data;
-        if (isValidWallet && (isPresaleEnrolled || isAirdropEnrolled)) {
+        const { isValidWallet, isAirdropEnrolled, errorMsgs } = response.data;
+        if (isValidWallet && isAirdropEnrolled) {
           let msgs: string[] = [];
           if (isAirdropEnrolled) msgs.push(`Airdrop enrolled`);
           let formattedMessages = <FormattedMessages messages={msgs} />;
@@ -56,7 +50,7 @@ export const CheckElegibility = () => {
 
   return (
     <div className="flex flex-col gap-2 w-full justify-center mt-4 p-4 md:p-10">
-      <p className="text-lg font-bold text-center">Check account enrollment</p>
+      <p className="text-2xl font-bold text-center">Check account enrollment</p>
       <form onSubmit={onCheck}>
         <label
           htmlFor="default-search"

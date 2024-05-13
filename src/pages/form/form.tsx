@@ -44,8 +44,6 @@ export const Form = () => {
   const blured = days + hours + minutes + seconds <= 0;
   const blurredAirdrop =
     dropInfo.numberOfAirdropUsers >= dropInfo.numberOfMaxAirdropUsers;
-  const blurredPresale =
-    dropInfo.numberOfPresaleUsers >= dropInfo.numberOfMaxPresaleUsers;
 
   return (
     <>

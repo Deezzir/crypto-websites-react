@@ -88,6 +88,7 @@ export const ExampleModal = (props: any) => {
               Feel free to add any image or text
             </h3>
             <a
+              href="#"
               onClick={downloadImage}
               className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-2 transition-transform duration-75 ease-in-out"
             >

@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import { Links } from "../../../../common/links";
 import { MovingImg } from "../../../../common/moving-img";
-import { animate, easeInOut, easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { CopyCa } from "../../../../common/copy-ca";
 import { BUY_LINK } from "../../../../common/urls";
 

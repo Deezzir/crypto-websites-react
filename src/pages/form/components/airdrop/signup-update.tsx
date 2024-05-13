@@ -112,12 +112,12 @@ export const SignUpUpdate = (props: any) => {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <p className="text-lg font-bold text-center">
+      <p className="text-2xl font-bold text-center">
         Sign up for airdrop / update record
       </p>
       <form className="">
         <div className="relative">
-          <p>Solana Wallet</p>
+          <p className="text-lg">Solana Wallet</p>
           <input
             value={wallet}
             onChange={onWalletChange}
@@ -129,7 +129,7 @@ export const SignUpUpdate = (props: any) => {
           />
         </div>
         <div className="relative">
-          <p>Twitter @</p>
+          <p className="text-lg">Twitter @</p>
           <input
             value={twitter}
             onChange={onTwitterChange}
@@ -140,12 +140,12 @@ export const SignUpUpdate = (props: any) => {
             required
           />
 
-          <p className="mb-4 mt-2 text-md text-black">
+          <p className="mb-4 mt-2 text-black">
             You must follow our account @{props.dropInfo.toXFollow}
           </p>
         </div>
         <div className="relative">
-          <p>Twitter Post link</p>
+          <p className="text-lg">Twitter Post link</p>
           <div className="w-full flex flex-row gap-4">
             <input
               value={twitterLink}
@@ -158,7 +158,7 @@ export const SignUpUpdate = (props: any) => {
             />
             <ExampleModal />
           </div>
-          <p className="mb-4 text-md mt-2 text-black">
+          <p className="mb-4 mt-2 text-black">
             Your post must include tag to our account @
             {props.dropInfo.toXFollow} and our ticker $
             {props.dropInfo.tockenTicker}
