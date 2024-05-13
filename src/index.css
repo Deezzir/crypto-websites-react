@@ -26,10 +26,16 @@
   transform: rotateX(180deg);
 }
 
+<<<<<<< HEAD
 .fade-img {
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1) 70%,
     transparent 100%
   );
+=======
+.updated-dark .react-tweet-theme {
+  --tweet-body-font-size: 0.75rem;
+  --tweet-body-line-height: 1rem;
+>>>>>>> 3c7a1e8 (Update form)
 }

@@ -89,10 +89,11 @@ export const PresaleForm = (props: any) => {
       });
 
       axios
-        .post(process.env.REACT_APP_SERVER + "/users/addUpdatePresaleUser", {
+        .post(process.env.REACT_APP_SERVER + "/drop/addUpdatePresaleUser", {
           user: {
             wallet: publicKey,
             solAmount: solAmount,
+            txEnroll: signature,
           },
         })
         .then((response) => {
@@ -161,9 +162,14 @@ export const PresaleForm = (props: any) => {
           </button>
         </div>
         <p className="text-center mt-4">
-          <span className="font-bold uppercase">75 million tokens</span> will be
-          distributed among {props.maxPresaleUsers} people depending on the
-          amount of SOL sent.
+          <span className="font-bold uppercase">
+            {props.presaleTokenAmount / 10 ** 6} million tokens
+          </span>
+          will be distributed among {props.maxPresaleUsers} people depending on
+          the amount of SOL sent. <br />
+          <span className="font-bold uppercase">
+            Use a devnet wallet to test the presale
+          </span>
         </p>
       </form>
     </div>

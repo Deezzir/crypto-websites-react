@@ -11,6 +11,23 @@ export const FormattedMessages = ({ messages }: { messages: string[] }) => (
   </div>
 );
 
+export interface DropInfo {
+  numberOfMaxAirdropUsers: number;
+  numberOfMaxPresaleUsers: number;
+  numberOfAirdropUsers: number;
+  numberOfPresaleUsers: number;
+  deadline: number;
+  toXFollow: string;
+  toTGFollow: string;
+  presaleMaxSolAmount: number;
+  presaleMinSolAmount: number;
+  presaleSolAmount: number;
+  presaleTokenAmount: number;
+  airdropTokenAmount: number;
+  tockenTicker: string;
+  dropPublicKey: string;
+}
+
 export const sendSuccessNotification = (text: string | JSX.Element) => {
   toast.success(text, {
     position: "top-right",

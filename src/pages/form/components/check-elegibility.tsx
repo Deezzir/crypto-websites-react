@@ -26,7 +26,7 @@ export const CheckElegibility = () => {
     }
 
     axios
-      .post(process.env.REACT_APP_SERVER + "/users/checkUserByWallet", {
+      .post(process.env.REACT_APP_SERVER + "/drop/checkUserByWallet", {
         wallet: walletToSend,
       })
       .then((response) => {

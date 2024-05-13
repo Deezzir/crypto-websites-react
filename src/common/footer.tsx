@@ -6,10 +6,17 @@ export const FooterSection = () => {
           $TRUMPY &copy; 2024
         </span>
       </p>
+<<<<<<< HEAD
       <p className="px-2 pb-2 text-sm">
         $TRUMPY is a memecoin with no intrinsic value, and is not a investment
         and simply a community/culture token similar to $. No Promises, No
         Utility, Purely For Entertainment Purposes
+=======
+      <p className="px-2 pb-2 md:text-sm text-xs">
+        $ is a memecoin with no intrinsic value, and is not a investment and
+        simply a community/culture token similar to $. No Promises, No Utility,
+        Purely For Entertainment Purposes
+>>>>>>> 3c7a1e8 (Update form)
       </p>
     </footer>
   );
