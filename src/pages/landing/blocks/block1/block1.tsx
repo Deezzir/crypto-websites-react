@@ -62,6 +62,7 @@ export const Block1 = () => {
           />
         </motion.div>
       </div>
+
       <MovingImg
         customClassWrapper={"absolute top-10 left-20"}
         tz={5}
