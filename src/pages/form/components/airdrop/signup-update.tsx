@@ -12,6 +12,7 @@ import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar
 import { toast } from "react-toastify";
 
 export const SignUpUpdate = (props: any) => {
+  const [isSending, setIsSending] = useState(false);
   const [twitter, setTwitter] = useState("");
   const [twitterLink, setTwitterLink] = useState("");
 
@@ -69,6 +70,7 @@ export const SignUpUpdate = (props: any) => {
 
     const toastId = sendEnrollNotification("pending");
 
+    setIsSending(true);
     axios
       .post(process.env.REACT_APP_SERVER + "/drop/addUpdateAirdropUser", {
         user: {
@@ -103,7 +105,9 @@ export const SignUpUpdate = (props: any) => {
         }
         sendErrorNotification("Unhandled error happened. Let dev know!");
       })
-      .finally(() => {});
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
   return (
@@ -160,6 +164,7 @@ export const SignUpUpdate = (props: any) => {
 
         <div className="w-full">
           <button
+            disabled={isSending}
             onClick={onSignUpUpdate}
             type="submit"
             className="text-white w-full bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out"
