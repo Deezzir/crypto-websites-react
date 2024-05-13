@@ -5,8 +5,8 @@ import { SignUpUpdate } from "./components/airdrop/signup-update";
 import { useCountdown } from "../../hooks/useCountdownHook";
 import axios from "axios";
 import { sendErrorNotification, DropInfo } from "./utils";
-import { Presale } from "./components/presale/presale";
 import { FooterSection } from "../../common/footer";
+import { MovingImg } from "../../common/moving-img";
 
 export const Form = () => {
   const [dropInfo, setDropInfo] = useState<DropInfo>({
@@ -49,8 +49,74 @@ export const Form = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-3 py-12 px-2 md:px-20">
-        <div className="w-full justify-self-center self-center">
+      <div className="flex flex-col gap-3 py-12 px-2 md:px-20 relative">
+        <MovingImg
+          customClassWrapper={"absolute top-10 left-20"}
+          tz={5}
+          ty={5}
+          tx={2}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+        <MovingImg
+          customClassWrapper={"absolute top-[20%] left-20"}
+          tz={5}
+          ty={6}
+          tx={15}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+        <MovingImg
+          customClassWrapper={"absolute top-[50%] left-10"}
+          tz={5}
+          ty={5}
+          tx={5}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+        <MovingImg
+          customClassWrapper={"absolute top-[80%] left-30"}
+          tz={1}
+          ty={4}
+          tx={3}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+
+        <MovingImg
+          customClassWrapper={"absolute top-10 right-20"}
+          tz={1}
+          ty={1}
+          tx={14}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+        <MovingImg
+          customClassWrapper={"absolute top-[20%] right-20"}
+          tz={5}
+          ty={5}
+          tx={1}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+        <MovingImg
+          customClassWrapper={"absolute top-[50%] right-48"}
+          tz={5}
+          ty={10}
+          tx={7}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+
+        <MovingImg
+          customClassWrapper={"absolute bottom-10 right-28"}
+          tz={5}
+          ty={5}
+          tx={10}
+          customClassImg={"w-[10vh] z-0 inline"}
+          imgPath={"./block1/maga.png"}
+        />
+        <div className="md:w-1/2 justify-self-center self-center">
           <AboutDrop
             dropInfo={dropInfo}
             days={days}
@@ -58,8 +124,6 @@ export const Form = () => {
             minutes={minutes}
             seconds={seconds}
           />
-        </div>
-        <div className="w-full md:w-[40%] p-4 justify-self-center self-center">
           <CheckElegibility />
         </div>
         <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
@@ -80,10 +144,10 @@ export const Form = () => {
               <SignUpUpdate dropInfo={dropInfo} />
             </div>
           </div>
-          <div className="w-full md:w-[8%] flex justify-self-center self-center justify-center items-center">
+          {/* <div className="w-full md:w-[8%] flex justify-self-center self-center justify-center items-center">
             <h1 className="text-3xl text-center font-bold uppercase">OR</h1>
-          </div>
-          <div className="w-full md:w-[46%] relative">
+          </div> */}
+          {/* <div className="w-full md:w-[46%] relative">
             {blurredPresale && (
               <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ">
                 Presale enrollment is done
@@ -99,8 +163,9 @@ export const Form = () => {
             >
               <Presale dropInfo={dropInfo} />
             </div>
-          </div>
+          </div> */}
         </div>
+        <div className="w-full md:w-[40%] p-4 justify-self-center self-center"></div>
         <div className="w-full flex flex-col justify-center items-center">
           <h1 className="p-4 text-xl md:text-3xl font-bold text-center">
             The Drops are going to be performed shortly after the Raydium
@@ -113,3 +178,5 @@ export const Form = () => {
     </>
   );
 };
+
+export default Form;

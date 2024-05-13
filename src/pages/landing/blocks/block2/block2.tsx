@@ -16,11 +16,7 @@ export const Block2 = () => {
         imgPath={"./block1/maga.png"}
       />
       <MovingImg
-<<<<<<< HEAD
         customClassWrapper={"absolute bottom-[20%] right-[50%] "}
-=======
-        customClassWrapper={"absolute bottom-[20%] right-[50%]"}
->>>>>>> 38ef3bc (maga done)
         tz={5}
         ty={7}
         tx={3}
@@ -124,20 +120,6 @@ export const Block2 = () => {
               <p className="w-full text-center text-xl uppercase">BUY</p>
             </button>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-          <img className="w-8/12" src={"./block2/cards.jpg"} alt="cards" />
-        </div>
-        <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
-          <img
-            className="md:h-[80vh]"
-            src="./block2/gendalph.jpg"
-            alt="gendalph"
-          />
->>>>>>> 3c7a1e8 (Update form)
-=======
->>>>>>> 38ef3bc (maga done)
         </div>
       </motion.div>
     </div>

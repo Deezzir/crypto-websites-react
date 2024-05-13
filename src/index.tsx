@@ -5,11 +5,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Layout } from "./layout";
 import { Landing } from "./pages/landing/landing";
-import { Form } from "./pages/form/form";
-
 import { Buffer } from "buffer";
 window.Buffer = Buffer;
 
+const Form = React.lazy(() => import("./pages/form/form"));
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

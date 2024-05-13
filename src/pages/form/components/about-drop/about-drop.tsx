@@ -3,7 +3,7 @@ import CountdownTimer from "./timer/countdown-timer";
 export const AboutDrop = (props: any) => {
   const { days, hours, seconds, minutes } = props;
   return (
-    <div className="flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-between items-center">
+    <div className="flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-between items-center p-4 md:p-10 z-50">
       <div className="flex flex-col items-center md:items-start gap-2">
         <h1 className="font-bold uppercase">Drop ends in:</h1>
         <CountdownTimer

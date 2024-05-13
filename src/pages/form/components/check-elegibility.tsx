@@ -55,7 +55,7 @@ export const CheckElegibility = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full justify-center">
+    <div className="flex flex-col gap-2 w-full justify-center mt-4 p-4 md:p-10">
       <p className="text-lg font-bold text-center">Check account enrollment</p>
       <form onSubmit={onCheck}>
         <label
@@ -88,7 +88,7 @@ export const CheckElegibility = () => {
             onChange={onWalletChange}
             type="text"
             id="solana-check-wallet"
-            className="pe-[100px] block w-full p-4 mb-8 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+            className="pe-[100px] block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />
