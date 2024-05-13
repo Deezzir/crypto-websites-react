@@ -11,6 +11,7 @@ export const SERVER = process.env.SERVER;
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const onWalletChange = (e: any) => {
     setWallet(e.target.value);
@@ -25,6 +26,7 @@ export const CheckElegibility = () => {
       return;
     }
 
+    setIsSending(true);
     axios
       .post(process.env.REACT_APP_SERVER + "/drop/checkUserByWallet", {
         wallet: walletToSend,
@@ -45,6 +47,9 @@ export const CheckElegibility = () => {
       })
       .catch((error) => {
         sendErrorNotification("Unhandled error:" + error);
+      })
+      .finally(() => {
+        setIsSending(false);
       });
   };
 
@@ -87,6 +92,7 @@ export const CheckElegibility = () => {
             required
           />
           <button
+            disabled={isSending}
             onClick={onCheck}
             className="text-white absolute end-2.5 bottom-2.5 bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-4 focus:outline-none focus:ring-[#1f2937] font-medium rounded-lg text-sm px-4 py-2"
           >
