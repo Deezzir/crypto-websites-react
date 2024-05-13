@@ -14,7 +14,7 @@ export const Block4 = () => {
     <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
       <motion.div
         className={
-          "w-11/12 md:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
+          "w-11/12 md:w-11/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
         }
         initial={{
           opacity: 0,
@@ -54,19 +54,19 @@ export const Block4 = () => {
             />
           </div>
           <div className="flex w-full justify-center">
-            <div className="flex flex-col gap-4 md:gap-16 md:flex-row">
+            <div className="flex justify-center flex-col gap-4 md:gap-16 md:flex-row">
               <img
                 onClick={onBuy}
-                className="md:h-20 md:w-6/12 cursor-pointer"
+                className=" md:w-4/12 cursor-pointer"
                 src="./block4/buy.jpg"
                 alt="buy"
               />
-              <img
+              {/* <img
                 onClick={onPlay}
                 className="md:h-20 md:w-6/12 cursor-pointer"
                 src="./block4/play.jpg"
                 alt="play"
-              />
+              /> */}
             </div>
           </div>
         </div>

@@ -111,13 +111,13 @@ export const Cards2 = () => {
   };
 
   return (
-    <div className="flex w-full min-h-screen justify-center align-middle items-center relative">
+    <div className="flex w-full  justify-center align-middle items-center relative">
       <div className="flex gap-2 items-center justify-center overflow-x-hidden mx-4">
         <div className="z-50 inline">
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[35vh] bg-white cursor-pointer select-none z-50 inline"
+            className="w-[33vh] bg-white cursor-pointer select-none z-50 inline"
             src="./landing/cards/deck.png"
           />
         </div>
@@ -145,7 +145,7 @@ export const Cards2 = () => {
                     >
                       <img
                         alt="card"
-                        className="w-[16vh] cursor-pointer"
+                        className="w-[20vh] cursor-pointer"
                         onClick={() => {
                           flipCard(card.id);
                         }}
@@ -161,7 +161,7 @@ export const Cards2 = () => {
                       transition={{ duration: 0.7 }}
                     >
                       <img
-                        className="w-[16vh] cursor-pointer"
+                        className="w-[20vh] cursor-pointer"
                         alt="back"
                         onClick={() => {
                           flipCard(card.id);
@@ -172,11 +172,7 @@ export const Cards2 = () => {
                   )}
                 </motion.div>
               </motion.div>
-              {card.isFlipped && (
-                <p className="absolute bottom-[-15%] left-0">
-                  {card.description}
-                </p>
-              )}
+              {card.isFlipped && <p className="">{card.description}</p>}
             </motion.div>
           );
         })}
