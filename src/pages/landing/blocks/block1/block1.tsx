@@ -79,6 +79,7 @@ export const Block1 = () => {
         customClassImg={"w-[10vh] z-0 inline"}
         imgPath={"./block1/maga.webp"}
       />
+
       <MovingImg
         customClassWrapper={"absolute top-[30%] right-[10%]"}
         tz={5}
