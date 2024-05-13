@@ -36,7 +36,7 @@ export const Block1 = () => {
         viewport={{ once: true }}
       >
         <img
-          className="w-[20vh] fade-img lg:w-[50vh]"
+          className="w-[20vh] fade-img md:w-[50vh]"
           src="./block1/trumpmaga.webp"
         />
       </motion.div>
