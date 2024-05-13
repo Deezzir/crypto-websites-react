@@ -85,10 +85,6 @@ export const SignUpUpdate = (props: any) => {
         },
       })
       .then((response) => {
-        if (response.data.errorMsg) {
-          sendWarningNotification(response.data.errorMsg);
-          return;
-        }
         if (response.data.isCreated) {
           sendSuccessNotification("You signed!");
         } else if (response.data.isUpdated) {
@@ -96,13 +92,17 @@ export const SignUpUpdate = (props: any) => {
         } else {
           sendErrorNotification("Unhandled sh*t happened. Let dev know!");
         }
+        clearForm();
       })
       .catch((error) => {
-        sendErrorNotification("Unhandled error:" + error);
+        console.log(error);
+        if (error.response.data.errorMsg) {
+          sendWarningNotification(error.response.data.errorMsg);
+          return;
+        }
+        sendErrorNotification("Unhandled error happened. Let dev know!");
       })
-      .finally(() => {
-        clearForm();
-      });
+      .finally(() => {});
   };
 
   return (
