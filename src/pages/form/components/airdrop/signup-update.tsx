@@ -50,13 +50,6 @@ export const SignUpUpdate = (props: any) => {
 
   const onSignUpUpdate = (e: any) => {
     e.preventDefault();
-
-    //@ts-ignore
-    const captchaValue = recaptcha.current.getValue();
-    if (!captchaValue) {
-      sendErrorNotification("Please verify the reCAPTCHA!");
-    }
-
     const walletToSend = wallet.replace(/\s/g, "");
     let validWallet = true;
     try {
@@ -83,6 +76,13 @@ export const SignUpUpdate = (props: any) => {
       )
     ) {
       sendErrorNotification("Wrong X Post link");
+      return;
+    }
+
+    //@ts-ignore
+    const captchaValue = recaptcha.current.getValue();
+    if (!captchaValue) {
+      sendErrorNotification("Please verify the reCAPTCHA!");
       return;
     }
 
