@@ -22,7 +22,7 @@ export const Form = () => {
     presaleSolAmount: 0,
     presaleTokenAmount: 10,
     airdropTokenAmount: 10,
-    tockenTicker: "SOL",
+    tokenTicker: "SOL",
     dropPublicKey: "",
   });
 

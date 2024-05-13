@@ -24,7 +24,7 @@ export interface DropInfo {
   presaleSolAmount: number;
   presaleTokenAmount: number;
   airdropTokenAmount: number;
-  tockenTicker: string;
+  tokenTicker: string;
   dropPublicKey: string;
 }
 
