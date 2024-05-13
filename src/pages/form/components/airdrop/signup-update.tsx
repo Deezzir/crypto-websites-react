@@ -134,7 +134,7 @@ export const SignUpUpdate = (props: any) => {
             placeholder="jeet_x_twitter"
             required
           />
-          <p className="mb-4 text-xs text-slate-400">
+          <p className="mb-4 text-xs text-black">
             You must follow our account @{props.dropInfo.toXFollow}
           </p>
         </div>
@@ -149,7 +149,7 @@ export const SignUpUpdate = (props: any) => {
             placeholder="https://twitter.com/username/status/1234454265263"
             required
           />
-          <p className="mb-4 text-xs text-slate-400">
+          <p className="mb-4 text-xs text-black">
             Your post must include tag to our account @
             {props.dropInfo.toXFollow} and our ticker $
             {props.dropInfo.tockenTicker}
@@ -167,7 +167,7 @@ export const SignUpUpdate = (props: any) => {
             placeholder="jeet_tg"
             required
           />
-          <p className="mb-4 text-xs text-slate-400">
+          <p className="mb-4 text-xs text-black">
             You need to send at least one message in @
             {props.dropInfo.toTGFollow} to confirm your Telegram account.
           </p>
