@@ -174,10 +174,10 @@ export const SignUpUpdate = (props: any) => {
         </div>
         <p className="text-center mt-4">
           <span className="font-bold uppercase">
-            {props.dropInfo.airdropTokenAmount / 10 ** 6} million tokens
+            {props.dropInfo.airdropTokenAmount}% of tokens
           </span>{" "}
-          will be distributed among {props.dropInfo.maxAirDropUsers} people
-          equaly.
+          from the Dev Buy will be distributed among{" "}
+          {props.dropInfo.maxAirDropUsers} people equaly.
         </p>
       </form>
       <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
