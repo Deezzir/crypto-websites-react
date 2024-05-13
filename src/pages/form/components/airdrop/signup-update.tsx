@@ -155,7 +155,7 @@ export const SignUpUpdate = (props: any) => {
         </div>
         <div className="relative">
           <p className="text-lg">Twitter Post link</p>
-          <div className="w-full flex flex-row gap-2 lg:gap-4">
+          <div className="w-full flex flex-row gap-1 lg:gap-4">
             <input
               value={twitterLink}
               onChange={onTwitterLinkChange}
@@ -168,7 +168,7 @@ export const SignUpUpdate = (props: any) => {
             <ExampleModal />
             <button
               onClick={downloadImage}
-              className="text-white text-center text-sm lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-4 transition-transform duration-75 ease-in-out"
+              className="text-white text-center text-xs lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-4 transition-transform duration-75 ease-in-out"
             >
               Images
             </button>
