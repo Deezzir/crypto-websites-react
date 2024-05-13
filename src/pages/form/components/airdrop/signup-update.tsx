@@ -130,15 +130,18 @@ export const SignUpUpdate = (props: any) => {
         </div>
         <div className="relative">
           <p>Twitter @</p>
-          <input
-            value={twitter}
-            onChange={onTwitterChange}
-            type="text"
-            id="twitter"
-            className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
-            placeholder="jeet_x_twitter"
-            required
-          />
+          <div className="w-full flex flex-row gap-4">
+            <input
+              value={twitter}
+              onChange={onTwitterChange}
+              type="text"
+              id="twitter"
+              className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+              placeholder="jeet_x_twitter"
+              required
+            />
+            <ExampleModal />
+          </div>
           <p className="mb-4 mt-2 text-md text-black">
             You must follow our account @{props.dropInfo.toXFollow}
           </p>
