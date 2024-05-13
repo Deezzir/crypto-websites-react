@@ -56,23 +56,23 @@ export const SignUpUpdate = (props: any) => {
       validWallet = false;
     }
     if (wallet.length < 34 || wallet.length > 44 || !validWallet) {
-      sendErrorNotification("Wrong solana wallet");
+      sendErrorNotification("Invalid Solana wallet address");
       return;
     }
 
     const twitterToSend = twitter.replace(/\s/g, "").replace(/^@/, "");
     if (!/^@?[0-9a-zA-Z_]{1,15}$/.test(twitterToSend)) {
-      sendErrorNotification("Wrong twitter account profile");
+      sendErrorNotification("Invalid X username");
       return;
     }
 
     const twitterLinkToSend = twitterLink.replace(/\s/g, "");
     if (
-      !/^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/[a-zA-Z0-9_]{1,15}\/status\/[0-9]+$/.test(
+      !/^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/([a-zA-Z0-9_]{1,15})\/status\/([0-9]+)(\?.*)?$/.test(
         twitterLinkToSend
       )
     ) {
-      sendErrorNotification("Wrong twitter link");
+      sendErrorNotification("Wrong X Post link");
       return;
     }
 
@@ -174,9 +174,8 @@ export const SignUpUpdate = (props: any) => {
           </div>
           <p className="mb-4 mt-2 text-black">
             Your post must include tag to our account @
-            {props.dropInfo.toXFollow} and our ticker $
-            {props.dropInfo.tockenTicker}
-            {props.dropInfo.tokenTicker}
+            {props.dropInfo.toXFollow}, our ticker ${props.dropInfo.tokenTicker}{" "}
+            and some related image.
           </p>
         </div>
 
