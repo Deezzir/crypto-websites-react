@@ -60,16 +60,17 @@ export const SignUpUpdate = (props: any) => {
       return;
     }
 
-    const twitterToSend = twitter.replace(/\s/g, "").replace(/^@/, "");
-    if (!/^@?[0-9a-zA-Z_]{1,15}$/.test(twitterToSend)) {
+    const xUsername = twitter.replace(/\s/g, "").replace(/^@/, "");
+    if (!/^@?[0-9a-zA-Z_]{1,15}$/.test(xUsername)) {
       sendErrorNotification("Invalid X username");
       return;
     }
 
-    const twitterLinkToSend = twitterLink.replace(/\s/g, "");
+    const url = new URL(twitterLink.replace(/\s/g, ""));
+    const xPostLink = url.origin + url.pathname;
     if (
       !/^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/([a-zA-Z0-9_]{1,15})\/status\/([0-9]+)(\?.*)?$/.test(
-        twitterLinkToSend
+        xPostLink
       )
     ) {
       sendErrorNotification("Wrong X Post link");
@@ -83,8 +84,8 @@ export const SignUpUpdate = (props: any) => {
       .post(process.env.REACT_APP_SERVER + "/drop/addUpdateAirdropUser", {
         user: {
           wallet: walletToSend,
-          xUsername: twitterToSend,
-          xPostLink: twitterLinkToSend,
+          xUsername: xUsername,
+          xPostLink: xPostLink,
         },
       })
       .then((response) => {
