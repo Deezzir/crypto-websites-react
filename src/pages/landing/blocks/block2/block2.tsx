@@ -66,18 +66,18 @@ export const Block2 = () => {
             duration: 1,
           }}
           viewport={{ once: true }}
-          className="flex w-full lg:w-1/2 flex-col gap-8 h-full my-auto justify-center items-start"
+          className="flex w-full lg:w-1/2 flex-col gap-8 h-full text-xl lg:text-4xl my-auto justify-center items-start"
         >
-          <p className="text-left w-full text-white font-bold text-4xl z-50">
+          <p className="text-left w-full text-white font-bold  z-50">
             &#x2022; Initial dev buy 25%
           </p>
-          <p className="text-left text-white font-bold text-4xl z-50">
+          <p className="text-left text-white font-bold z-50">
             &#x2022; 15% of dev buy to burn before Dexscreen
           </p>
-          <p className="text-left w-full text-white font-bold text-4xl z-50">
+          <p className="text-left w-full text-white font-bold  z-50">
             &#x2022; 10% is going to be airdroped after burn
           </p>
-          <p className="text-left w-full text-white font-bold text-4xl z-50">
+          <p className="text-left w-full text-white font-bold z-50">
             &#x2022; 100 sol dev buy burn at 1 mil mc
           </p>
         </motion.div>

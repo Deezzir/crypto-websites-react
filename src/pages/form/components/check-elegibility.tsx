@@ -76,13 +76,13 @@ export const CheckElegibility = () => {
               />
             </svg>
           </div>
-          <p className="">Solana Wallet</p>
+          <p className="text-lg">Solana Wallet</p>
           <input
             value={wallet}
             onChange={onWalletChange}
             type="text"
             id="solana-check-wallet"
-            className="pe-[100px] block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+            className="block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />

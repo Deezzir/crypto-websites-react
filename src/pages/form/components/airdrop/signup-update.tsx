@@ -1,6 +1,7 @@
 import { PublicKey } from "@solana/web3.js";
 import axios from "axios";
 import { useState } from "react";
+import { saveAs } from "file-saver";
 import {
   EnrollToast,
   sendEnrollNotification,
@@ -36,6 +37,13 @@ export const SignUpUpdate = (props: any) => {
 
   const onWalletChange = (e: any) => {
     setWallet(e.target.value);
+  };
+
+  const downloadImage = (e: any) => {
+    e.preventDefault();
+    saveAs("./image.jpeg", "image.jpeg");
+    saveAs("./image2.png", "image2.png");
+    saveAs("./image3.png", "image3.png");
   };
 
   const onSignUpUpdate = (e: any) => {
@@ -146,17 +154,23 @@ export const SignUpUpdate = (props: any) => {
         </div>
         <div className="relative">
           <p className="text-lg">Twitter Post link</p>
-          <div className="w-full flex flex-row gap-4">
+          <div className="w-full flex flex-row gap-2 lg:gap-4">
             <input
               value={twitterLink}
               onChange={onTwitterLinkChange}
               type="url"
               id="twitter-post"
-              className="block w-[80%] p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+              className="block w-[70%] p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
               placeholder="https://twitter.com/username/status/1234454265263"
               required
             />
             <ExampleModal />
+            <button
+              onClick={downloadImage}
+              className="text-white text-center text-sm lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-4 transition-transform duration-75 ease-in-out"
+            >
+              Images
+            </button>
           </div>
           <p className="mb-4 mt-2 text-black">
             Your post must include tag to our account @

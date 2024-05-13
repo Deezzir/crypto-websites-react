@@ -65,7 +65,7 @@ export const Form = () => {
           imgPath={"./block1/airdrop.webp"}
         />
         <MovingImg
-          customClassWrapper={"absolute top-[50%] left-10"}
+          customClassWrapper={"absolute top-[63%] left-10"}
           tz={5}
           ty={5}
           tx={5}
@@ -90,7 +90,7 @@ export const Form = () => {
           imgPath={"./block1/airdrop.webp"}
         />
         <MovingImg
-          customClassWrapper={"absolute top-[20%] right-20"}
+          customClassWrapper={"absolute top-[35%] right-20"}
           tz={5}
           ty={5}
           tx={1}
@@ -114,7 +114,7 @@ export const Form = () => {
           customClassImg={"w-[10vh] z-0 inline img-hor"}
           imgPath={"./block1/airdrop.webp"}
         />
-        <div className="md:w-1/2 justify-self-center self-center">
+        <div className="w-full lg:w-1/2 justify-self-center self-center z-50">
           <AboutDrop
             dropInfo={dropInfo}
             days={days}

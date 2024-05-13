@@ -4,7 +4,6 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { saveAs } from "file-saver";
 import { Tweet } from "react-tweet";
 
 import { useMemo, useState } from "react";
@@ -43,19 +42,13 @@ export const ExampleModal = (props: any) => {
     setOpen(false);
   };
 
-  const downloadImage = () => {
-    saveAs("./image.jpeg", "image.jpeg"); // Put your image URL here.
-    saveAs("./image2.png", "image2.png"); // Put your image URL here.
-    saveAs("./image3.png", "image3.png"); // Put your image URL here.
-  };
-
   return (
-    <div>
+    <>
       <button
-        className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-4 transition-transform duration-75 ease-in-out"
+        className="text-white text-center text-sm lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-4 transition-transform duration-75 ease-in-out"
         onClick={handleOpen}
       >
-        Example post
+        Example
       </button>
       <Modal
         keepMounted
@@ -84,19 +77,12 @@ export const ExampleModal = (props: any) => {
             </Box>
             <h2 className="text-2xl font-bold text-center">Example</h2>
             {TweetEmbed}
-            <h3 className="text-lg font-bold text-center mb-2">
+            <h3 className="lg:text-lg font-bold text-center mb-2">
               Feel free to add any image or text
             </h3>
-            <a
-              href="#"
-              onClick={downloadImage}
-              className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-2 transition-transform duration-75 ease-in-out"
-            >
-              Download Example Image
-            </a>
           </Box>
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 };
