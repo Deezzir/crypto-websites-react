@@ -167,7 +167,7 @@ export const Form = () => {
         <div className="w-full flex flex-col justify-center items-center">
           <h1 className="p-4 text-xl md:text-3xl font-bold text-center">
             The Drops are going to be performed shortly after the Raydium
-            launch. Please be patiente, it takes time to perform transactions.
+            launch. Please be patient, it takes time to perform transactions.
             Thanks for the enrollment.
           </h1>
         </div>
