@@ -36,7 +36,7 @@ export const Block1 = () => {
         viewport={{ once: true }}
       >
         <img
-          className="w-[20vh] fade-img lg:w-[30vh]"
+          className="w-[20vh] fade-img lg:w-[50vh]"
           src="./block1/trumpmaga.png"
         />
       </motion.div>
@@ -86,7 +86,7 @@ export const Block1 = () => {
           "w-10/12 max-w-screen-2xl flex flex-col p-8 gap-4 rounded-lg min-h-[80vh] justify-center"
         }
       >
-        <div className="flex flex-col-reverse lg:flex-row gap-4 justify-center align-middle">
+        <div className="flex flex-col-reverse lg:flex-row gap-4 justify-center align-middle me-0 md:me-12 lg:me-36">
           <div className="flex w-full justify-center items-center flex-col align-middle gap-4">
             <div className="w-full flex flex-col items-center md:items-end">
               <motion.div
@@ -131,7 +131,7 @@ export const Block1 = () => {
                     window.open("/drop", "_blank");
                   }}
                   type="button"
-                  className="z-50 text-gray-900 bg-gray-100 hover:bg-gray-200  focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 "
+                  className="z-50 text-white bg-red-500 hover:bg-red-800 hover:text-black focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 "
                 >
                   <p className="w-full text-center text-xl uppercase">
                     Sign up for Airdrop
