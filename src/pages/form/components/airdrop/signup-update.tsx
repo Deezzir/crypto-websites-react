@@ -5,13 +5,17 @@ import {
   sendErrorNotification,
   sendSuccessNotification,
   sendWarningNotification,
-} from "../utils";
+} from "../../utils";
+import { ExampleModal } from "./example-modal";
+import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar";
 
 export const SignUpUpdate = (props: any) => {
   const [twitter, setTwitter] = useState("");
   const [twitterLink, setTwitterLink] = useState("");
   const [telegram, setTelegram] = useState("");
   const [wallet, setWallet] = useState("");
+
+  useCompensateScrollbar();
 
   const clearForm = () => {
     setTwitter("");
@@ -72,7 +76,7 @@ export const SignUpUpdate = (props: any) => {
     }
 
     axios
-      .post(process.env.REACT_APP_SERVER + "/users/addUpdateAirdropUser", {
+      .post(process.env.REACT_APP_SERVER + "/drop/addUpdateAirdropUser", {
         user: {
           wallet: walletToSend,
           xUsername: twitterToSend,
@@ -131,7 +135,7 @@ export const SignUpUpdate = (props: any) => {
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            You should follow our account @{props.toXFollow}
+            You must follow our account @{props.dropInfo.toXFollow}
           </p>
         </div>
         <div className="relative">
@@ -146,10 +150,12 @@ export const SignUpUpdate = (props: any) => {
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            Your post should include tag to our account @{props.toXFollow}
+            Your post must include tag to our account @
+            {props.dropInfo.toXFollow} and our ticker $
+            {props.dropInfo.tockenTicker}
+            {props.dropInfo.tokenTicker}
           </p>
         </div>
-
         <div className="relative">
           <p>Telegram @</p>
           <input
@@ -162,8 +168,8 @@ export const SignUpUpdate = (props: any) => {
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            You need to send at least one message in @{props.toTGFollow} to
-            confirm your Telegram account.
+            You need to send at least one message in @
+            {props.dropInfo.toTGFollow} to confirm your Telegram account.
           </p>
         </div>
 
@@ -177,10 +183,16 @@ export const SignUpUpdate = (props: any) => {
           </button>
         </div>
         <p className="text-center mt-4">
-          <span className="font-bold uppercase">50 million tokens</span> will be
-          distributed among {props.maxAirDropUsers} people equaly.
+          <span className="font-bold uppercase">
+            {props.dropInfo.airdropTokenAmount / 10 ** 6} million tokens
+          </span>{" "}
+          will be distributed among {props.dropInfo.maxAirDropUsers} people
+          equaly.
         </p>
       </form>
+      <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
+        <ExampleModal />
+      </div>
     </div>
   );
 };

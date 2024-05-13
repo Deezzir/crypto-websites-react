@@ -7,10 +7,12 @@ export const Block5 = () => {
       <img
         className="w-16 md:w-32 absolute bottom-0 left-0"
         src="./block5/chel.jpg"
+        alt="chel"
       />
       <img
         className="w-16 md:w-32 absolute bottom-0 right-0"
         src="./block5/chel2.jpg"
+        alt="chel"
       />
       <motion.div
         className={

@@ -20,28 +20,28 @@ export const Block3 = () => {
         viewport={{ once: true }}
       >
         <div className="flex w-full md:w-3/12 flex-col gap-8 p-4 justify-center align-center items-center">
-          <img className="w-12/12" src="./block3/card.jpg" />
+          <img className="w-12/12" src="./block3/card.jpg" alt="card" />
           <TextReg
             customClass={"text-[#00BCF8]"}
             text={"Lorem ipsun Lorem ipsun Lorem ipsun ipsun Lorem ipsun"}
           />
         </div>
         <div className="flex w-full md:w-3/12 flex-col gap-8 p-4 justify-center align-center items-center">
-          <img className="w-12/12" src="./block3/card.jpg" />
+          <img className="w-12/12" src="./block3/card.jpg" alt="card" />
           <TextReg
             customClass={"text-[#00BCF8]"}
             text={"Lorem ipsun Lorem ipsun Lorem ipsun ipsun Lorem ipsun"}
           />
         </div>
         <div className="flex w-full md:w-3/12 flex-col gap-8 p-4 justify-center align-center items-center">
-          <img className="w-12/12" src="./block3/card.jpg" />
+          <img className="w-12/12" src="./block3/card.jpg" alt="card" />
           <TextReg
             customClass={"text-[#00BCF8]"}
             text={"Lorem ipsun Lorem ipsun Lorem ipsun ipsun Lorem ipsun"}
           />
         </div>
         <div className="flex w-full md:w-3/12 flex-col gap-8 p-4 justify-center align-center items-center">
-          <img className="w-12/12" src="./block3/card.jpg" />
+          <img className="w-12/12" src="./block3/card.jpg" alt="card" />
           <TextReg
             customClass={"text-[#00BCF8]"}
             text={"Lorem ipsun Lorem ipsun Lorem ipsun ipsun Lorem ipsun"}

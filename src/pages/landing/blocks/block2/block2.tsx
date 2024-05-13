@@ -36,10 +36,14 @@ export const Block2 = () => {
               text={"Lorem ipsun Lorem ipsun Lorem ipsun"}
             />
           </div>
-          <img className="w-8/12" src={"./block2/cards.jpg"} />
+          <img className="w-8/12" src={"./block2/cards.jpg"} alt="cards" />
         </div>
         <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
-          <img className="md:h-[80vh]" src="./block2/gendalph.jpg" />
+          <img
+            className="md:h-[80vh]"
+            src="./block2/gendalph.jpg"
+            alt="gendalph"
+          />
         </div>
       </motion.div>
     </div>

@@ -1,55 +1,38 @@
 import { useEffect, useState } from "react";
 import { AboutDrop } from "./components/about-drop/about-drop";
 import { CheckElegibility } from "./components/check-elegibility";
-import { SignUpUpdate } from "./components/signup-update";
+import { SignUpUpdate } from "./components/airdrop/signup-update";
 import { useCountdown } from "../../hooks/useCountdownHook";
 import axios from "axios";
-import { sendErrorNotification } from "./utils";
+import { sendErrorNotification, DropInfo } from "./utils";
 import { Presale } from "./components/presale/presale";
 import { FooterSection } from "../../common/footer";
 
 export const Form = () => {
-  const [deadline, setDeadline] = useState(0);
-  let [days, hours, minutes, seconds] = useCountdown(deadline);
-  const [registeredAirdropUsers, setAirdropRegisteredUsers] = useState(0);
-  const [registeredPresaleUsers, setPresaleRegisteredUsers] = useState(0);
-  const [maxSolAmount, setMaxSolAmount] = useState(5.0);
-  const [minSolAmount, setMinSolAmount] = useState(0.1);
-  const [presaleSolAmount, setPresaleSolAmount] = useState(0.0);
-  const [maxAirDropUsers, setMaxAirDropUsers] = useState(1000);
-  const [maxPresaleUsers, setMaxPresaleUsers] = useState(500);
-  const [toXFollow, setToXFollow] = useState("");
-  const [toTGFollow, setToTGFollow] = useState("");
-  const [dropPubkey, setDropPubkey] = useState("");
+  const [dropInfo, setDropInfo] = useState<DropInfo>({
+    numberOfMaxAirdropUsers: 1000,
+    numberOfMaxPresaleUsers: 500,
+    numberOfAirdropUsers: 0,
+    numberOfPresaleUsers: 0,
+    deadline: 0,
+    toXFollow: "",
+    toTGFollow: "",
+    presaleMaxSolAmount: 5.0,
+    presaleMinSolAmount: 0.1,
+    presaleSolAmount: 0,
+    presaleTokenAmount: 75000000,
+    airdropTokenAmount: 75000000,
+    tockenTicker: "SOL",
+    dropPublicKey: "",
+  });
+
+  let [days, hours, minutes, seconds] = useCountdown(dropInfo.deadline);
 
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_SERVER + "/users/getDropInfo")
+      .get(process.env.REACT_APP_SERVER + "/drop/getDropInfo")
       .then((response) => {
-        const {
-          numberOfMaxAirdropUsers,
-          numberOfMaxPresaleUsers,
-          numberOfAirdropUsers,
-          numberOfPresaleUsers,
-          deadline,
-          toXFollow,
-          toTGFollow,
-          presaleMaxSolAmount,
-          presaleMinSolAmount,
-          presaleSolAmount,
-          dropPublicKey,
-        } = response.data;
-        setMaxAirDropUsers(numberOfMaxAirdropUsers);
-        setMaxPresaleUsers(numberOfMaxPresaleUsers);
-        setAirdropRegisteredUsers(numberOfAirdropUsers);
-        setPresaleRegisteredUsers(numberOfPresaleUsers);
-        setDeadline(parseInt(deadline, 10));
-        setToXFollow(toXFollow);
-        setToTGFollow(toTGFollow);
-        setPresaleSolAmount(presaleSolAmount);
-        setMaxSolAmount(presaleMaxSolAmount);
-        setMinSolAmount(presaleMinSolAmount);
-        setDropPubkey(dropPublicKey);
+        setDropInfo(response.data as DropInfo);
       })
       .catch((error) => {
         sendErrorNotification(
@@ -59,26 +42,24 @@ export const Form = () => {
   }, []);
 
   const blured = days + hours + minutes + seconds <= 0;
-  const blurredAirdrop = registeredAirdropUsers >= maxAirDropUsers;
-  const blurredPresale = registeredPresaleUsers >= maxPresaleUsers;
+  const blurredAirdrop =
+    dropInfo.numberOfAirdropUsers >= dropInfo.numberOfMaxAirdropUsers;
+  const blurredPresale =
+    dropInfo.numberOfPresaleUsers >= dropInfo.numberOfMaxPresaleUsers;
 
   return (
     <>
-      <div className="flex flex-col gap-8 py-12 px-20">
+      <div className="flex flex-col gap-3 py-12 px-2 md:px-20">
         <div className="w-full justify-self-center self-center">
           <AboutDrop
-            registeredAirdropUsers={registeredAirdropUsers}
-            registeredPresaleUsers={registeredPresaleUsers}
-            maxAirDropUsers={maxAirDropUsers}
-            maxPresaleUsers={maxPresaleUsers}
-            presaleSolAmount={presaleSolAmount}
+            dropInfo={dropInfo}
             days={days}
             hours={hours}
             minutes={minutes}
             seconds={seconds}
           />
         </div>
-        <div className="w-[40%] justify-self-center self-center">
+        <div className="w-full md:w-[40%] p-4 justify-self-center self-center">
           <CheckElegibility />
         </div>
         <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
@@ -96,12 +77,7 @@ export const Form = () => {
                   : "")
               }
             >
-              <SignUpUpdate
-                blured={blured}
-                maxAirDropUsers={maxAirDropUsers}
-                toXFollow={toXFollow}
-                toTGFollow={toTGFollow}
-              />
+              <SignUpUpdate dropInfo={dropInfo} />
             </div>
           </div>
           <div className="w-full md:w-[8%] flex justify-self-center self-center justify-center items-center">
@@ -121,17 +97,12 @@ export const Form = () => {
                   : "")
               }
             >
-              <Presale
-                maxPresaleUsers={maxPresaleUsers}
-                maxSolAmount={maxSolAmount}
-                minSolAmount={minSolAmount}
-                dropPubkey={dropPubkey}
-              />
+              <Presale dropInfo={dropInfo} />
             </div>
           </div>
         </div>
         <div className="w-full flex flex-col justify-center items-center">
-          <h1 className="text-3xl font-bold text-center">
+          <h1 className="p-4 text-xl md:text-3xl font-bold text-center">
             The Drops are going to be performed shortly after the Raydium
             launch. Please be patiente, it takes time to perform transactions.
             Thanks for the enrollment.

@@ -59,17 +59,19 @@ export const Block4 = () => {
                 onClick={onBuy}
                 className="md:h-20 md:w-6/12 cursor-pointer"
                 src="./block4/buy.jpg"
+                alt="buy"
               />
               <img
                 onClick={onPlay}
                 className="md:h-20 md:w-6/12 cursor-pointer"
                 src="./block4/play.jpg"
+                alt="play"
               />
             </div>
           </div>
         </div>
         <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
-          <img className="md:h-[80vh]" src="./block4/card.jpg" />
+          <img className="md:h-[80vh]" src="./block4/card.jpg" alt="card" />
         </div>
       </motion.div>
     </div>
