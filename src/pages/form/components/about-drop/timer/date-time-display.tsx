@@ -8,7 +8,7 @@ const DateTimeDisplay = (props: any) => {
         (props.isDanger ? "text-red-600" : "text-black")
       }
     >
-      <p className="text-2xl">{props.value}</p>
+      <p className="text-xl md:text-2xl">{props.value}</p>
       <span className="uppercase text-2xl">{props.type}</span>
     </div>
   );

@@ -40,12 +40,12 @@ export const CheckElegibility = () => {
         if (isValidWallet && (isPresaleEnrolled || isAirdropEnrolled)) {
           let msgs: string[] = [];
           if (isAirdropEnrolled) msgs.push(`Airdrop enrolled`);
-          if (isPresaleEnrolled)
-            msgs.push(`Presale enrolled with ${presaleAmount.toFixed(2)} SOL`);
           let formattedMessages = <FormattedMessages messages={msgs} />;
           sendSuccessNotification(formattedMessages);
         } else {
-          let formattedMessages = <FormattedMessages messages={errorMsgs} />;
+          let formattedMessages = (
+            <FormattedMessages messages={errorMsgs.slice(0, 1)} />
+          );
           sendWarningNotification(formattedMessages);
         }
       })
