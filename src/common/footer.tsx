@@ -8,7 +8,7 @@ export const FooterSection = () => {
       </p>
       <p className="px-2 pb-2 text-sm">
         $TRUMPY is a memecoin with no intrinsic value, and is not a investment
-        and simply a community/culture token similar to $. No Promises, No
+        and simply a community/culture token similar to $TRUMPY. No Promises, No
         Utility, Purely For Entertainment Purposes
       </p>
     </footer>

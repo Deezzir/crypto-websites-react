@@ -38,6 +38,7 @@ export const Block1 = () => {
         <img
           className="w-[20vh] fade-img md:w-[50vh]"
           src="./block1/trumpmaga.webp"
+          alt="trump maga"
         />
       </motion.div>
 
@@ -54,7 +55,11 @@ export const Block1 = () => {
             },
           }}
         >
-          <img className="w-[15vh]" src="./block1/trumpmom.webp" />
+          <img
+            className="w-[15vh]"
+            src="./block1/trumpmom.webp"
+            alt="trump mom"
+          />
         </motion.div>
       </div>
       <MovingImg

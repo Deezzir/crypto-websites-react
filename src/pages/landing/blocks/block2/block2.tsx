@@ -35,6 +35,7 @@ export const Block2 = () => {
         <img
           className="w-[30vh] md:w-[50vh] img-hor z-0"
           src="./block1/trump.webp"
+          alt="trump"
         />
       </div>
       <motion.div

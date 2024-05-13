@@ -5,8 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Layout } from "./layout";
 import { Landing } from "./pages/landing/landing";
-import { Buffer } from "buffer";
-window.Buffer = Buffer;
 
 const Form = React.lazy(() => import("./pages/form/form"));
 const root = ReactDOM.createRoot(
