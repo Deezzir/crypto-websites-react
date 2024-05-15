@@ -1,46 +1,14 @@
-# Getting Started with Create React App
+# Token Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the portfolio of the Token websites that I created/collaborated with:
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. TarotOfMeme [Website](https://tarotofmeme.com/), [Repo](https://github.com/Verchyonov/react-websites).
+2. Alon The Alien [Chart](https://dexscreener.com/solana/ANvvhmTshfyVMDNiXX58Lq6XG3xqq9ZbnbYoo6W1exAc), [Website](https://alonthealien.com/), [Repo](https://github.com/vverchonov/crypto-websites/tree/aliens).
+3. Trumpy [Website](https://www.mitrumpysol.com/), [Repo](https://github.com/vverchonov/crypto-websites-react/tree/trumpy)
+4. Font [Chart](https://dexscreener.com/solana/C4R8Z8TS8NyLCxaWxEkXghQFW8GDAuYwQuoDqMRAYWJM), [Website](http://wvwvvvvvvv.com/).
+5. FRODO [Chart](https://dexscreener.com/solana/2xCGqSn86Y2Ziba7sR6Nd2G5HqaYtFfL5NhpvwsyKc9R), [Website](https://frodo.world/).
+6. Mihabibi [Chart](https://dexscreener.com/solana/ERCD6qtvn4sWhmNBLyPXfoKghjFRM3gxAYKxNzcw9a5x), [Website](https://mihabibilady.com/).
+7. Vault Boy [Chart](https://www.pump.fun/7rwHQ8qykg4AjP6Tv5Xo6HPUVdug2gA2LcK9y8wWHU22), [Website](http://thevaultboy.com/).
+8. Cat Waffle [Chart](https://dexscreener.com/solana/NTH4L6xZfa9X2Pk1hnMhW1RiYQFQmL5tCEWaeG3ht8V), [Website](http://catwafhat.com/).
+9. SMOB [Chart](https://dexscreener.com/solana/fh31jwcfrc7exmd4qwory3jkp8kt9hwrzjzeweckmpkx), [Website](https://smobsolana.com/en), [Repo](https://github.com/vverchonov/crypto-websites/tree/smoking-bear), [AR Repo](https://github.com/vverchonov/crypto-websites/tree/smoking-bear-ar).
+10. Pepeplane [Chart](https://dexscreener.com/solana/B4HNBPkTHpodjfkxWg1CQhHdYgei4uhcEBt6j4uK5Tor), [Website](https://www.pepeplane.com/), [Repo](https://github.com/vverchonov/crypto-websites-react/tree/pepeplane).
