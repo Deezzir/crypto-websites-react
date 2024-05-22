@@ -73,10 +73,10 @@ export const Block2 = () => {
             &#x2022; Initial dev buy 25%
           </p>
           <p className="text-left text-white font-bold z-50">
-            &#x2022; 15% of dev buy to burn before Dexscreen
+            &#x2022; 15% of dev buy to burn before Raydium
           </p>
           <p className="text-left w-full text-white font-bold  z-50">
-            &#x2022; 10% is going to be airdroped after burn
+            &#x2022; 10% to burn after Raydium
           </p>
           <p className="text-left w-full text-white font-bold z-50">
             &#x2022; 100 sol dev buy burn at 1 mil mc
