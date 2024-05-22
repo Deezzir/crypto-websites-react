@@ -135,23 +135,12 @@ export const Block1 = () => {
               <div className="flex md:flex-row flex-col gap-4">
                 <button
                   onClick={() => {
-                    window.open("/drop", "_blank");
+                    window.open(BUY_LINK, "_blank");
                   }}
                   type="button"
                   className="z-50 text-white bg-red-500 hover:bg-red-800 hover:text-black focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 "
                 >
-                  <p className="w-full text-center text-xl uppercase">
-                    Sign up for Airdrop
-                  </p>
-                </button>
-                <button
-                  onClick={() => {
-                    window.open(BUY_LINK, "_blank");
-                  }}
-                  type="button"
-                  className="z-50 text-gray-900 bg-gray-100 hover:bg-gray-200  focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 "
-                >
-                  <p className="w-full text-center text-xl uppercase">BUY</p>
+                  <p className="w-full text-center text-xl uppercase">Buy</p>
                 </button>
               </div>
             </div>

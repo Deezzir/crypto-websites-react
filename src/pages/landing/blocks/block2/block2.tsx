@@ -84,7 +84,7 @@ export const Block2 = () => {
         </motion.div>
         <div className="flex flex-col gap-4 w-full items-center">
           <div className="flex md:flex-row flex-col gap-4">
-            <button
+            {/* <button
               onClick={() => {
                 window.open("/drop", "_blank");
               }}
@@ -94,7 +94,7 @@ export const Block2 = () => {
               <p className="w-full text-center text-xl uppercase">
                 Sign up for Airdrop
               </p>
-            </button>
+            </button> */}
             <button
               onClick={() => {
                 window.open(BUY_LINK, "_blank");
